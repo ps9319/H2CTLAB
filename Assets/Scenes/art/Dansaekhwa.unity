@@ -1845,7 +1845,7 @@ VisualEffect:
       m_Array: []
     m_NamedObject:
       m_Array:
-      - m_Value: {fileID: 2800000, guid: d3ff40392ed40284795c7043f763f5a8, type: 3}
+      - m_Value: {fileID: 2800000, guid: cde3f165c982b0a45b554f575add4d65, type: 3}
         m_Name: Texture
         m_Overridden: 1
     m_Bool:
@@ -3987,7 +3987,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 883538982}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12, y: 2.9400003, z: 0}
+  m_LocalPosition: {x: 12, y: 3.9900005, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4026,7 +4026,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 0.8544546, b: 0.7764706, a: 1}
-  m_Intensity: 200
+  m_Intensity: 40
   m_Range: 12
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -5197,7 +5197,7 @@ VisualEffect:
       m_Array: []
     m_NamedObject:
       m_Array:
-      - m_Value: {fileID: 2800000, guid: d3ff40392ed40284795c7043f763f5a8, type: 3}
+      - m_Value: {fileID: 2800000, guid: cde3f165c982b0a45b554f575add4d65, type: 3}
         m_Name: Texture
         m_Overridden: 1
     m_Bool:
@@ -6640,7 +6640,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 1
+  m_Intensity: 0.2
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -6946,7 +6946,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1528766496}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12, y: 2.94, z: 0}
+  m_LocalPosition: {x: -12, y: 3.99, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6985,7 +6985,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 0.8544546, b: 0.7764706, a: 1}
-  m_Intensity: 200
+  m_Intensity: 40
   m_Range: 12
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -7061,7 +7061,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1532836400}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.94, z: 0}
+  m_LocalPosition: {x: 0, y: 3.9900002, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7100,7 +7100,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 0.8544546, b: 0.7764706, a: 1}
-  m_Intensity: 200
+  m_Intensity: 40
   m_Range: 12
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -8052,7 +8052,7 @@ MonoBehaviour:
   - lights:
     - {fileID: 4606747344495519204}
     - {fileID: 675470057}
-    targetIntensity: 60
+    targetIntensity: 3
     turnOnTime: 0
     transitionDuration: 2
     turnOff: 0
@@ -8060,7 +8060,7 @@ MonoBehaviour:
   - lights:
     - {fileID: 634244318}
     - {fileID: 1576420267}
-    targetIntensity: 20
+    targetIntensity: 0.5
     turnOnTime: 0
     transitionDuration: 2
     turnOff: 0
@@ -8070,7 +8070,7 @@ MonoBehaviour:
     - {fileID: 229373802}
     - {fileID: 2145386211}
     - {fileID: 503800922}
-    targetIntensity: 60
+    targetIntensity: 3
     turnOnTime: 2
     transitionDuration: 2
     turnOff: 0
@@ -8078,7 +8078,7 @@ MonoBehaviour:
   - lights:
     - {fileID: 1385440575}
     - {fileID: 2134742695}
-    targetIntensity: 20
+    targetIntensity: 0.5
     turnOnTime: 4
     transitionDuration: 2
     turnOff: 0
@@ -9760,7 +9760,7 @@ MeshRenderer:
   m_RenderingLayerMask: 2
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e8210091bd6de5444a8d3ea3698c2647, type: 2}
+  - {fileID: 2100000, guid: 7049fe809c874a54a8ee3f37ffe30aef, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

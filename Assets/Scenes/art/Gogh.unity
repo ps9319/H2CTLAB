@@ -8152,7 +8152,7 @@ MonoBehaviour:
   - lights:
     - {fileID: 4606747344495519204}
     - {fileID: 675470057}
-    targetIntensity: 60
+    targetIntensity: 40
     turnOnTime: 0
     transitionDuration: 2
     turnOff: 0
@@ -8160,7 +8160,7 @@ MonoBehaviour:
   - lights:
     - {fileID: 634244318}
     - {fileID: 1576420267}
-    targetIntensity: 20
+    targetIntensity: 10
     turnOnTime: 0
     transitionDuration: 2
     turnOff: 0
@@ -8170,7 +8170,7 @@ MonoBehaviour:
     - {fileID: 229373802}
     - {fileID: 2145386211}
     - {fileID: 503800922}
-    targetIntensity: 60
+    targetIntensity: 40
     turnOnTime: 2
     transitionDuration: 2
     turnOff: 0
@@ -8178,7 +8178,7 @@ MonoBehaviour:
   - lights:
     - {fileID: 1385440575}
     - {fileID: 2134742695}
-    targetIntensity: 20
+    targetIntensity: 10
     turnOnTime: 4
     transitionDuration: 2
     turnOff: 0
