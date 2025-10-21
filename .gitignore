@@ -237,3 +237,9 @@ $RECYCLE.BIN/
 *.lnk
 
 # End of https://www.toptal.com/developers/gitignore/api/windows,macos,unity,visualstudiocode,rider
+
+# ai 생성 이미지 
+Assets/Scenes/Base/Resource/Images/AI_Images/**/**/*.png
+Assets/Scenes/Base/Resource/Images/AI_Images/**/**/*.png.meta
+Assets/Scenes/Base/Material/AImage/**/*.mat
+Assets/Scenes/Base/Material/AImage/**/*.mat.meta
