@@ -1,6 +1,9 @@
 # Created by https://www.toptal.com/developers/gitignore/api/windows,macos,unity,visualstudiocode,rider
 # Edit at https://www.toptal.com/developers/gitignore?templates=windows,macos,unity,visualstudiocode,rider
 
+**/test.unity
+test.unity
+
 ### macOS ###
 # General
 .DS_Store
