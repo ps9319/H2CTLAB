@@ -266,7 +266,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 8866e9461746f8e4494736c8f3986129, type: 2}
+  - {fileID: 2100000, guid: 78c94a6f5ad51664f9b207657ee62570, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7742,7 +7742,7 @@ Transform:
   m_Children:
   - {fileID: 520665530}
   m_Father: {fileID: 2086808339}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1669552130
 MonoBehaviour:
@@ -7927,8 +7927,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vfxGroups:
   - vfxList:
-    - {fileID: 742095559}
-    - {fileID: 593887652}
+    - {fileID: 1308773065}
+    - {fileID: 972016555}
     startTime: 0
     endTime: 15
   - vfxList:
@@ -8023,7 +8023,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2086808339}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1884850950
 MonoBehaviour:
@@ -8237,93 +8237,6 @@ Transform:
   m_Father: {fileID: 1573841767}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2016148859
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2016148860}
-  - component: {fileID: 2016148861}
-  m_Layer: 0
-  m_Name: VFXManager2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2016148860
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2016148859}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.29807258, y: 0.74477005, z: -17.307001}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2086808339}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2016148861
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2016148859}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07080aff4f1576442a915fa797d7f110, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  vfxGroups:
-  - vfxList:
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    startTime: 0
-    endTime: Infinity
-  - vfxList:
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    startTime: 2
-    endTime: Infinity
-  startDelay: 0
 --- !u!1 &2030656808
 GameObject:
   m_ObjectHideFlags: 0
@@ -8392,7 +8305,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 8866e9461746f8e4494736c8f3986129, type: 2}
+  - {fileID: 2100000, guid: 78c94a6f5ad51664f9b207657ee62570, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8961,7 +8874,6 @@ Transform:
   m_Children:
   - {fileID: 500828881}
   - {fileID: 1738197555}
-  - {fileID: 2016148860}
   - {fileID: 1884850949}
   - {fileID: 1669552129}
   m_Father: {fileID: 0}
