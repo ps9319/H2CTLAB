@@ -4,6 +4,8 @@
 **/test.unity
 test.unity
 
+.idea/
+
 ### macOS ###
 # General
 .DS_Store
