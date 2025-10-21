@@ -8,6 +8,7 @@ public class VFXGroup
     public List<VFXAttachment> vfxList = new List<VFXAttachment>();
     public float startTime;
     public float endTime;
+    public Transform targetTransform; // 추가: 타겟 오브젝트
 }
 
 public class VFXManager : MonoBehaviour
@@ -78,7 +79,15 @@ public class VFXManager : MonoBehaviour
                     foreach (var vfx in group.vfxList)
                     {
                         if (vfx != null)
+                        {
+                            // targetTransform이 있으면 위치와 스케일을 맞춤
+                            if (group.targetTransform != null)
+                            {
+                                vfx.transform.position = group.targetTransform.position;
+                                vfx.transform.localScale = group.targetTransform.localScale;
+                            }
                             vfx.Play();
+                        }
                     }
                     played.Add(group);
                 }
