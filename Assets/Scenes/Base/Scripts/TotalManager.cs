@@ -11,6 +11,7 @@ public class TotalManager : MonoBehaviour
         public List<GameObject> targets = new List<GameObject>();
         public float startTime;
         public float endTime;
+        public bool enabled = true; // 그룹 활성/비활성화 (기본값 true)
     }
 
     public List<SequenceGroup> sequenceGroups = new List<SequenceGroup>();
@@ -19,6 +20,7 @@ public class TotalManager : MonoBehaviour
     {
         foreach (var group in sequenceGroups)
         {
+            if (group == null || !group.enabled) continue; // 비활성화 그룹은 무시
             foreach (var obj in group.targets)
             {
                 if (obj != null)
@@ -37,12 +39,13 @@ public class TotalManager : MonoBehaviour
         float elapsed = 0f;
         float maxTime = 0f;
         foreach (var group in sequenceGroups)
-            if (group.endTime > maxTime) maxTime = group.endTime;
+            if (group.enabled && group.endTime > maxTime) maxTime = group.endTime;
 
         while (elapsed < maxTime)
         {
             foreach (var group in sequenceGroups)
             {
+                if (group == null || !group.enabled) continue; // 비활성화 그룹은 무시
                 foreach (var obj in group.targets)
                 {
                     if (obj == null) continue;
@@ -60,8 +63,11 @@ public class TotalManager : MonoBehaviour
 
         // 마지막으로 모두 비활성화
         foreach (var group in sequenceGroups)
+        {
+            if (group == null || !group.enabled) continue; // 비활성화 그룹은 무시
             foreach (var obj in group.targets)
                 if (obj != null)
                     obj.SetActive(false);
+        }
     }
 }
