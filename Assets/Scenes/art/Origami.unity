@@ -7996,11 +7996,13 @@ MonoBehaviour:
     - {fileID: 972016555}
     startTime: 0
     endTime: 15
+    targetTransform: {fileID: 0}
   - vfxList:
     - {fileID: 1176051677}
     - {fileID: 450522287}
     startTime: 13
     endTime: 36
+    targetTransform: {fileID: 0}
   startDelay: 0
 --- !u!4 &1738197555
 Transform:
@@ -9815,7 +9817,7 @@ MeshRenderer:
   m_RenderingLayerMask: 2
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f639c694215f30b4d92c2723b115a67c, type: 2}
+  - {fileID: 2100000, guid: 8be5f7c7772b50a42885a75ccd8a8636, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
