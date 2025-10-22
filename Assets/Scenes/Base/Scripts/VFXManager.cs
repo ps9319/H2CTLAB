@@ -9,6 +9,7 @@ public class VFXGroup
     public float startTime;
     public float endTime;
     public Transform targetTransform; // 추가: 타겟 오브젝트
+    public bool enabled = true; // 추가: 그룹 활성/비활성화 (기본값 true)
 }
 
 public class VFXManager : MonoBehaviour
@@ -28,6 +29,7 @@ public class VFXManager : MonoBehaviour
     {
         foreach (var group in vfxGroups)
         {
+            if (group == null || !group.enabled) continue; // 비활성화 그룹은 무시
             foreach (var vfx in group.vfxList)
             {
                 if (vfx != null && vfx.gameObject.activeSelf)
@@ -50,7 +52,7 @@ public class VFXManager : MonoBehaviour
         float maxEndTime = 0f;
         foreach (var group in vfxGroups)
         {
-            if (group != null && group.endTime > maxEndTime)
+            if (group != null && group.enabled && group.endTime > maxEndTime)
                 maxEndTime = group.endTime;
         }
 
@@ -63,7 +65,7 @@ public class VFXManager : MonoBehaviour
         {
             foreach (var group in vfxGroups)
             {
-                if (group == null) continue;
+                if (group == null || !group.enabled) continue; // 비활성화 그룹은 무시
 
                 // Play
                 if (!played.Contains(group) && timer >= group.startTime)
@@ -115,7 +117,7 @@ public class VFXManager : MonoBehaviour
         // 혹시 끝까지 Finish/Disable 안된 것 처리
         foreach (var group in vfxGroups)
         {
-            if (group != null)
+            if (group != null && group.enabled)
             {
                 if (!finished.Contains(group))
                 {
