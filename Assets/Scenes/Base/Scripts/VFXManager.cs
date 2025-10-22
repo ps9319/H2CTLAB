@@ -21,14 +21,6 @@ public class VFXManager : MonoBehaviour
 
     private void OnEnable()
     {
-        foreach (var group in vfxGroups)
-        {
-            foreach (var vfx in group.vfxList)
-            {
-                if (vfx != null && !vfx.gameObject.activeSelf)
-                    vfx.gameObject.SetActive(true);
-            }
-        }
         PlayAll();
     }
 
@@ -80,6 +72,10 @@ public class VFXManager : MonoBehaviour
                     {
                         if (vfx != null)
                         {
+                            // 실행 직전에만 활성화
+                            if (!vfx.gameObject.activeSelf)
+                                vfx.gameObject.SetActive(true);
+
                             // targetTransform이 있으면 위치와 스케일을 맞춤
                             if (group.targetTransform != null)
                             {
