@@ -243,3 +243,7 @@ Assets/Scenes/Base/Resource/Images/AI_Images/**/**/*.png
 Assets/Scenes/Base/Resource/Images/AI_Images/**/**/*.png.meta
 Assets/Scenes/Base/Material/AImage/**/*.mat
 Assets/Scenes/Base/Material/AImage/**/*.mat.meta
+Assets/Scenes/0_Base/Material/AImage/
+
+# Windows Thumbnail Cache
+Thumbs.db
