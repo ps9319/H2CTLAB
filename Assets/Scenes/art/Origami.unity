@@ -1722,6 +1722,7 @@ MonoBehaviour:
   vfxStopTrigger: 
   animatorPlayTrigger: meshAnimation
   animatorStopTrigger: 
+  startDelay: 0
 --- !u!95 &450522288
 Animator:
   serializedVersion: 5
@@ -2082,6 +2083,7 @@ MonoBehaviour:
   vfxStopTrigger: 
   animatorPlayTrigger: 
   animatorStopTrigger: 
+  startDelay: 0
 --- !u!95 &520665532
 Animator:
   serializedVersion: 5
@@ -2353,6 +2355,7 @@ MonoBehaviour:
   vfxStopTrigger: 
   animatorPlayTrigger: 
   animatorStopTrigger: 
+  startDelay: 0
 --- !u!114 &593887653
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -3524,6 +3527,7 @@ MonoBehaviour:
   vfxStopTrigger: 
   animatorPlayTrigger: 
   animatorStopTrigger: 
+  startDelay: 0
 --- !u!95 &742095560
 Animator:
   serializedVersion: 5
@@ -4274,6 +4278,7 @@ MonoBehaviour:
   vfxStopTrigger: 
   animatorPlayTrigger: PlayAnimation
   animatorStopTrigger: 
+  startDelay: 0
 --- !u!114 &972016556
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5314,6 +5319,7 @@ MonoBehaviour:
   vfxStopTrigger: 
   animatorPlayTrigger: meshAnimation
   animatorStopTrigger: 
+  startDelay: 0
 --- !u!114 &1176051678
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5972,6 +5978,7 @@ MonoBehaviour:
   vfxStopTrigger: 
   animatorPlayTrigger: PlayAnimation
   animatorStopTrigger: 
+  startDelay: 0
 --- !u!1 &1314507333
 GameObject:
   m_ObjectHideFlags: 0
@@ -7997,12 +8004,14 @@ MonoBehaviour:
     startTime: 0
     endTime: 15
     targetTransform: {fileID: 0}
+    enabled: 1
   - vfxList:
     - {fileID: 1176051677}
     - {fileID: 450522287}
     startTime: 13
     endTime: 36
     targetTransform: {fileID: 0}
+    enabled: 1
   startDelay: 0
 --- !u!4 &1738197555
 Transform:
@@ -8965,6 +8974,7 @@ MonoBehaviour:
     - {fileID: 1669552128}
     startTime: 2
     endTime: 40
+    enabled: 1
   - targets:
     - {fileID: 1519919997}
     - {fileID: 1607390887}
@@ -8972,16 +8982,19 @@ MonoBehaviour:
     - {fileID: 1884850948}
     startTime: 0
     endTime: 40
+    enabled: 1
   - targets:
     - {fileID: 1738197553}
     - {fileID: 77138261}
     - {fileID: 1099189080}
     startTime: 6
     endTime: 40
+    enabled: 1
   - targets:
     - {fileID: 500828879}
     startTime: 38
     endTime: Infinity
+    enabled: 1
 --- !u!1 &2116479940
 GameObject:
   m_ObjectHideFlags: 0
@@ -9817,7 +9830,7 @@ MeshRenderer:
   m_RenderingLayerMask: 2
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 8be5f7c7772b50a42885a75ccd8a8636, type: 2}
+  - {fileID: 2100000, guid: b66ac24372b57414caac0c7dcc25ed69, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
