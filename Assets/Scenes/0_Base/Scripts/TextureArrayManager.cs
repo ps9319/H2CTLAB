@@ -90,7 +90,13 @@ public class TextureArrayManager : MonoBehaviour
                 }
                 finally
                 {
+                    // 이전 active 먼저 복원
                     RenderTexture.active = prev;
+                    // 임시 RT가 아직 active라면 해제 전에 비움
+                    if (RenderTexture.active == rt)
+                    {
+                        RenderTexture.active = null;
+                    }
                     RenderTexture.ReleaseTemporary(rt);
                 }
             }
