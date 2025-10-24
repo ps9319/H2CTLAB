@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 
-public class EffectManger : MonoBehaviour
+public class AuroraEffectManger : MonoBehaviour
 {
     [Header("Auto Play")]
     public bool autoPlay = true;
