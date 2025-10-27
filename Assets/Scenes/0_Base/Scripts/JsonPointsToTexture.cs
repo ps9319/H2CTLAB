@@ -15,17 +15,42 @@ public class JsonPointsToTexture : MonoBehaviour
 
     // 쿼드 로컬 공간에서의 오프셋 (기본값: 좌하단, z도 입력 가능)
     public Vector3 quadLocalOffset = new Vector3(-0.5f, -0.5f, 0f);
+    // 쿼드 스케일에 곱해지는 오프셋 (x, y에 동시에 적용)
+    [Range(0.01f, 10f)]
+    public float quadScaleOffset = 1f;
 
     void OnEnable()
     {
         // 타겟 쿼드의 오프셋 위치에 현재 오브젝트 위치시키기
         if (targetQuad != null)
         {
-            // 쿼드의 로컬 오프셋 (사용자 입력)
-            Vector3 worldOffset = targetQuad.TransformVector(Vector3.Scale(quadLocalOffset, targetQuad.localScale));
-            transform.position = targetQuad.position + worldOffset;
-            transform.rotation = targetQuad.rotation;
-            transform.localScale = targetQuad.lossyScale;
+            // 쿼드의 월드 크기 (x, y에만 오프셋 적용)
+            Vector3 worldSize = targetQuad.lossyScale;
+            worldSize.x *= quadScaleOffset;
+            worldSize.y *= quadScaleOffset;
+
+            // 쿼드의 중앙에서 오프셋까지의 벡터 (쿼드의 로컬 공간)
+            Vector3 localOffset = quadLocalOffset;
+            // 쿼드의 월드 공간에서의 오프셋 위치
+            Vector3 offsetWorld = targetQuad.rotation * Vector3.Scale(localOffset, worldSize);
+            Vector3 targetWorldPos = targetQuad.position + offsetWorld;
+            // 위치와 회전 적용
+            transform.SetPositionAndRotation(targetWorldPos, targetQuad.rotation);
+
+            // 부모의 스케일을 고려한 localScale 적용
+            if (transform.parent != null)
+            {
+                Vector3 parentScale = transform.parent.lossyScale;
+                transform.localScale = new Vector3(
+                    worldSize.x / parentScale.x,
+                    worldSize.y / parentScale.y,
+                    worldSize.z / parentScale.z
+                );
+            }
+            else
+            {
+                transform.localScale = worldSize;
+            }
         }
 
         if (jsonFile == null)
