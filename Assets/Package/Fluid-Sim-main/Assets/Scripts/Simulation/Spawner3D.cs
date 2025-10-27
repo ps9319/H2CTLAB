@@ -26,7 +26,12 @@ namespace Seb.Fluid.Simulation
 			foreach (SpawnRegion region in spawnRegions)
 			{
 				int particlesPerAxis = region.CalculateParticleCountPerAxis(particleSpawnDensity);
-				(float3[] points, float3[] velocities) = SpawnCube(particlesPerAxis, region.centre, Vector3.one * region.size);
+				// 스케일 반영
+				(float3[] points, float3[] velocities) = SpawnCube(
+					particlesPerAxis,
+					transform.position + region.centre,
+					Vector3.Scale(Vector3.one * region.size, region.scale)
+				);
 				allPoints.AddRange(points);
 				allVelocities.AddRange(velocities);
 			}
@@ -75,10 +80,16 @@ namespace Seb.Fluid.Simulation
 
 			if (spawnRegions != null)
 			{
-				foreach (SpawnRegion region in spawnRegions)
+				for (int i = 0; i < spawnRegions.Length; i++)
 				{
-					debug_spawn_volume += region.Volume;
-					int numPerAxis = region.CalculateParticleCountPerAxis(particleSpawnDensity);
+					// scale 기본값 1,1,1 적용
+					if (spawnRegions[i].scale == Vector3.zero)
+					{
+						spawnRegions[i].scale = Vector3.one;
+					}
+
+					debug_spawn_volume += spawnRegions[i].Volume;
+					int numPerAxis = spawnRegions[i].CalculateParticleCountPerAxis(particleSpawnDensity);
 					debug_num_particles += numPerAxis * numPerAxis * numPerAxis;
 				}
 			}
@@ -91,7 +102,8 @@ namespace Seb.Fluid.Simulation
 				foreach (SpawnRegion region in spawnRegions)
 				{
 					Gizmos.color = region.debugDisplayCol;
-					Gizmos.DrawWireCube(region.centre, Vector3.one * region.size);
+					// 스케일 반영
+					Gizmos.DrawWireCube(transform.position + region.centre, Vector3.Scale(Vector3.one * region.size, region.scale));
 				}
 			}
 		}
@@ -100,10 +112,11 @@ namespace Seb.Fluid.Simulation
 		public struct SpawnRegion
 		{
 			public Vector3 centre;
+			public Vector3 scale; // 추가: 개별 스케일
 			public float size;
 			public Color debugDisplayCol;
 
-			public float Volume => size * size * size;
+			public float Volume => size * size * size * scale.x * scale.y * scale.z; // 스케일 반영
 
 			public int CalculateParticleCountPerAxis(int particleDensity)
 			{
