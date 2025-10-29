@@ -13,7 +13,7 @@ test.unity.meta
 .AppleDouble
 .LSOverride
 
-# Icon must end with two \r
+# Icon must end with two /r
 Icon
 
 
@@ -246,6 +246,9 @@ Assets/Scenes/Base/Material/AImage/**/*.mat.meta
 Assets/Scenes/0_Base/Material/AImage/
 Assets/Project/Resource/AI_Images/**/**/*.png
 Assets/Project/Resource/AI_Images/**/**/*.png.meta
+Assets/Project/Material/AImage/**/*.mat
+Assets/Project/Material/AImage/**/*.mat.meta
+Assets/Project/Material/AImage/
 
 # Windows Thumbnail Cache
 Thumbs.db
