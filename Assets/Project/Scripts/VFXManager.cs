@@ -1,15 +1,15 @@
 using UnityEngine;
+using UnityEngine.VFX;
 using System.Collections;
 using System.Collections.Generic;
 
 [System.Serializable]
 public class VFXGroup
 {
-    public List<VFXAttachment> vfxList = new List<VFXAttachment>();
+    public List<VisualEffect> vfxList = new List<VisualEffect>();
     public float startTime;
     public float endTime;
-    public Transform targetTransform; // 추가: 타겟 오브젝트
-    public bool enabled = true; // 추가: 그룹 활성/비활성화 (기본값 true)
+    public bool enabled = true;
 }
 
 public class VFXManager : MonoBehaviour
@@ -29,7 +29,7 @@ public class VFXManager : MonoBehaviour
     {
         foreach (var group in vfxGroups)
         {
-            if (group == null || !group.enabled) continue; // 비활성화 그룹은 무시
+            if (group == null || !group.enabled) continue;
             foreach (var vfx in group.vfxList)
             {
                 if (vfx != null && vfx.gameObject.activeSelf)
@@ -58,46 +58,23 @@ public class VFXManager : MonoBehaviour
 
         float timer = 0f;
         var played = new HashSet<VFXGroup>();
-        var finished = new HashSet<VFXGroup>();
         var disabled = new HashSet<VFXGroup>();
 
         while (timer < maxEndTime)
         {
             foreach (var group in vfxGroups)
             {
-                if (group == null || !group.enabled) continue; // 비활성화 그룹은 무시
+                if (group == null || !group.enabled) continue;
 
-                // Play
+                // Enable
                 if (!played.Contains(group) && timer >= group.startTime)
                 {
                     foreach (var vfx in group.vfxList)
                     {
-                        if (vfx != null)
-                        {
-                            // 실행 직전에만 활성화
-                            if (!vfx.gameObject.activeSelf)
-                                vfx.gameObject.SetActive(true);
-
-                            // targetTransform이 있으면 위치와 스케일을 맞춤
-                            if (group.targetTransform != null)
-                            {
-                                vfx.transform.position = group.targetTransform.position;
-                                vfx.transform.localScale = group.targetTransform.localScale;
-                            }
-                            vfx.Play();
-                        }
+                        if (vfx != null && !vfx.gameObject.activeSelf)
+                            vfx.gameObject.SetActive(true);
                     }
                     played.Add(group);
-                }
-                // Finish
-                if (!finished.Contains(group) && timer >= group.endTime)
-                {
-                    foreach (var vfx in group.vfxList)
-                    {
-                        if (vfx != null)
-                            vfx.Finish();
-                    }
-                    finished.Add(group);
                 }
                 // Disable after endTime
                 if (!disabled.Contains(group) && timer >= group.endTime)
@@ -114,26 +91,15 @@ public class VFXManager : MonoBehaviour
             yield return null;
         }
 
-        // 혹시 끝까지 Finish/Disable 안된 것 처리
+        // 혹시 끝까지 Disable 안된 것 처리
         foreach (var group in vfxGroups)
         {
-            if (group != null && group.enabled)
+            if (group != null && group.enabled && !disabled.Contains(group))
             {
-                if (!finished.Contains(group))
+                foreach (var vfx in group.vfxList)
                 {
-                    foreach (var vfx in group.vfxList)
-                    {
-                        if (vfx != null)
-                            vfx.Finish();
-                    }
-                }
-                if (!disabled.Contains(group))
-                {
-                    foreach (var vfx in group.vfxList)
-                    {
-                        if (vfx != null && vfx.gameObject.activeSelf)
-                            vfx.gameObject.SetActive(false);
-                    }
+                    if (vfx != null && vfx.gameObject.activeSelf)
+                        vfx.gameObject.SetActive(false);
                 }
             }
         }

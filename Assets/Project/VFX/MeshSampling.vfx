@@ -86,9 +86,9 @@ MonoBehaviour:
   categories: []
   uiBounds:
     serializedVersion: 2
-    x: -257
+    x: -282
     y: -601
-    width: 2113
+    width: 2138
     height: 2348
 --- !u!114 &114350483966674976
 MonoBehaviour:
@@ -373,9 +373,7 @@ MonoBehaviour:
   m_Label: Single burst
   m_Data: {fileID: 8926484042661615068}
   m_InputFlowSlot:
-  - link:
-    - context: {fileID: 8926484042661615202}
-      slotIndex: 0
+  - link: []
   - link: []
   m_OutputFlowSlot:
   - link:
@@ -5207,9 +5205,7 @@ MonoBehaviour:
   m_InputFlowSlot:
   - link: []
   m_OutputFlowSlot:
-  - link:
-    - context: {fileID: 8926484042661614555}
-      slotIndex: 0
+  - link: []
   eventName: meshStart
 --- !u!114 &8926484042661615203
 MonoBehaviour:
