@@ -5,6 +5,7 @@ using System.Collections.Generic;
 public class TextureArrayCreator : EditorWindow
 {
     private List<Texture2D> textureList = new List<Texture2D>();
+    private Vector2 scrollPos; // 스크롤 위치 저장
 
     [MenuItem("Tools/Texture2DArray Creator")]
     public static void ShowWindow()
@@ -15,6 +16,30 @@ public class TextureArrayCreator : EditorWindow
     void OnGUI()
     {
         GUILayout.Label("Texture2DArray 생성기", EditorStyles.boldLabel);
+
+        // --- 버튼 영역 (항상 상단) ---
+        EditorGUILayout.BeginHorizontal();
+        if (GUILayout.Button("선택한 텍스처 추가"))
+        {
+            foreach (var tex in Selection.GetFiltered<Texture2D>(SelectionMode.DeepAssets))
+            {
+                if (!textureList.Contains(tex))
+                    textureList.Insert(textureList.Count - 1, tex);
+            }
+        }
+
+        bool canCreate = textureList.Count > 1 && textureList.Exists(t => t != null);
+        GUI.enabled = canCreate;
+        if (GUILayout.Button("Texture2DArray 생성"))
+        {
+            CreateTextureArray();
+        }
+        GUI.enabled = true;
+        EditorGUILayout.EndHorizontal();
+        EditorGUILayout.Space();
+
+        // --- 텍스처 리스트 스크롤 영역 ---
+        scrollPos = EditorGUILayout.BeginScrollView(scrollPos); // 높이 제한 제거
 
         // 항상 마지막에 None 슬롯이 있도록 관리
         if (textureList.Count == 0 || textureList[textureList.Count - 1] != null)
@@ -62,33 +87,11 @@ public class TextureArrayCreator : EditorWindow
             }
         }
 
-        EditorGUILayout.Space();
-
-        // 선택된 텍스처 추가
-        if (GUILayout.Button("선택한 텍스처 추가"))
-        {
-            foreach (var tex in Selection.GetFiltered<Texture2D>(SelectionMode.DeepAssets))
-            {
-                if (!textureList.Contains(tex))
-                    textureList.Insert(textureList.Count - 1, tex);
-            }
-        }
-
-        EditorGUILayout.Space();
-
-        // 생성 버튼
-        bool canCreate = textureList.Count > 1 && textureList.Exists(t => t != null);
-        GUI.enabled = canCreate;
-        if (GUILayout.Button("Texture2DArray 생성"))
-        {
-            CreateTextureArray();
-        }
-        GUI.enabled = true;
+        EditorGUILayout.EndScrollView();
     }
 
     void CreateTextureArray()
     {
-        // null이 아닌 텍스처만 추출
         List<Texture2D> validTextures = textureList.FindAll(t => t != null);
 
         if (validTextures.Count == 0)
@@ -97,30 +100,27 @@ public class TextureArrayCreator : EditorWindow
             return;
         }
 
-        int width = validTextures[0].width;
-        int height = validTextures[0].height;
-        TextureFormat targetFormat = TextureFormat.RGBA32; // 원하는 포맷으로 고정
+        int width = 256;
+        int height = 256;
+        TextureFormat arrayFormat = TextureFormat.RGBA32; // 압축 없이 생성
 
-        // 모든 텍스처를 동일 포맷으로 변환
         List<Texture2D> convertedTextures = new List<Texture2D>();
         foreach (var tex in validTextures)
         {
-            Texture2D converted = tex;
-            if (tex.format != targetFormat || !tex.isReadable)
-            {
-                RenderTexture rt = RenderTexture.GetTemporary(width, height, 0, RenderTextureFormat.ARGB32);
-                Graphics.Blit(tex, rt);
-                RenderTexture.active = rt;
-                converted = new Texture2D(width, height, targetFormat, false);
-                converted.ReadPixels(new Rect(0, 0, width, height), 0, 0);
-                converted.Apply();
-                RenderTexture.active = null;
-                RenderTexture.ReleaseTemporary(rt);
-            }
+            RenderTexture rt = RenderTexture.GetTemporary(width, height, 0, RenderTextureFormat.ARGB32);
+            Graphics.Blit(tex, rt);
+            RenderTexture.active = rt;
+            Texture2D converted = new Texture2D(width, height, TextureFormat.RGBA32, false, false);
+            converted.ReadPixels(new Rect(0, 0, width, height), 0, 0);
+            converted.Apply();
+            RenderTexture.active = null;
+            RenderTexture.ReleaseTemporary(rt);
+
             convertedTextures.Add(converted);
         }
 
-        Texture2DArray textureArray = new Texture2DArray(width, height, convertedTextures.Count, targetFormat, false);
+        // Texture2DArray(RGBA32) 생성
+        Texture2DArray textureArray = new Texture2DArray(width, height, convertedTextures.Count, arrayFormat, false);
 
         for (int i = 0; i < convertedTextures.Count; i++)
         {
@@ -129,7 +129,7 @@ public class TextureArrayCreator : EditorWindow
 
         textureArray.Apply();
 
-        string path = EditorUtility.SaveFilePanelInProject(
+        string savePath = EditorUtility.SaveFilePanelInProject(
             "Save Texture2DArray",
             "NewTextureArray",
             "asset",
@@ -137,11 +137,11 @@ public class TextureArrayCreator : EditorWindow
             "Assets"
         );
 
-        if (!string.IsNullOrEmpty(path))
+        if (!string.IsNullOrEmpty(savePath))
         {
-            AssetDatabase.CreateAsset(textureArray, path);
+            AssetDatabase.CreateAsset(textureArray, savePath);
             AssetDatabase.SaveAssets();
-            Debug.Log("Texture2DArray 에셋 생성 완료! " + path);
+            Debug.Log("Texture2DArray 에셋 생성 완료! " + savePath);
         }
         else
         {
