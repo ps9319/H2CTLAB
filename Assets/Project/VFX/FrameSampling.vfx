@@ -258,9 +258,7 @@ MonoBehaviour:
   m_Label: Single burst
   m_Data: {fileID: 8926484042661615068}
   m_InputFlowSlot:
-  - link:
-    - context: {fileID: 8926484042661615202}
-      slotIndex: 0
+  - link: []
   - link: []
   m_OutputFlowSlot:
   - link:
@@ -6051,9 +6049,7 @@ MonoBehaviour:
   m_InputFlowSlot:
   - link: []
   m_OutputFlowSlot:
-  - link:
-    - context: {fileID: 8926484042661614555}
-      slotIndex: 0
+  - link: []
   eventName: frameStart
 --- !u!114 &8926484042661615203
 MonoBehaviour:
