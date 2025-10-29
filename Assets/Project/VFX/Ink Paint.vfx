@@ -192,9 +192,7 @@ MonoBehaviour:
   m_Label: 
   m_Data: {fileID: 8926484042661614787}
   m_InputFlowSlot:
-  - link:
-    - context: {fileID: 8926484042661614865}
-      slotIndex: 0
+  - link: []
   - link: []
   m_OutputFlowSlot:
   - link:
@@ -5006,9 +5004,7 @@ MonoBehaviour:
   m_InputFlowSlot:
   - link: []
   m_OutputFlowSlot:
-  - link:
-    - context: {fileID: 8926484042661614555}
-      slotIndex: 0
+  - link: []
   eventName: inkStart
 --- !u!114 &8926484042661614866
 MonoBehaviour:

@@ -20,7 +20,7 @@ MonoBehaviour:
     x: 539
     y: -381
     width: 826
-    height: 2352
+    height: 2353
 --- !u!114 &114350483966674976
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -213,9 +213,7 @@ MonoBehaviour:
   m_Label: 
   m_Data: {fileID: 8926484042661614787}
   m_InputFlowSlot:
-  - link:
-    - context: {fileID: 8926484042661615333}
-      slotIndex: 0
+  - link: []
   - link: []
   m_OutputFlowSlot:
   - link:
@@ -1504,9 +1502,7 @@ MonoBehaviour:
   m_InputFlowSlot:
   - link: []
   m_OutputFlowSlot:
-  - link:
-    - context: {fileID: 8926484042661614555}
-      slotIndex: 0
+  - link: []
   eventName: vfxStart
 --- !u!114 &8926484042661615334
 MonoBehaviour:
