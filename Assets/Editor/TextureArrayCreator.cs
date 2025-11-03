@@ -17,7 +17,7 @@ public class TextureArrayCreator : EditorWindow
     {
         GUILayout.Label("Texture2DArray 생성기", EditorStyles.boldLabel);
 
-        // --- 버튼 영역 (항상 상단) ---
+        // --- 텍스처 추가 & 초기화 버튼 (한 줄) ---
         EditorGUILayout.BeginHorizontal();
         if (GUILayout.Button("선택한 텍스처 추가"))
         {
@@ -27,7 +27,13 @@ public class TextureArrayCreator : EditorWindow
                     textureList.Insert(textureList.Count - 1, tex);
             }
         }
+        if (GUILayout.Button("초기화"))
+        {
+            textureList.Clear();
+        }
+        EditorGUILayout.EndHorizontal();
 
+        // --- 생성 버튼 (다음 줄) ---
         bool canCreate = textureList.Count > 1 && textureList.Exists(t => t != null);
         GUI.enabled = canCreate;
         if (GUILayout.Button("Texture2DArray 생성"))
@@ -35,7 +41,6 @@ public class TextureArrayCreator : EditorWindow
             CreateTextureArray();
         }
         GUI.enabled = true;
-        EditorGUILayout.EndHorizontal();
         EditorGUILayout.Space();
 
         // --- 텍스처 리스트 스크롤 영역 ---
@@ -134,7 +139,7 @@ public class TextureArrayCreator : EditorWindow
             "NewTextureArray",
             "asset",
             "저장할 위치와 파일명을 선택하세요.",
-            "Assets"
+            "Assets/Project/Texture/2DArray"
         );
 
         if (!string.IsNullOrEmpty(savePath))
