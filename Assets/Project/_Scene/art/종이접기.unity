@@ -626,7 +626,7 @@ VisualEffect:
       m_Array: []
     m_Vector4f:
       m_Array:
-      - m_Value: {x: 0.7783019, y: 0.91774094, z: 1, w: 1}
+      - m_Value: {x: 1, y: 0.7764706, z: 0.89235103, w: 1}
         m_Name: color
         m_Overridden: 1
     m_Uint:
@@ -2818,7 +2818,7 @@ VisualEffect:
       m_Array: []
     m_NamedObject:
       m_Array:
-      - m_Value: {fileID: 2800000, guid: 5613d1196e4315645a68424ed00c2eca, type: 3}
+      - m_Value: {fileID: 2800000, guid: b5df5ae707fd5594b9760d6f383c599e, type: 3}
         m_Name: Texture
         m_Overridden: 1
     m_Bool:
@@ -2957,21 +2957,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetRenderer: {fileID: 0}
   textures:
-  - {fileID: 2800000, guid: bad45bd51f8a3c24ab03c113e3f087ff, type: 3}
-  - {fileID: 2800000, guid: 8433b9c0eed78bc41a33ade30a8df7f2, type: 3}
-  - {fileID: 2800000, guid: 36cc53ce1640c91408812514a604ad91, type: 3}
-  - {fileID: 2800000, guid: 5613d1196e4315645a68424ed00c2eca, type: 3}
-  - {fileID: 2800000, guid: 9b3132c35c1e1194b8dec02d20b97967, type: 3}
-  - {fileID: 2800000, guid: 4dc03d2b17e75a945b8c46c34eb9a687, type: 3}
-  - {fileID: 2800000, guid: 737a187c99e8bde44a737de7326f1a2d, type: 3}
-  - {fileID: 2800000, guid: 3548b6d3116f5124fade491cc280a03e, type: 3}
-  - {fileID: 2800000, guid: 80155b38d03d37142a1dec45d38996af, type: 3}
-  - {fileID: 2800000, guid: 13aa53872e40057459c0f436200a1b11, type: 3}
-  - {fileID: 2800000, guid: 57ed73c74576aba4f91fd183a5f77a79, type: 3}
-  - {fileID: 2800000, guid: 2e86520e3fbfcac4797f5f810406427d, type: 3}
-  - {fileID: 2800000, guid: b617ce7aba2ba6541ab47393c9323db8, type: 3}
-  - {fileID: 2800000, guid: cb72875aa85376e4aa36f956e696b3df, type: 3}
-  - {fileID: 2800000, guid: 6bb315a6adfad684c8823dfc3c9dba1e, type: 3}
+  - {fileID: 2800000, guid: b5df5ae707fd5594b9760d6f383c599e, type: 3}
+  - {fileID: 2800000, guid: 88a97f0304cfe7b4f8d52bc25ba6641f, type: 3}
+  - {fileID: 2800000, guid: 6f199bbd123a2ad4ebc141d192b41a99, type: 3}
+  - {fileID: 2800000, guid: 0cba2f80d11bb5c4187ead6d133c3b45, type: 3}
+  - {fileID: 2800000, guid: c6f486f5f648ded4b852e4096adf6c56, type: 3}
+  - {fileID: 2800000, guid: b515bbd81b7d99d49b98f19c2bfb27d4, type: 3}
+  - {fileID: 2800000, guid: def3512718d17a24ca4470217cadbcc3, type: 3}
+  - {fileID: 2800000, guid: 9e2898ba4a18b494683210e2a0667588, type: 3}
+  - {fileID: 2800000, guid: 895691fd7d20888499a5fadc33ba0fb1, type: 3}
+  - {fileID: 2800000, guid: b178646103c9c0f4c9a533daa45508fa, type: 3}
+  - {fileID: 2800000, guid: 25e1a8e19acb8ab4ba3cae36c2ca09d0, type: 3}
+  - {fileID: 2800000, guid: 499f3870b3cac4447978e39f3fc3810b, type: 3}
+  - {fileID: 2800000, guid: f83c5fd1a118e9d40a267b4f50fea1a9, type: 3}
+  - {fileID: 2800000, guid: 5f8b4845d43f431489577fb6b503fe62, type: 3}
+  - {fileID: 2800000, guid: e370bbca49c0a9a49b0ecd2ceb081be8, type: 3}
   loop: 1
   randomOrder: 1
   fadeDuration: 1
@@ -3201,7 +3201,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a61fa67667a90f04f9a7055a8b51bbd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  transition: {fileID: 11400000, guid: e87aa5e18ce0ca746ab09d0ec745c3fe, type: 2}
+  transition: {fileID: 11400000, guid: 4a02cd59a60372a4f979d2e5721e09ad, type: 2}
   startDelay: 0
 --- !u!1 &513861201
 GameObject:
@@ -3553,7 +3553,7 @@ VisualEffect:
       m_Array: []
     m_Vector4f:
       m_Array:
-      - m_Value: {x: 0.7783019, y: 0.91774094, z: 1, w: 1}
+      - m_Value: {x: 1, y: 0.7764706, z: 0.89235103, w: 1}
         m_Name: color
         m_Overridden: 1
     m_Uint:
@@ -5796,7 +5796,7 @@ VisualEffect:
       m_Array: []
     m_Vector4f:
       m_Array:
-      - m_Value: {x: 2.4319801, y: 2.7684317, z: 2.786918, w: 0}
+      - m_Value: {x: 2.7730145, y: 1.7658348, z: 2.0514488, w: 0}
         m_Name: color
         m_Overridden: 1
     m_Uint:
@@ -6186,7 +6186,7 @@ VisualEffect:
       m_Array: []
     m_NamedObject:
       m_Array:
-      - m_Value: {fileID: 2800000, guid: 5613d1196e4315645a68424ed00c2eca, type: 3}
+      - m_Value: {fileID: 2800000, guid: b5df5ae707fd5594b9760d6f383c599e, type: 3}
         m_Name: Texture
         m_Overridden: 1
       - m_Value: {fileID: 18700000, guid: 32bd914ed0f47774ea7a0edd7bf26dbc, type: 2}
@@ -6838,7 +6838,7 @@ VisualEffect:
       m_Array: []
     m_NamedObject:
       m_Array:
-      - m_Value: {fileID: 2800000, guid: 5613d1196e4315645a68424ed00c2eca, type: 3}
+      - m_Value: {fileID: 2800000, guid: b5df5ae707fd5594b9760d6f383c599e, type: 3}
         m_Name: Texture
         m_Overridden: 1
     m_Bool:
@@ -8977,7 +8977,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 8400000, guid: 713081e341cefcc44b550bdae7a2c7b7, type: 2}
+  m_Texture: {fileID: 8400000, guid: 4c823aa3a42a24b43b5eb5248957497d, type: 2}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -11216,7 +11216,7 @@ VisualEffect:
       m_Array: []
     m_NamedObject:
       m_Array:
-      - m_Value: {fileID: 2800000, guid: 5613d1196e4315645a68424ed00c2eca, type: 3}
+      - m_Value: {fileID: 2800000, guid: b5df5ae707fd5594b9760d6f383c599e, type: 3}
         m_Name: Texture
         m_Overridden: 1
       - m_Value: {fileID: 18700000, guid: 32bd914ed0f47774ea7a0edd7bf26dbc, type: 2}
@@ -12135,13 +12135,18 @@ MonoBehaviour:
     - {fileID: 500828879}
     startTime: 32
     endTime: Infinity
-    enabled: 0
+    enabled: 1
+  - targets:
+    - {fileID: 2141151803}
+    startTime: 34
+    endTime: Infinity
+    enabled: 1
   - targets:
     - {fileID: 1918780441}
     - {fileID: 1003188728}
     startTime: 28
     endTime: Infinity
-    enabled: 1
+    enabled: 0
 --- !u!1 &2087689551
 GameObject:
   m_ObjectHideFlags: 0
@@ -12478,11 +12483,11 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2126882296}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 96ec5b0556e7da04b962b617d3b4f92c, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: 113cef3c3c8d50b4d8597844749f90c8, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
-  m_TargetTexture: {fileID: 8400000, guid: 713081e341cefcc44b550bdae7a2c7b7, type: 2}
+  m_TargetTexture: {fileID: 8400000, guid: 4c823aa3a42a24b43b5eb5248957497d, type: 2}
   m_TimeReference: 0
   m_TargetMaterialRenderer: {fileID: 0}
   m_TargetMaterialProperty: <noninit>
@@ -12620,7 +12625,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2141151804
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12932,7 +12937,7 @@ Transform:
   m_Father: {fileID: 1573841767}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &6780919868391663268
+--- !u!1 &7313398260608819684
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -12940,9 +12945,9 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6780919868391663274}
-  - component: {fileID: 6780919868391663275}
-  - component: {fileID: 6780919868391663273}
+  - component: {fileID: 7313398260608819690}
+  - component: {fileID: 7313398260608819691}
+  - component: {fileID: 7313398260608819689}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -12950,13 +12955,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &6780919868391663273
+--- !u!114 &7313398260608819689
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6780919868391663268}
+  m_GameObject: {fileID: 7313398260608819684}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
@@ -12970,13 +12975,13 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
---- !u!4 &6780919868391663274
+--- !u!4 &7313398260608819690
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6780919868391663268}
+  m_GameObject: {fileID: 7313398260608819684}
   m_LocalRotation: {x: -0.60875744, y: -0, z: -0, w: -0.7933564}
   m_LocalPosition: {x: 0, y: 10, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -12985,13 +12990,13 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 434.999, y: 0, z: 0}
---- !u!108 &6780919868391663275
+--- !u!108 &7313398260608819691
 Light:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6780919868391663268}
+  m_GameObject: {fileID: 7313398260608819684}
   m_Enabled: 1
   serializedVersion: 10
   m_Type: 1
