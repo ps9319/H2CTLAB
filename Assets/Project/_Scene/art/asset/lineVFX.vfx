@@ -2225,7 +2225,7 @@ MonoBehaviour:
   - {fileID: 8926484042661614653}
   m_ExposedName: positionMapSize
   m_Exposed: 1
-  m_Order: 1
+  m_Order: 2
   m_Category: auto asigned
   m_Min:
     m_Type:
@@ -2613,7 +2613,7 @@ MonoBehaviour:
   - {fileID: 8926484042661614678}
   m_ExposedName: alpha
   m_Exposed: 1
-  m_Order: 2
+  m_Order: 4
   m_Category: 
   m_Min:
     m_Type:
@@ -2693,7 +2693,7 @@ MonoBehaviour:
   - {fileID: 8926484042661614684}
   m_ExposedName: size
   m_Exposed: 1
-  m_Order: 3
+  m_Order: 5
   m_Category: 
   m_Min:
     m_Type:
@@ -3714,7 +3714,7 @@ MonoBehaviour:
   - {fileID: 8926484042661614740}
   m_ExposedName: thickness
   m_Exposed: 1
-  m_Order: 4
+  m_Order: 6
   m_Category: 
   m_Min:
     m_Type:
@@ -4114,7 +4114,7 @@ MonoBehaviour:
   - {fileID: 8926484042661614793}
   m_ExposedName: diffusion
   m_Exposed: 1
-  m_Order: 5
+  m_Order: 7
   m_Category: 
   m_Min:
     m_Type:
@@ -4526,7 +4526,7 @@ MonoBehaviour:
   - {fileID: 8926484042661614999}
   m_ExposedName: spawnRatio
   m_Exposed: 1
-  m_Order: 0
+  m_Order: 1
   m_Category: 
   m_Min:
     m_Type:
@@ -4692,7 +4692,7 @@ MonoBehaviour:
       slotIndex: 0
   m_OutputFlowSlot:
   - link: []
-  blendMode: 1
+  blendMode: 0
   useAlphaClipping: 0
   generateMotionVector: 0
   excludeFromTAA: 0
@@ -5652,7 +5652,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615032}
   m_ExposedName: color
   m_Exposed: 1
-  m_Order: 1
+  m_Order: 3
   m_Category: 
   m_Min:
     m_Type:

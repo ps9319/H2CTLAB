@@ -611,10 +611,10 @@ VisualEffect:
       - m_Value: 0.4
         m_Name: size
         m_Overridden: 1
-      - m_Value: 0
+      - m_Value: 1
         m_Name: thickness
         m_Overridden: 1
-      - m_Value: 0.00009906987
+      - m_Value: 0
         m_Name: alpha
         m_Overridden: 1
       - m_Value: 0
@@ -626,7 +626,7 @@ VisualEffect:
       m_Array: []
     m_Vector4f:
       m_Array:
-      - m_Value: {x: 0.99031436, y: 1, z: 0.6367924, w: 1}
+      - m_Value: {x: 0.37254903, y: 0.3745098, z: 0.23921569, w: 1}
         m_Name: color
         m_Overridden: 1
     m_Uint:
@@ -2981,7 +2981,7 @@ MonoBehaviour:
   startDelay: 0.5
   intervalMin: 0.5
   intervalMax: 1.5
-  addColor: {r: 0, g: 0, b: 0, a: 0}
+  addColor: {r: 0.2, g: 0.2, b: 0.2, a: 0}
 --- !u!64 &467190140
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3533,10 +3533,10 @@ VisualEffect:
       - m_Value: 0.4
         m_Name: size
         m_Overridden: 1
-      - m_Value: 0
+      - m_Value: 1
         m_Name: thickness
         m_Overridden: 1
-      - m_Value: 0.00009906987
+      - m_Value: 0
         m_Name: alpha
         m_Overridden: 1
       - m_Value: 0
@@ -3554,7 +3554,7 @@ VisualEffect:
       m_Array: []
     m_Vector4f:
       m_Array:
-      - m_Value: {x: 0.99031436, y: 1, z: 0.6367924, w: 1}
+      - m_Value: {x: 0.37254903, y: 0.3745098, z: 0.23921569, w: 1}
         m_Name: color
         m_Overridden: 1
     m_Uint:
@@ -8658,7 +8658,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 4
+  m_Intensity: 3
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
