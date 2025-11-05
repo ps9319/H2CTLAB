@@ -991,7 +991,7 @@ RectTransform:
   m_Children:
   - {fileID: 32791453}
   m_Father: {fileID: 295536616}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1761,6 +1761,9 @@ VisualEffect:
       - m_Value: 5
         m_Name: Falling leaves size
         m_Overridden: 1
+      - m_Value: 40
+        m_Name: Duration
+        m_Overridden: 1
     m_Vector2f:
       m_Array:
       - m_Value: {x: 10, y: 15}
@@ -2350,7 +2353,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2069251100}
   - {fileID: 177070757}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -3438,7 +3440,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 605082523}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.7378023, y: -9.62, z: 19.034792}
+  m_LocalPosition: {x: 3.7378023, y: -9.62, z: 18.05}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4549,6 +4551,9 @@ VisualEffect:
       - m_Value: 5
         m_Name: Falling leaves size
         m_Overridden: 1
+      - m_Value: 40
+        m_Name: Duration
+        m_Overridden: 1
     m_Vector2f:
       m_Array:
       - m_Value: {x: 10, y: 15}
@@ -4768,7 +4773,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1 &791305540
 GameObject:
@@ -6405,7 +6410,7 @@ VisualEffect:
       - m_Value: 1.8
         m_Name: Leaves Size
         m_Overridden: 1
-      - m_Value: 3000
+      - m_Value: 2500
         m_Name: Leaves Amount
         m_Overridden: 1
       - m_Value: 2.05
@@ -6416,6 +6421,9 @@ VisualEffect:
         m_Overridden: 0
       - m_Value: 10
         m_Name: Falling leaves Amount
+        m_Overridden: 1
+      - m_Value: 20
+        m_Name: Duration
         m_Overridden: 1
     m_Vector2f:
       m_Array:
@@ -6445,32 +6453,32 @@ VisualEffect:
       - m_Value:
           serializedVersion: 2
           key0: {r: 2.0125992, g: 0.34652507, b: 0.029243581, a: 1}
-          key1: {r: 8.832023, g: 1.2454516, b: 0.04999186, a: 1}
-          key2: {r: 1.9599336, g: 0.35762435, b: 0.022130499, a: 1}
-          key3: {r: 1.9599336, g: 0.35762435, b: 0.022130499, a: 1}
-          key4: {r: 1.9599336, g: 0.35762435, b: 0.022130499, a: 1}
-          key5: {r: 2.4034023, g: 0.65547335, b: 0.10924556, a: 1}
-          key6: {r: 2.4034023, g: 0.65547335, b: 0.10924556, a: 1}
-          key7: {r: 2.4034023, g: 0.65547335, b: 0.10924556, a: 1}
-          ctime0: 15461
-          ctime1: 26999
-          ctime2: 54228
-          ctime3: 54228
-          ctime4: 54228
-          ctime5: 47921
-          ctime6: 47921
-          ctime7: 47921
+          key1: {r: 2.4844158, g: 0.34716213, b: 0.039022166, a: 1}
+          key2: {r: 2.3463576, g: 0.34991607, b: 0.034575813, a: 1}
+          key3: {r: 3.1094337, g: 1.0419046, b: 0.5860713, a: 1}
+          key4: {r: 3.1094337, g: 1.0419046, b: 0.5860713, a: 1}
+          key5: {r: 3.1094337, g: 1.0419046, b: 0.5860713, a: 0}
+          key6: {r: 0, g: 0, b: 0, a: 0}
+          key7: {r: 0, g: 0, b: 0, a: 0}
+          ctime0: 10384
+          ctime1: 19307
+          ctime2: 26076
+          ctime3: 56382
+          ctime4: 56382
+          ctime5: 56382
+          ctime6: 0
+          ctime7: 0
           atime0: 0
           atime1: 32075
-          atime2: 48228
-          atime3: 65535
+          atime2: 40690
+          atime3: 48228
           atime4: 65535
-          atime5: 65535
-          atime6: 65535
-          atime7: 65535
+          atime5: 0
+          atime6: 0
+          atime7: 0
           m_Mode: 0
-          m_NumColorKeys: 3
-          m_NumAlphaKeys: 4
+          m_NumColorKeys: 4
+          m_NumAlphaKeys: 5
         m_Name: Leaves Colors
         m_Overridden: 1
       - m_Value:
@@ -8375,7 +8383,7 @@ Transform:
   - {fileID: 106484499}
   - {fileID: 1331042773}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1576446811
 GameObject:
@@ -8689,7 +8697,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1600787116
 PrefabInstance:
@@ -9040,6 +9048,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[1].m_Value
       value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4953804492134210687, guid: 95afaa4f994d56942b581878dd0790f0,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[2].m_Value
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4953804492134210687, guid: 95afaa4f994d56942b581878dd0790f0,
         type: 3}
@@ -10024,6 +10037,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4953804492134210687, guid: 95afaa4f994d56942b581878dd0790f0,
         type: 3}
+      propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[2].m_Value
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4953804492134210687, guid: 95afaa4f994d56942b581878dd0790f0,
+        type: 3}
       propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[3].m_Value
       value: 2
       objectReference: {fileID: 0}
@@ -10769,7 +10787,7 @@ Transform:
   - {fileID: 1161308261}
   - {fileID: 1796853892}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1789034572
 GameObject:
@@ -11120,7 +11138,7 @@ VisualEffect:
       - m_Value: 1.8
         m_Name: Leaves Size
         m_Overridden: 1
-      - m_Value: 3000
+      - m_Value: 2500
         m_Name: Leaves Amount
         m_Overridden: 1
       - m_Value: 2.05
@@ -11131,6 +11149,9 @@ VisualEffect:
         m_Overridden: 0
       - m_Value: 10
         m_Name: Falling leaves Amount
+        m_Overridden: 1
+      - m_Value: 20
+        m_Name: Duration
         m_Overridden: 1
     m_Vector2f:
       m_Array:
@@ -11161,31 +11182,31 @@ VisualEffect:
           serializedVersion: 2
           key0: {r: 2.0125992, g: 0.34652507, b: 0.029243581, a: 1}
           key1: {r: 2.4844158, g: 0.34716213, b: 0.039022166, a: 1}
-          key2: {r: 2.279349, g: 0.35125273, b: 0.032417707, a: 1}
-          key3: {r: 1.9599336, g: 0.35762435, b: 0.022130499, a: 1}
-          key4: {r: 2.4034023, g: 0.65547335, b: 0.10924556, a: 1}
-          key5: {r: 2.4034023, g: 0.65547335, b: 0.10924556, a: 1}
-          key6: {r: 2.4034023, g: 0.65547335, b: 0.10924556, a: 1}
-          key7: {r: 2.4034023, g: 0.65547335, b: 0.10924556, a: 1}
-          ctime0: 15461
-          ctime1: 33767
-          ctime2: 41767
-          ctime3: 54228
-          ctime4: 47921
-          ctime5: 47921
-          ctime6: 47921
-          ctime7: 47921
+          key2: {r: 2.3463576, g: 0.34991607, b: 0.034575813, a: 1}
+          key3: {r: 3.1094337, g: 1.0419046, b: 0.5860713, a: 1}
+          key4: {r: 3.1094337, g: 1.0419046, b: 0.5860713, a: 1}
+          key5: {r: 3.1094337, g: 1.0419046, b: 0.5860713, a: 0}
+          key6: {r: 0, g: 0, b: 0, a: 0}
+          key7: {r: 0, g: 0, b: 0, a: 0}
+          ctime0: 10384
+          ctime1: 19307
+          ctime2: 26076
+          ctime3: 56382
+          ctime4: 56382
+          ctime5: 56382
+          ctime6: 0
+          ctime7: 0
           atime0: 0
           atime1: 32075
-          atime2: 48228
-          atime3: 65535
+          atime2: 40690
+          atime3: 48228
           atime4: 65535
-          atime5: 65535
-          atime6: 65535
-          atime7: 65535
+          atime5: 0
+          atime6: 0
+          atime7: 0
           m_Mode: 0
           m_NumColorKeys: 4
-          m_NumAlphaKeys: 4
+          m_NumAlphaKeys: 5
         m_Name: Leaves Colors
         m_Overridden: 1
       - m_Value:
@@ -11734,6 +11755,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[10].m_Name
       value: Falling leaves Amount
+      objectReference: {fileID: 0}
+    - target: {fileID: 4953804492134210687, guid: 95afaa4f994d56942b581878dd0790f0,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[2].m_Value
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4953804492134210687, guid: 95afaa4f994d56942b581878dd0790f0,
         type: 3}
@@ -12813,7 +12839,7 @@ VisualEffect:
       - m_Value: 1.8
         m_Name: Leaves Size
         m_Overridden: 1
-      - m_Value: 3000
+      - m_Value: 2500
         m_Name: Leaves Amount
         m_Overridden: 1
       - m_Value: 2.05
@@ -12824,6 +12850,9 @@ VisualEffect:
         m_Overridden: 0
       - m_Value: 10
         m_Name: Falling leaves Amount
+        m_Overridden: 1
+      - m_Value: 20
+        m_Name: Duration
         m_Overridden: 1
     m_Vector2f:
       m_Array:
@@ -12854,31 +12883,31 @@ VisualEffect:
           serializedVersion: 2
           key0: {r: 2.0125992, g: 0.34652507, b: 0.029243581, a: 1}
           key1: {r: 2.4844158, g: 0.34716213, b: 0.039022166, a: 1}
-          key2: {r: 2.279349, g: 0.35125273, b: 0.032417707, a: 1}
-          key3: {r: 1.9599336, g: 0.35762435, b: 0.022130499, a: 1}
-          key4: {r: 2.4034023, g: 0.65547335, b: 0.10924556, a: 1}
-          key5: {r: 2.4034023, g: 0.65547335, b: 0.10924556, a: 1}
-          key6: {r: 2.4034023, g: 0.65547335, b: 0.10924556, a: 1}
-          key7: {r: 2.4034023, g: 0.65547335, b: 0.10924556, a: 1}
-          ctime0: 15461
-          ctime1: 33767
-          ctime2: 41767
-          ctime3: 54228
-          ctime4: 47921
-          ctime5: 47921
-          ctime6: 47921
-          ctime7: 47921
+          key2: {r: 2.3463576, g: 0.34991607, b: 0.034575813, a: 1}
+          key3: {r: 3.1094337, g: 1.0419046, b: 0.5860713, a: 1}
+          key4: {r: 3.1094337, g: 1.0419046, b: 0.5860713, a: 1}
+          key5: {r: 3.1094337, g: 1.0419046, b: 0.5860713, a: 0}
+          key6: {r: 0, g: 0, b: 0, a: 0}
+          key7: {r: 0, g: 0, b: 0, a: 0}
+          ctime0: 10384
+          ctime1: 19307
+          ctime2: 26076
+          ctime3: 56382
+          ctime4: 56382
+          ctime5: 56382
+          ctime6: 0
+          ctime7: 0
           atime0: 0
           atime1: 32075
-          atime2: 48228
-          atime3: 65535
+          atime2: 40690
+          atime3: 48228
           atime4: 65535
-          atime5: 65535
-          atime6: 65535
-          atime7: 65535
+          atime5: 0
+          atime6: 0
+          atime7: 0
           m_Mode: 0
           m_NumColorKeys: 4
-          m_NumAlphaKeys: 4
+          m_NumAlphaKeys: 5
         m_Name: Leaves Colors
         m_Overridden: 1
       - m_Value:
@@ -13742,6 +13771,9 @@ VisualEffect:
       - m_Value: 5
         m_Name: Falling leaves size
         m_Overridden: 1
+      - m_Value: 40
+        m_Name: Duration
+        m_Overridden: 1
     m_Vector2f:
       m_Array:
       - m_Value: {x: 10, y: 15}
@@ -14197,6 +14229,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[10].m_Name
       value: Falling leaves Amount
+      objectReference: {fileID: 0}
+    - target: {fileID: 4953804492134210687, guid: 95afaa4f994d56942b581878dd0790f0,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Float.m_Array.Array.data[2].m_Value
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4953804492134210687, guid: 95afaa4f994d56942b581878dd0790f0,
         type: 3}
@@ -14668,7 +14705,7 @@ GameObject:
   - component: {fileID: 2069251098}
   - component: {fileID: 2069251097}
   m_Layer: 5
-  m_Name: Canvas1
+  m_Name: Bgvideo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14751,8 +14788,8 @@ RectTransform:
   - {fileID: 1181072793}
   - {fileID: 147132500}
   - {fileID: 267017258}
-  m_Father: {fileID: 295536616}
-  m_RootOrder: 0
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -14821,6 +14858,11 @@ MonoBehaviour:
     - {fileID: 1784385483}
     startTime: 26
     endTime: 50
+    enabled: 1
+  - targets:
+    - {fileID: 2069251096}
+    startTime: 35
+    endTime: Infinity
     enabled: 1
 --- !u!1001 &2099633042
 PrefabInstance:
