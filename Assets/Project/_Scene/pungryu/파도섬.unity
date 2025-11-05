@@ -190,7 +190,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8f733d97673dfe448d32926d8eeefe4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainTextureArray: {fileID: 18700000, guid: fd22bc8a0f116f44ca9862bd6205b465, type: 2}
+  mainTextureArray: {fileID: 18700000, guid: bcfa8a97898d5964cbbcc9f594e78255, type: 2}
   targetQuad: {fileID: 2375103765620079281}
 --- !u!73398921 &221522598
 VFXRenderer:
@@ -270,7 +270,7 @@ VisualEffect:
       - m_Value: 1
         m_Name: rangeRatio
         m_Overridden: 1
-      - m_Value: 3
+      - m_Value: 5
         m_Name: threshold
         m_Overridden: 1
     m_Vector2f:
@@ -300,10 +300,10 @@ VisualEffect:
       m_Array: []
     m_NamedObject:
       m_Array:
-      - m_Value: {fileID: 18700000, guid: fd22bc8a0f116f44ca9862bd6205b465, type: 2}
+      - m_Value: {fileID: 18700000, guid: bcfa8a97898d5964cbbcc9f594e78255, type: 2}
         m_Name: particleTextureArr
         m_Overridden: 1
-      - m_Value: {fileID: 2800000, guid: a71f5f4c1f4882444951c9c0f25d8481, type: 3}
+      - m_Value: {fileID: 2800000, guid: df2a7e981083b9a4da350da315085dcc, type: 3}
         m_Name: Texture
         m_Overridden: 1
     m_Bool:
@@ -707,7 +707,7 @@ VisualEffect:
       - m_Value: 1
         m_Name: alpha
         m_Overridden: 1
-      - m_Value: 0.2
+      - m_Value: 0.3
         m_Name: alphaDuration
         m_Overridden: 1
       - m_Value: 0
@@ -776,7 +776,7 @@ VisualEffect:
       m_Array: []
     m_NamedObject:
       m_Array:
-      - m_Value: {fileID: 18700000, guid: b154445882b912d42acf52fec16c942c, type: 2}
+      - m_Value: {fileID: 18700000, guid: dbf9e32e8e450cc42b7a4894ca72035d, type: 2}
         m_Name: Texture2DArray
         m_Overridden: 1
     m_Bool:
@@ -1043,7 +1043,7 @@ VisualEffect:
       - m_Value: 1
         m_Name: alpha
         m_Overridden: 1
-      - m_Value: 0.2
+      - m_Value: 0.3
         m_Name: alphaDuration
         m_Overridden: 1
       - m_Value: 0
@@ -1112,7 +1112,7 @@ VisualEffect:
       m_Array: []
     m_NamedObject:
       m_Array:
-      - m_Value: {fileID: 18700000, guid: b154445882b912d42acf52fec16c942c, type: 2}
+      - m_Value: {fileID: 18700000, guid: dbf9e32e8e450cc42b7a4894ca72035d, type: 2}
         m_Name: Texture2DArray
         m_Overridden: 1
     m_Bool:
@@ -1607,7 +1607,7 @@ VisualEffect:
       - m_Value: 1
         m_Name: rangeRatio
         m_Overridden: 1
-      - m_Value: 3
+      - m_Value: 5
         m_Name: threshold
         m_Overridden: 1
     m_Vector2f:
@@ -1637,10 +1637,10 @@ VisualEffect:
       m_Array: []
     m_NamedObject:
       m_Array:
-      - m_Value: {fileID: 18700000, guid: fd22bc8a0f116f44ca9862bd6205b465, type: 2}
+      - m_Value: {fileID: 18700000, guid: bcfa8a97898d5964cbbcc9f594e78255, type: 2}
         m_Name: particleTextureArr
         m_Overridden: 1
-      - m_Value: {fileID: 2800000, guid: a71f5f4c1f4882444951c9c0f25d8481, type: 3}
+      - m_Value: {fileID: 2800000, guid: df2a7e981083b9a4da350da315085dcc, type: 3}
         m_Name: Texture
         m_Overridden: 1
     m_Bool:
@@ -1675,7 +1675,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8f733d97673dfe448d32926d8eeefe4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainTextureArray: {fileID: 18700000, guid: fd22bc8a0f116f44ca9862bd6205b465, type: 2}
+  mainTextureArray: {fileID: 18700000, guid: bcfa8a97898d5964cbbcc9f594e78255, type: 2}
   targetQuad: {fileID: 2375103765278767604}
 --- !u!95 &2040912437
 Animator:
@@ -1821,7 +1821,7 @@ VisualEffect:
       m_Array: []
     m_NamedObject:
       m_Array:
-      - m_Value: {fileID: 18700000, guid: b154445882b912d42acf52fec16c942c, type: 2}
+      - m_Value: {fileID: 18700000, guid: dbf9e32e8e450cc42b7a4894ca72035d, type: 2}
         m_Name: Texture2DArray
         m_Overridden: 1
     m_Bool:
@@ -2375,7 +2375,7 @@ VisualEffect:
       m_Array: []
     m_NamedObject:
       m_Array:
-      - m_Value: {fileID: 18700000, guid: b154445882b912d42acf52fec16c942c, type: 2}
+      - m_Value: {fileID: 18700000, guid: dbf9e32e8e450cc42b7a4894ca72035d, type: 2}
         m_Name: Texture2DArray
         m_Overridden: 1
     m_Bool:
