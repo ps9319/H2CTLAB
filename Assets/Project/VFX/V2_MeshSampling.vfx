@@ -53,9 +53,9 @@ MonoBehaviour:
     collapsed: 1
   uiBounds:
     serializedVersion: 2
-    x: -475
+    x: -501
     y: -518
-    width: 1850
+    width: 1876
     height: 2474
 --- !u!114 &114350483966674976
 MonoBehaviour:
@@ -3906,7 +3906,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615174}
   m_ExposedName: turbulence
   m_Exposed: 1
-  m_Order: 5
+  m_Order: 4
   m_Category: 
   m_Min:
     m_Type:
@@ -3986,7 +3986,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615176}
   m_ExposedName: size
   m_Exposed: 1
-  m_Order: 4
+  m_Order: 3
   m_Category: 
   m_Min:
     m_Type:
@@ -4344,7 +4344,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615289}
   m_ExposedName: SpawnRate
   m_Exposed: 1
-  m_Order: 3
+  m_Order: 2
   m_Category: 
   m_Min:
     m_Type:
@@ -4426,7 +4426,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615297}
   m_ExposedName: range
   m_Exposed: 1
-  m_Order: 6
+  m_Order: 5
   m_Category: 
   m_Min:
     m_Type:
@@ -4880,7 +4880,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615339}
   m_ExposedName: particleTextureArr
   m_Exposed: 1
-  m_Order: 12
+  m_Order: 11
   m_Category: edit in code
   m_Min:
     m_Type:
@@ -5057,7 +5057,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615461}
   m_ExposedName: texIndex
   m_Exposed: 1
-  m_Order: 9
+  m_Order: 8
   m_Category: edit in code
   m_Min:
     m_Type:
@@ -5199,7 +5199,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615470}
   m_ExposedName: lifeTime
   m_Exposed: 1
-  m_Order: 10
+  m_Order: 9
   m_Category: 
   m_Min:
     m_Type:
@@ -5341,7 +5341,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615486}
   m_ExposedName: useSetColor
   m_Exposed: 1
-  m_Order: 7
+  m_Order: 6
   m_Category: edit in code
   m_Min:
     m_Type:
@@ -5933,7 +5933,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615503}
   m_ExposedName: threshold
   m_Exposed: 1
-  m_Order: 13
+  m_Order: 12
   m_Category: 
   m_Min:
     m_Type:
@@ -6005,7 +6005,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615509}
   m_ExposedName: zPosition
   m_Exposed: 1
-  m_Order: 11
+  m_Order: 10
   m_Category: 
   m_Min:
     m_Type:
@@ -7078,7 +7078,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615703}
   m_ExposedName: rangeRatio
   m_Exposed: 1
-  m_Order: 8
+  m_Order: 7
   m_Category: 
   m_Min:
     m_Type:
