@@ -16,10 +16,10 @@ MonoBehaviour:
   - title: Mesh sampling
     position:
       serializedVersion: 2
-      x: -500
-      y: -28
-      width: 878
-      height: 444
+      x: -501
+      y: -8
+      width: 879
+      height: 426
     contents:
     - model: {fileID: 8926484042661614642}
       id: 0
@@ -2015,7 +2015,7 @@ MonoBehaviour:
   m_UIIgnoredErrors: []
   m_Parent: {fileID: 114350483966674976}
   m_Children: []
-  m_UIPosition: {x: 113, y: 209}
+  m_UIPosition: {x: 113, y: 210}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots:
@@ -2077,7 +2077,7 @@ MonoBehaviour:
   - {fileID: 8926484042661614701}
   - {fileID: 8926484042661614702}
   m_UIPosition: {x: 0, y: 0}
-  m_UICollapsed: 1
+  m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_MasterSlot: {fileID: 8926484042661614700}
   m_MasterData:
@@ -4085,7 +4085,7 @@ MonoBehaviour:
     linkedSlots:
     - outputSlot: {fileID: 8926484042661615199}
       inputSlot: {fileID: 8926484042661614699}
-    position: {x: 72, y: 31}
+    position: {x: -211.2, y: 113.59999}
     expandedSlots: []
     expanded: 0
 --- !u!114 &8926484042661615199
@@ -4901,7 +4901,7 @@ MonoBehaviour:
       inputSlot: {fileID: 8926484042661615408}
     position: {x: 696, y: 1365}
     expandedSlots: []
-    expanded: 0
+    expanded: 1
 --- !u!114 &8926484042661615339
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5362,7 +5362,7 @@ MonoBehaviour:
       inputSlot: {fileID: 8926484042661615481}
     position: {x: 393, y: 214}
     expandedSlots: []
-    expanded: 0
+    expanded: 1
 --- !u!114 &8926484042661615486
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5598,7 +5598,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Color, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"r":1.0,"g":1.0,"b":1.0,"a":0.0}'
+      m_SerializableObject: '{"r":0.9999998807907105,"g":0.9999998807907105,"b":0.9999998807907105,"a":1.0}'
     m_Space: 2147483647
   m_Property:
     name: False
@@ -6915,7 +6915,7 @@ MonoBehaviour:
     linkedSlots:
     - outputSlot: {fileID: 8926484042661615646}
       inputSlot: {fileID: 8926484042661615624}
-    position: {x: -175, y: 74}
+    position: {x: -175.2, y: 74.399994}
     expandedSlots: []
     expanded: 0
 --- !u!114 &8926484042661615646
