@@ -56,7 +56,7 @@ MonoBehaviour:
     x: -500
     y: -518
     width: 1875
-    height: 2474
+    height: 2634
 --- !u!114 &114350483966674976
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3906,7 +3906,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615174}
   m_ExposedName: turbulence
   m_Exposed: 1
-  m_Order: 4
+  m_Order: 5
   m_Category: 
   m_Min:
     m_Type:
@@ -4337,14 +4337,14 @@ MonoBehaviour:
   m_Parent: {fileID: 114350483966674976}
   m_Children: []
   m_UIPosition: {x: 0, y: 0}
-  m_UICollapsed: 0
+  m_UICollapsed: 1
   m_UISuperCollapsed: 0
   m_InputSlots: []
   m_OutputSlots:
   - {fileID: 8926484042661615289}
   m_ExposedName: SpawnRate
   m_Exposed: 1
-  m_Order: 2
+  m_Order: 1
   m_Category: 
   m_Min:
     m_Type:
@@ -4426,7 +4426,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615297}
   m_ExposedName: range
   m_Exposed: 1
-  m_Order: 5
+  m_Order: 6
   m_Category: 
   m_Min:
     m_Type:
@@ -4880,7 +4880,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615339}
   m_ExposedName: particleTextureArr
   m_Exposed: 1
-  m_Order: 11
+  m_Order: 13
   m_Category: edit in code
   m_Min:
     m_Type:
@@ -5057,7 +5057,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615461}
   m_ExposedName: texIndex
   m_Exposed: 1
-  m_Order: 8
+  m_Order: 10
   m_Category: edit in code
   m_Min:
     m_Type:
@@ -5341,7 +5341,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615486}
   m_ExposedName: useSetColor
   m_Exposed: 1
-  m_Order: 6
+  m_Order: 7
   m_Category: edit in code
   m_Min:
     m_Type:
@@ -5598,7 +5598,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Color, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"r":1.0,"g":1.0,"b":1.0,"a":0.0}'
+      m_SerializableObject: '{"r":1.0,"g":1.0,"b":1.0,"a":1.0}'
     m_Space: 2147483647
   m_Property:
     name: False
@@ -6005,7 +6005,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615509}
   m_ExposedName: zPosition
   m_Exposed: 1
-  m_Order: 10
+  m_Order: 11
   m_Category: 
   m_Min:
     m_Type:
@@ -6896,7 +6896,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615646}
   m_ExposedName: targetQuadScale
   m_Exposed: 1
-  m_Order: 1
+  m_Order: 2
   m_Category: edit in code
   m_Min:
     m_Type:
@@ -7078,7 +7078,7 @@ MonoBehaviour:
   - {fileID: 8926484042661615703}
   m_ExposedName: rangeRatio
   m_Exposed: 1
-  m_Order: 7
+  m_Order: 8
   m_Category: 
   m_Min:
     m_Type:

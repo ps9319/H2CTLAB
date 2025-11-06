@@ -53,26 +53,26 @@ public class JsonPointsToTexture : MonoBehaviour
             case JsonSourceType.LocalJsonFile:
                 if (jsonFile == null)
                 {
-                    Debug.LogError("[JsonPointsToTexture] LocalJsonFile 모드: JSON 파일이 할당되지 않았습니다!");
+                    // Debug.LogError("[JsonPointsToTexture] LocalJsonFile 모드: JSON 파일이 할당되지 않았습니다!");
                     return;
                 }
                 jsonText = jsonFile.text;
-                Debug.Log("[JsonPointsToTexture] LocalJsonFile 모드로 JSON 처리");
+                // Debug.Log("[JsonPointsToTexture] LocalJsonFile 모드로 JSON 처리");
                 break;
                 
             case JsonSourceType.FirebaseRealtime:
                 if (EventListener.Instance == null)
                 {
-                    Debug.LogWarning("[JsonPointsToTexture] FirebaseRealtime 모드: EventListener 인스턴스를 찾을 수 없습니다.");
+                    // Debug.LogWarning("[JsonPointsToTexture] FirebaseRealtime 모드: EventListener 인스턴스를 찾을 수 없습니다.");
                     return;
                 }
                 jsonText = EventListener.Instance.GetCurrentSketchJson();
                 if (string.IsNullOrEmpty(jsonText))
                 {
-                    Debug.LogWarning("[JsonPointsToTexture] FirebaseRealtime 모드: Firebase에서 JSON 데이터를 가져올 수 없습니다.");
+                    // Debug.LogWarning("[JsonPointsToTexture] FirebaseRealtime 모드: Firebase에서 JSON 데이터를 가져올 수 없습니다.");
                     return;
                 }
-                Debug.Log("[JsonPointsToTexture] FirebaseRealtime 모드로 JSON 처리");
+                // Debug.Log("[JsonPointsToTexture] FirebaseRealtime 모드로 JSON 처리");
                 break;
         }
 
@@ -119,7 +119,7 @@ public class JsonPointsToTexture : MonoBehaviour
         {
             if (vfx == null)
             {
-                Debug.LogError("[JsonPointsToTexture] VFX가 할당되지 않았습니다.");
+                // Debug.LogError("[JsonPointsToTexture] VFX가 할당되지 않았습니다.");
                 return;
             }
 
@@ -133,7 +133,7 @@ public class JsonPointsToTexture : MonoBehaviour
                 
                 if (root?.drawingData?.shapeData == null)
                 {
-                    Debug.LogError("[JsonPointsToTexture] LocalJsonFile: JSON 구조가 올바르지 않습니다.");
+                    // Debug.LogError("[JsonPointsToTexture] LocalJsonFile: JSON 구조가 올바르지 않습니다.");
                     return;
                 }
 
@@ -156,7 +156,7 @@ public class JsonPointsToTexture : MonoBehaviour
 
                 if (shapeData == null || shapeData.Count == 0)
                 {
-                    Debug.LogError("[JsonPointsToTexture] FirebaseRealtime: shapeData를 찾을 수 없습니다.");
+                    // Debug.LogError("[JsonPointsToTexture] FirebaseRealtime: shapeData를 찾을 수 없습니다.");
                     return;
                 }
 
@@ -176,7 +176,7 @@ public class JsonPointsToTexture : MonoBehaviour
 
             if (allPoints.Count == 0)
             {
-                Debug.LogWarning("[JsonPointsToTexture] 포인트가 없습니다.");
+                // Debug.LogWarning("[JsonPointsToTexture] 포인트가 없습니다.");
                 return;
             }
 
@@ -212,7 +212,7 @@ public class JsonPointsToTexture : MonoBehaviour
             vfx.SetTexture(propertyName, tex);
             vfx.SetInt(sizeProperty, allPoints.Count);
 
-            Debug.Log($"[JsonPointsToTexture] {allPoints.Count}개의 포인트로 텍스처 생성 완료 (모드: {jsonSource})");
+            // Debug.Log($"[JsonPointsToTexture] {allPoints.Count}개의 포인트로 텍스처 생성 완료 (모드: {jsonSource})");
         }
         catch (Exception e)
         {
