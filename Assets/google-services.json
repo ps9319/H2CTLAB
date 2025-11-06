@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "396643670514",
+    "firebase_url": "https://ai-art-h2-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "ai-art-h2",
+    "storage_bucket": "ai-art-h2.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:396643670514:android:339041e393bcdee6c4f36b",
+        "android_client_info": {
+          "package_name": "com.H2CTLAB.Art"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBRIdH4-QodSZ2udB7HfM7jqEeZZxuViow"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
