@@ -4,7 +4,7 @@ using UnityEngine;
 public class TimeScaleToolbarWindow
 {
     // 단축키: Ctrl+Q → 2x <-> 1x 토글
-    [MenuItem("Tools/TimeScale/2x Toggle %q")]
+    [MenuItem("Tools/TimeScale/2x Toggle %]")]
     private static void ToggleDoubleTimeScale()
     {
         if (Time.timeScale >= 2.0f)
@@ -19,7 +19,7 @@ public class TimeScaleToolbarWindow
     }
 
     // 단축키: Ctrl+W → 1x <-> 0.5x 토글
-    [MenuItem("Tools/TimeScale/0.5x Toggle %w")]
+    [MenuItem("Tools/TimeScale/0.5x Toggle %[")]
     private static void ToggleHalfTimeScale()
     {
         if (Time.timeScale <= 0.5f)
