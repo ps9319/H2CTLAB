@@ -6,18 +6,23 @@ public class TextureMatcher : MonoBehaviour
 {
     [SerializeField] private VisualEffect vfx;
     [SerializeField] private string texturePropertyName = "Texture"; // VFX 속성 이름
-    [SerializeField] private string localFileName = "latest_island.png"; // 다운로드된 파일 이름
-
-    private string localFilePath;
 
     void OnEnable()
     {
-        localFilePath = Path.Combine(Application.persistentDataPath, localFileName);
         LoadTextureToVFX();
     }
 
     private void LoadTextureToVFX()
     {
+        // EventListener에서 현재 이미지 경로 가져오기
+        string localFilePath = EventListener.Instance.GetCurrentImagePath();
+        
+        if (string.IsNullOrEmpty(localFilePath))
+        {
+            Debug.LogError("EventListener에서 이미지 경로를 가져올 수 없습니다.");
+            return;
+        }
+        
         if (!File.Exists(localFilePath))
         {
             Debug.LogError($"파일을 찾을 수 없습니다: {localFilePath}");
@@ -35,7 +40,7 @@ public class TextureMatcher : MonoBehaviour
             if (vfx != null)
             {
                 vfx.SetTexture(texturePropertyName, texture);
-                Debug.Log("VFX 텍스처 설정 완료");
+                Debug.Log($"VFX 텍스처 설정 완료: {localFilePath}");
             }
         }
         catch (System.Exception ex)

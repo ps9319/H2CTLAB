@@ -8,4 +8,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Project/_Scene/TestScene.unity
+    guid: fc56a272fb9d49e4fa8ea24a28c01e2d
+  - enabled: 1
+    path: Assets/Project/_Scene/natural/winter.unity
+    guid: a47db4dda2e3a4b4087bd63c4aaec428
   m_configObjects: {}
