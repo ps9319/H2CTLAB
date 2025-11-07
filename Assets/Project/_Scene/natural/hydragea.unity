@@ -3923,6 +3923,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5236527934320823873, guid: 054e01d73b8dd9c4ea2c3446480342c5,
         type: 3}
+      propertyPath: ShapeModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5236527934320823873, guid: 054e01d73b8dd9c4ea2c3446480342c5,
+        type: 3}
       propertyPath: ShapeModule.m_Scale.z
       value: 1
       objectReference: {fileID: 0}
@@ -3992,6 +3997,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3613567641014311022, guid: e7ed795cfea15924aac5023c1087aca9,
         type: 3}
+    - target: {fileID: 5236527934320823878, guid: 054e01d73b8dd9c4ea2c3446480342c5,
+        type: 3}
+      propertyPath: m_UseCustomVertexStreams
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5236527934320823878, guid: 054e01d73b8dd9c4ea2c3446480342c5,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
