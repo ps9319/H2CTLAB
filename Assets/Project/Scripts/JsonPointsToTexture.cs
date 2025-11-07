@@ -36,46 +36,77 @@ public class JsonPointsToTexture : MonoBehaviour
 
     void OnEnable()
     {
-        // 타겟 쿼드의 오프셋 위치에 현재 오브젝트 위치시키기
         if (targetQuad != null)
         {
             UpdateTransformFromQuad();
         }
 
-        // JSON 소스에 따라 처리 분기
-        string jsonText = null;
-        
+        List<Vector2> allPoints = new List<Vector2>();
+        float canvasWidth = 512f;
+        float canvasHeight = 512f;
+
         switch (jsonSource)
         {
             case JsonSourceType.LocalJsonFile:
                 if (jsonFile == null)
-                {
-                    // Debug.LogError("[JsonPointsToTexture] LocalJsonFile 모드: JSON 파일이 할당되지 않았습니다!");
                     return;
+                DrawingDataRoot root = JsonUtility.FromJson<DrawingDataRoot>(jsonFile.text);
+                if (root?.drawingData?.shapeData == null)
+                    return;
+
+                // drawingData에 canvasWidth, canvasHeight가 없으면 기본값 사용
+                canvasWidth = root.drawingData.canvasWidth != 0f ? root.drawingData.canvasWidth : 512f;
+                canvasHeight = root.drawingData.canvasHeight != 0f ? root.drawingData.canvasHeight : 512f;
+
+                foreach (var shape in root.drawingData.shapeData)
+                {
+                    if (shape.points != null)
+                    {
+                        foreach (var pt in shape.points)
+                        {
+                            allPoints.Add(new Vector2(pt.x, pt.y));
+                        }
+                    }
                 }
-                jsonText = jsonFile.text;
-                // Debug.Log("[JsonPointsToTexture] LocalJsonFile 모드로 JSON 처리");
                 break;
-                
+
             case JsonSourceType.FirebaseRealtime:
                 if (EventListener.Instance == null)
-                {
-                    // Debug.LogWarning("[JsonPointsToTexture] FirebaseRealtime 모드: EventListener 인스턴스를 찾을 수 없습니다.");
                     return;
-                }
-                jsonText = EventListener.Instance.GetCurrentSketchJson();
+                string jsonText = EventListener.Instance.GetCurrentSketchJson();
                 if (string.IsNullOrEmpty(jsonText))
-                {
-                    // Debug.LogWarning("[JsonPointsToTexture] FirebaseRealtime 모드: Firebase에서 JSON 데이터를 가져올 수 없습니다.");
                     return;
+
+                JObject json = JObject.Parse(jsonText);
+                JObject drawingData = json["drawingData"] as JObject;
+                if (drawingData == null)
+                    return;
+
+                canvasWidth = drawingData["canvasWidth"]?.ToObject<float>() ?? 512f;
+                canvasHeight = drawingData["canvasHeight"]?.ToObject<float>() ?? 512f;
+
+                JArray shapeData = drawingData["shapeData"] as JArray;
+                if (shapeData == null)
+                    return;
+
+                foreach (JObject shape in shapeData)
+                {
+                    JArray points = shape["points"] as JArray;
+                    if (points == null) continue;
+
+                    foreach (JObject point in points)
+                    {
+                        float x = point["x"]?.ToObject<float>() ?? 0f;
+                        float y = point["y"]?.ToObject<float>() ?? 0f;
+                        allPoints.Add(new Vector2(x, y));
+                    }
                 }
-                // Debug.Log("[JsonPointsToTexture] FirebaseRealtime 모드로 JSON 처리");
                 break;
         }
 
-        if (!string.IsNullOrEmpty(jsonText))
+        if (allPoints.Count > 0)
         {
-            ProcessJsonData(jsonText);
+            ProcessJsonData(allPoints, canvasWidth, canvasHeight);
         }
     }
 
@@ -108,99 +139,37 @@ public class JsonPointsToTexture : MonoBehaviour
         }
     }
 
-    private void ProcessJsonData(string jsonText)
+    private void ProcessJsonData(List<Vector2> allPoints, float canvasWidth, float canvasHeight)
     {
         try
         {
             if (vfx == null)
-            {
-                // Debug.LogError("[JsonPointsToTexture] VFX가 할당되지 않았습니다.");
                 return;
-            }
 
-            List<Vector2> allPoints = new List<Vector2>();
-
-            // JSON 소스에 따라 파싱 방법 선택
-            if (jsonSource == JsonSourceType.LocalJsonFile)
-            {
-                // Unity JsonUtility 사용 (기존 방식)
-                DrawingDataRoot root = JsonUtility.FromJson<DrawingDataRoot>(jsonText);
-                
-                if (root?.drawingData?.shapeData == null)
-                {
-                    // Debug.LogError("[JsonPointsToTexture] LocalJsonFile: JSON 구조가 올바르지 않습니다.");
-                    return;
-                }
-
-                foreach (var shape in root.drawingData.shapeData)
-                {
-                    if (shape.points != null)
-                    {
-                        foreach (var pt in shape.points)
-                        {
-                            allPoints.Add(new Vector2(pt.x, pt.y));
-                        }
-                    }
-                }
-            }
-            else // FirebaseRealtime
-            {
-                // Newtonsoft.Json 사용 (Firebase 방식)
-                JObject json = JObject.Parse(jsonText);
-                JArray shapeData = json["drawingData"]?["shapeData"] as JArray;
-
-                if (shapeData == null || shapeData.Count == 0)
-                {
-                    // Debug.LogError("[JsonPointsToTexture] FirebaseRealtime: shapeData를 찾을 수 없습니다.");
-                    return;
-                }
-
-                foreach (JObject shape in shapeData)
-                {
-                    JArray points = shape["points"] as JArray;
-                    if (points == null) continue;
-
-                    foreach (JObject point in points)
-                    {
-                        float x = point["x"]?.ToObject<float>() ?? 0f;
-                        float y = point["y"]?.ToObject<float>() ?? 0f;
-                        allPoints.Add(new Vector2(x, y));
-                    }
-                }
-            }
-
-            if (allPoints.Count == 0)
-            {
-                // Debug.LogWarning("[JsonPointsToTexture] 포인트가 없습니다.");
-                return;
-            }
-
-            // 모든 좌표를 512로 나누어 정규화
+            // canvasWidth, canvasHeight로 정규화
             List<Vector2> normalizedPoints = new List<Vector2>();
             for (int i = 0; i < allPoints.Count; i++)
             {
-                normalizedPoints.Add(allPoints[i] / 512f);
+                normalizedPoints.Add(new Vector2(
+                    allPoints[i].x / canvasWidth,
+                    allPoints[i].y / canvasHeight
+                ));
             }
 
-            // Color 배열 생성 (R=x, G=y)
             Color[] pixels = new Color[normalizedPoints.Count];
             for (int i = 0; i < normalizedPoints.Count; i++)
             {
                 pixels[i] = new Color(normalizedPoints[i].x, normalizedPoints[i].y, 0, 0);
             }
 
-            // 1D 텍스처 생성
             Texture2D tex = new Texture2D(normalizedPoints.Count, 1, TextureFormat.RGFloat, false, true);
             tex.filterMode = FilterMode.Point;
             tex.wrapMode = TextureWrapMode.Clamp;
             tex.SetPixels(pixels);
             tex.Apply();
 
-            // VFX에 텍스처와 사이즈 전달
             vfx.SetTexture(propertyName, tex);
             vfx.SetInt(sizeProperty, normalizedPoints.Count);
-
-            // Debug.Log($"[JsonPointsToTexture] {allPoints.Count}개의 포인트로 텍스처 생성 완료 (모드: {jsonSource})");
         }
         catch (Exception e)
         {
@@ -234,6 +203,8 @@ public class DrawingDataRoot
 [System.Serializable]
 public class DrawingData
 {
+    public float canvasWidth;
+    public float canvasHeight;
     public List<ShapeData> shapeData;
 }
 
