@@ -33,9 +33,6 @@ public class JsonPointsToTexture : MonoBehaviour
 
     // 쿼드 로컬 공간에서의 오프셋 (기본값: 좌하단, z도 입력 가능)
     public Vector3 quadLocalOffset = new Vector3(-0.5f, -0.5f, 0f);
-    // 쿼드 스케일에 곱해지는 오프셋 (x, y에 동시에 적용)
-    [Range(0.01f, 10f)]
-    public float quadScaleOffset = 1f;
 
     void OnEnable()
     {
@@ -86,8 +83,6 @@ public class JsonPointsToTexture : MonoBehaviour
     {
         // 쿼드의 월드 크기 (x, y에만 오프셋 적용)
         Vector3 worldSize = targetQuad.lossyScale;
-        worldSize.x *= quadScaleOffset;
-        worldSize.y *= quadScaleOffset;
 
         // 쿼드의 중앙에서 오프셋까지의 벡터 (쿼드의 로컬 공간)
         Vector3 localOffset = quadLocalOffset;
@@ -180,34 +175,22 @@ public class JsonPointsToTexture : MonoBehaviour
                 return;
             }
 
-            // 정규화 (0~1) : 전체 points의 min/max로 정규화
-            float minX = float.MaxValue, maxX = float.MinValue;
-            float minY = float.MaxValue, maxY = float.MinValue;
-            
-            foreach (var pt in allPoints)
-            {
-                if (pt.x < minX) minX = pt.x;
-                if (pt.x > maxX) maxX = pt.x;
-                if (pt.y < minY) minY = pt.y;
-                if (pt.y > maxY) maxY = pt.y;
-            }
-
-            // 두 축의 범위 중 더 넓은 쪽을 사용하여 비율 유지
-            float rangeX = maxX - minX;
-            float rangeY = maxY - minY;
-            float maxRange = Mathf.Max(rangeX, rangeY);
-
-            // Color 배열 생성 (R=x, G=y)
-            Color[] pixels = new Color[allPoints.Count];
+            // 모든 좌표를 512로 나누어 정규화
+            List<Vector2> normalizedPoints = new List<Vector2>();
             for (int i = 0; i < allPoints.Count; i++)
             {
-                float fx = maxRange > 0 ? (allPoints[i].x - minX) / maxRange : 0f;
-                float fy = maxRange > 0 ? (allPoints[i].y - minY) / maxRange : 0f;
-                pixels[i] = new Color(fx, fy, 0, 0);
+                normalizedPoints.Add(allPoints[i] / 512f);
+            }
+
+            // Color 배열 생성 (R=x, G=y)
+            Color[] pixels = new Color[normalizedPoints.Count];
+            for (int i = 0; i < normalizedPoints.Count; i++)
+            {
+                pixels[i] = new Color(normalizedPoints[i].x, normalizedPoints[i].y, 0, 0);
             }
 
             // 1D 텍스처 생성
-            Texture2D tex = new Texture2D(allPoints.Count, 1, TextureFormat.RGFloat, false, true);
+            Texture2D tex = new Texture2D(normalizedPoints.Count, 1, TextureFormat.RGFloat, false, true);
             tex.filterMode = FilterMode.Point;
             tex.wrapMode = TextureWrapMode.Clamp;
             tex.SetPixels(pixels);
@@ -215,7 +198,7 @@ public class JsonPointsToTexture : MonoBehaviour
 
             // VFX에 텍스처와 사이즈 전달
             vfx.SetTexture(propertyName, tex);
-            vfx.SetInt(sizeProperty, allPoints.Count);
+            vfx.SetInt(sizeProperty, normalizedPoints.Count);
 
             // Debug.Log($"[JsonPointsToTexture] {allPoints.Count}개의 포인트로 텍스처 생성 완료 (모드: {jsonSource})");
         }
