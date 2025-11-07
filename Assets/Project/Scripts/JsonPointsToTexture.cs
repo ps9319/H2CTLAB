@@ -192,12 +192,17 @@ public class JsonPointsToTexture : MonoBehaviour
                 if (pt.y > maxY) maxY = pt.y;
             }
 
+            // 두 축의 범위 중 더 넓은 쪽을 사용하여 비율 유지
+            float rangeX = maxX - minX;
+            float rangeY = maxY - minY;
+            float maxRange = Mathf.Max(rangeX, rangeY);
+
             // Color 배열 생성 (R=x, G=y)
             Color[] pixels = new Color[allPoints.Count];
             for (int i = 0; i < allPoints.Count; i++)
             {
-                float fx = (maxX - minX) > 0 ? (allPoints[i].x - minX) / (maxX - minX) : 0f;
-                float fy = (maxY - minY) > 0 ? (allPoints[i].y - minY) / (maxY - minY) : 0f;
+                float fx = maxRange > 0 ? (allPoints[i].x - minX) / maxRange : 0f;
+                float fy = maxRange > 0 ? (allPoints[i].y - minY) / maxRange : 0f;
                 pixels[i] = new Color(fx, fy, 0, 0);
             }
 
