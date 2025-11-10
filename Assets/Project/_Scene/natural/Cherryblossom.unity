@@ -149,7 +149,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5183352}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.770001, y: -0.58, z: -0.11782074}
+  m_LocalPosition: {x: 9.91, y: -0.58, z: -0.11782074}
   m_LocalScale: {x: 8.247441, y: 8.247441, z: 0.041237205}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -5686,7 +5686,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &685830857
 Transform:
   m_ObjectHideFlags: 0
@@ -5750,7 +5750,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 771270705}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.646281, y: -4.2637205, z: 4.8821793}
+  m_LocalPosition: {x: 5.786279, y: -4.2637205, z: 4.8821793}
   m_LocalScale: {x: 8.247441, y: 8.247441, z: 0.041237205}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8725,7 +8725,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     separateAxes: 0
-    frequency: 1
+    frequency: 1.15
     damping: 1
     octaves: 1
     octaveMultiplier: 0.5
@@ -10635,10 +10635,7 @@ GameObject:
   - component: {fileID: 972016554}
   - component: {fileID: 972016560}
   - component: {fileID: 972016559}
-  - component: {fileID: 972016558}
   - component: {fileID: 972016557}
-  - component: {fileID: 972016556}
-  - component: {fileID: 972016555}
   - component: {fileID: 972016561}
   m_Layer: 0
   m_Name: Line drawing2
@@ -10655,48 +10652,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 972016553}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 5.786279, y: -4.2637205, z: 9.005899}
+  m_LocalScale: {x: 8.247441, y: 8.247441, z: 0.041237205}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 876723367}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &972016555
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 972016553}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc5a14fe78bed1446b2c8dc49e2f3c4b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  vfx: {fileID: 0}
-  animator: {fileID: 0}
-  vfxPlayTrigger: vfxStart
-  vfxStopTrigger: 
-  animatorPlayTrigger: PlayAnimation
-  animatorStopTrigger: 
-  startDelay: 0
---- !u!114 &972016556
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 972016553}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cdafc37f32b176349b1684c4455b98e9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_ExecuteInEditor: 1
-  m_Bindings:
-  - {fileID: 972016558}
-  m_VisualEffect: {fileID: 972016560}
 --- !u!95 &972016557
 Animator:
   serializedVersion: 5
@@ -10718,21 +10680,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &972016558
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 972016553}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7fdfea1f838247c40921a07afedde962, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Property:
-    m_Name: targetPos
-  Target: {fileID: 1099189082}
 --- !u!73398921 &972016559
 VFXRenderer:
   serializedVersion: 1
@@ -10781,7 +10728,7 @@ VisualEffect:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 972016553}
   m_Enabled: 1
-  m_Asset: {fileID: 8926484042661614526, guid: 2657c90f73a480445a743331d608f53e, type: 3}
+  m_Asset: {fileID: 8926484042661614526, guid: e7e03f0b5487954458f9fcbaba34eeb3, type: 3}
   m_InitialEventName: onPlay
   m_InitialEventNameOverriden: 0
   m_StartSeed: 0
@@ -10805,6 +10752,24 @@ VisualEffect:
       - m_Value: 1
         m_Name: particleAlpha
         m_Overridden: 1
+      - m_Value: 1
+        m_Name: alpha
+        m_Overridden: 1
+      - m_Value: 0.5
+        m_Name: size
+        m_Overridden: 1
+      - m_Value: 1
+        m_Name: thickness
+        m_Overridden: 1
+      - m_Value: 0
+        m_Name: diffusion
+        m_Overridden: 1
+      - m_Value: 0
+        m_Name: gravity
+        m_Overridden: 1
+      - m_Value: 10
+        m_Name: spawnRatio
+        m_Overridden: 1
     m_Vector2f:
       m_Array: []
     m_Vector3f:
@@ -10820,13 +10785,16 @@ VisualEffect:
         m_Overridden: 1
     m_Vector4f:
       m_Array:
-      - m_Value: {x: 0.1254902, y: 0.05980392, z: 0.07450981, w: 0}
+      - m_Value: {x: 0.13141513, y: 0.023555528, z: 0.044636674, w: 0}
         m_Name: color
         m_Overridden: 1
     m_Uint:
       m_Array: []
     m_Int:
-      m_Array: []
+      m_Array:
+      - m_Value: 1458
+        m_Name: positionMapSize
+        m_Overridden: 1
     m_Matrix4x4f:
       m_Array: []
     m_AnimationCurve:
@@ -10834,7 +10802,10 @@ VisualEffect:
     m_Gradient:
       m_Array: []
     m_NamedObject:
-      m_Array: []
+      m_Array:
+      - m_Value: {fileID: 0}
+        m_Name: positionMap
+        m_Overridden: 1
     m_Bool:
       m_Array: []
 --- !u!114 &972016561
@@ -10846,11 +10817,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 972016553}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a57910df1d040d49974668d1edf0d7e, type: 3}
+  m_Script: {fileID: 11500000, guid: 6c1115b6cd478b6418dfbde57b56db60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectsToEnable:
-  - {fileID: 1099189080}
+  jsonSource: 0
+  vfx: {fileID: 972016560}
+  propertyName: positionMap
+  sizeProperty: positionMapSize
+  jsonFile: {fileID: 4900000, guid: 9314c37542a13804eb7a82b99a09596e, type: 3}
+  targetQuad: {fileID: 5183353}
+  quadLocalOffset: {x: -0.5, y: -0.5, z: 100}
 --- !u!1 &1055776037
 GameObject:
   m_ObjectHideFlags: 0
@@ -10998,7 +10974,7 @@ VisualEffect:
       m_Array: []
     m_Int:
       m_Array:
-      - m_Value: 0
+      - m_Value: 28
         m_Name: texIndex
         m_Overridden: 1
     m_Matrix4x4f:
@@ -11009,7 +10985,7 @@ VisualEffect:
       m_Array: []
     m_NamedObject:
       m_Array:
-      - m_Value: {fileID: 2800000, guid: 5803a33650a2adc498c1949fb143db32, type: 3}
+      - m_Value: {fileID: 2800000, guid: 64024ac890538e54f9b0f4574b81c50d, type: 3}
         m_Name: Texture
         m_Overridden: 1
       - m_Value: {fileID: 2800000, guid: 260c875ee8b67ba4dbb5d1c5f6cda417, type: 3}
@@ -11319,11 +11295,8 @@ GameObject:
   - component: {fileID: 1308773059}
   - component: {fileID: 1308773058}
   - component: {fileID: 1308773057}
-  - component: {fileID: 1308773062}
   - component: {fileID: 1308773064}
-  - component: {fileID: 1308773061}
   - component: {fileID: 1308773065}
-  - component: {fileID: 1308773066}
   m_Layer: 0
   m_Name: Line drawing1
   m_TagString: Untagged
@@ -11379,7 +11352,7 @@ VisualEffect:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1308773056}
   m_Enabled: 1
-  m_Asset: {fileID: 8926484042661614526, guid: 2657c90f73a480445a743331d608f53e, type: 3}
+  m_Asset: {fileID: 8926484042661614526, guid: e7e03f0b5487954458f9fcbaba34eeb3, type: 3}
   m_InitialEventName: onPlay
   m_InitialEventNameOverriden: 0
   m_StartSeed: 0
@@ -11403,6 +11376,24 @@ VisualEffect:
       - m_Value: 1
         m_Name: particleAlpha
         m_Overridden: 1
+      - m_Value: 1
+        m_Name: alpha
+        m_Overridden: 1
+      - m_Value: 0.5
+        m_Name: size
+        m_Overridden: 1
+      - m_Value: 1
+        m_Name: thickness
+        m_Overridden: 1
+      - m_Value: 0
+        m_Name: diffusion
+        m_Overridden: 1
+      - m_Value: 0
+        m_Name: gravity
+        m_Overridden: 1
+      - m_Value: 10
+        m_Name: spawnRatio
+        m_Overridden: 1
     m_Vector2f:
       m_Array: []
     m_Vector3f:
@@ -11418,13 +11409,16 @@ VisualEffect:
         m_Overridden: 1
     m_Vector4f:
       m_Array:
-      - m_Value: {x: 0.1254902, y: 0.05980392, z: 0.07450981, w: 0}
+      - m_Value: {x: 0.13141513, y: 0.023555528, z: 0.044636674, w: 0}
         m_Name: color
         m_Overridden: 1
     m_Uint:
       m_Array: []
     m_Int:
-      m_Array: []
+      m_Array:
+      - m_Value: 1458
+        m_Name: positionMapSize
+        m_Overridden: 1
     m_Matrix4x4f:
       m_Array: []
     m_AnimationCurve:
@@ -11432,7 +11426,10 @@ VisualEffect:
     m_Gradient:
       m_Array: []
     m_NamedObject:
-      m_Array: []
+      m_Array:
+      - m_Value: {fileID: 0}
+        m_Name: positionMap
+        m_Overridden: 1
     m_Bool:
       m_Array: []
 --- !u!4 &1308773059
@@ -11443,44 +11440,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1308773056}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -11.29372, y: -4.2637196, z: 9.005899}
+  m_LocalScale: {x: 8.247439, y: 8.247439, z: 0.041237198}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 876723367}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1308773061
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1308773056}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cdafc37f32b176349b1684c4455b98e9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_ExecuteInEditor: 1
-  m_Bindings:
-  - {fileID: 1308773062}
-  m_VisualEffect: {fileID: 1308773058}
---- !u!114 &1308773062
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1308773056}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7fdfea1f838247c40921a07afedde962, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Property:
-    m_Name: targetPos
-  Target: {fileID: 77138263}
 --- !u!95 &1308773064
 Animator:
   serializedVersion: 5
@@ -11511,30 +11477,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1308773056}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc5a14fe78bed1446b2c8dc49e2f3c4b, type: 3}
+  m_Script: {fileID: 11500000, guid: 6c1115b6cd478b6418dfbde57b56db60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vfx: {fileID: 0}
-  animator: {fileID: 0}
-  vfxPlayTrigger: vfxStart
-  vfxStopTrigger: 
-  animatorPlayTrigger: PlayAnimation
-  animatorStopTrigger: 
-  startDelay: 0
---- !u!114 &1308773066
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1308773056}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a57910df1d040d49974668d1edf0d7e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectsToEnable:
-  - {fileID: 77138261}
+  jsonSource: 0
+  vfx: {fileID: 1308773058}
+  propertyName: positionMap
+  sizeProperty: positionMapSize
+  jsonFile: {fileID: 4900000, guid: 9314c37542a13804eb7a82b99a09596e, type: 3}
+  targetQuad: {fileID: 386532083}
+  quadLocalOffset: {x: -0.5, y: -0.5, z: 100}
 --- !u!1 &1508497943
 GameObject:
   m_ObjectHideFlags: 0
@@ -11995,7 +11947,7 @@ MonoBehaviour:
     - {fileID: 1308773058}
     - {fileID: 972016560}
     startTime: 6
-    endTime: 25
+    endTime: Infinity
     enabled: 1
   - vfxList:
     - {fileID: 1055776040}
@@ -12047,7 +11999,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1885872532}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.770001, y: -0.13999999, z: 4.8821793}
+  m_LocalPosition: {x: 9.91, y: -0.13999999, z: 4.8821793}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12166,7 +12118,7 @@ VisualEffect:
       m_Array: []
     m_Int:
       m_Array:
-      - m_Value: 0
+      - m_Value: 28
         m_Name: texIndex
         m_Overridden: 1
     m_Matrix4x4f:
@@ -12177,7 +12129,7 @@ VisualEffect:
       m_Array: []
     m_NamedObject:
       m_Array:
-      - m_Value: {fileID: 2800000, guid: 5803a33650a2adc498c1949fb143db32, type: 3}
+      - m_Value: {fileID: 2800000, guid: 64024ac890538e54f9b0f4574b81c50d, type: 3}
         m_Name: Texture
         m_Overridden: 1
       - m_Value: {fileID: 18700000, guid: 8845bfbf22065e04788e8a8a5616839d, type: 2}
@@ -12241,7 +12193,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1933155923
 Transform:
   m_ObjectHideFlags: 0
@@ -12521,7 +12473,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4606747344338702762}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: 8}
+  m_LocalPosition: {x: 0, y: 0, z: 10}
   m_LocalScale: {x: 33.35, y: 10.0786, z: 0.03}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12566,7 +12518,7 @@ ParticleSystem:
   startDelay:
     serializedVersion: 2
     minMaxState: 0
-    scalar: 0
+    scalar: 1
     minScalar: 0
     maxCurve:
       serializedVersion: 2
@@ -13111,7 +13063,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 0
-    maxNumParticles: 10000
+    maxNumParticles: 100000
     customEmitterVelocity: {x: 0, y: 0, z: 0}
     size3D: 0
     rotation3D: 1
@@ -17544,7 +17496,7 @@ ParticleSystem:
   startDelay:
     serializedVersion: 2
     minMaxState: 0
-    scalar: 0
+    scalar: 1
     minScalar: 0
     maxCurve:
       serializedVersion: 2
@@ -18089,7 +18041,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 0
-    maxNumParticles: 10000
+    maxNumParticles: 100000
     customEmitterVelocity: {x: 0, y: 0, z: 0}
     size3D: 0
     rotation3D: 1

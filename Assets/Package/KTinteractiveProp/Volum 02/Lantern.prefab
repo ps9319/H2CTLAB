@@ -94,7 +94,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4139816658747209837}
   - component: {fileID: 4139816658747209838}
-  - component: {fileID: 4139816658747209839}
   m_Layer: 0
   m_Name: Lantern
   m_TagString: Untagged
@@ -132,24 +131,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0.5, z: 0}
---- !u!114 &4139816658747209839
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4139816658747209832}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 144691a62d891d945824885250626f6a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  activate: 0
-  toggleState: 1
-  icon: {fileID: 0}
-  lightObj: {fileID: 4139816659671041205}
-  lantern: {fileID: 3364752906203997481}
-  uvCN: 0
 --- !u!1 &4139816659671041205
 GameObject:
   m_ObjectHideFlags: 0
