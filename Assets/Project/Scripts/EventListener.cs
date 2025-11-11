@@ -65,7 +65,8 @@ public class EventListener : MonoBehaviour
     private ListenerRegistration configListenerRegistration;
     private const string CONFIG_COLLECTION = "config";
     private const string CONFIG_DOCUMENT = "current_task";
-
+    private DocumentReference queueCountRef;
+    
     // --- 중복 방지를 위한 마지막 처리 timestamp ---
     private Timestamp lastProcessedTimestamp = new Timestamp();
 
@@ -91,6 +92,7 @@ public class EventListener : MonoBehaviour
             {
                 db = FirebaseFirestore.DefaultInstance;
                 storage = FirebaseStorage.DefaultInstance;
+                queueCountRef = db.Collection(CONFIG_COLLECTION).Document("tablet_config");
                 Debug.Log("[EventListener] Firebase Firestore 초기화 성공");
 
                 ListenForConfigChanges();
@@ -193,6 +195,8 @@ public class EventListener : MonoBehaviour
             taskQueue.Enqueue((matchedIslandId, sketchJson, imagePath));
             lastProcessedTimestamp = currentTimestamp;
             Debug.Log($"[Queue] Island ID {matchedIslandId} + JSON + 이미지({imagePath}) 추가. 큐 크기: {taskQueue.Count}");
+            
+            UpdateQueueCount(); // 🔥 Enqueue 시 Firestore 동기화
         }
         else
         {
@@ -213,6 +217,10 @@ public class EventListener : MonoBehaviour
             {
                 isScenePlaying = true;
                 var (islandId, sketchJson, imagePath) = taskQueue.Dequeue();
+                
+                UpdateQueueCount(); // 🔥 Dequeue 시 Firestore 동기화
+                
+                
                 currentIslandId = islandId;
                 currentSketchJson = sketchJson;
                 currentImagePath = imagePath; // 현재 이미지 경로 저장
@@ -285,6 +293,22 @@ public class EventListener : MonoBehaviour
         {
             Debug.LogError($"[Storage] 이미지 다운로드 실패: {e.Message}");
             return null;
+        }
+    }
+    
+    // 큐 크기를 Firestore에 업데이트하는 메서드
+    private async void UpdateQueueCount()
+    {
+        if (queueCountRef == null) return;
+
+        try
+        {
+            await queueCountRef.UpdateAsync("QUEUE_COUNT", taskQueue.Count);
+            Debug.Log($"[Firestore] QUEUE_COUNT 업데이트: {taskQueue.Count}");
+        }
+        catch (System.Exception e)
+        {
+            Debug.LogError($"[Firestore] QUEUE_COUNT 업데이트 실패: {e.Message}");
         }
     }
     
