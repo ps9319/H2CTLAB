@@ -30,7 +30,7 @@ public class MeshSamplingAsignTxArr : MonoBehaviour
         Initialize();
     }
 
-    void OnEnable()
+    void Start()
     {
         Initialize();
     }
