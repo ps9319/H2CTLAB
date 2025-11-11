@@ -5253,6 +5253,7 @@ GameObject:
   - component: {fileID: 808711963}
   - component: {fileID: 808711962}
   - component: {fileID: 808711965}
+  - component: {fileID: 808711966}
   m_Layer: 0
   m_Name: TextureVFX
   m_TagString: Untagged
@@ -5362,11 +5363,27 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 808711961}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4b19af53131f02240bef38d538481fd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sourceMode: 0
+  sourceVFX: {fileID: 0}
+  texturePropertyName: Texture
+--- !u!114 &808711966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 808711961}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d35ee58ef6dbd2042a3a16172fdc5561, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vfx: {fileID: 808711963}
   texturePropertyName: Texture
 --- !u!1 &813581988
 GameObject:
@@ -5464,6 +5481,7 @@ GameObject:
   - component: {fileID: 819309567}
   - component: {fileID: 819309566}
   - component: {fileID: 819309565}
+  - component: {fileID: 819309569}
   m_Layer: 0
   m_Name: MeshSampling2
   m_TagString: Untagged
@@ -5648,7 +5666,7 @@ VisualEffect:
       m_Array: []
     m_NamedObject:
       m_Array:
-      - m_Value: {fileID: 2800000, guid: 43388744b0c935e43815b2b47eb70e11, type: 3}
+      - m_Value: {fileID: 0}
         m_Name: Texture
         m_Overridden: 1
       - m_Value: {fileID: 2800000, guid: 260c875ee8b67ba4dbb5d1c5f6cda417, type: 3}
@@ -5665,6 +5683,20 @@ VisualEffect:
       - m_Value: 1
         m_Name: useSetColor
         m_Overridden: 1
+--- !u!114 &819309569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 819309563}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d35ee58ef6dbd2042a3a16172fdc5561, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vfx: {fileID: 819309568}
+  texturePropertyName: Texture
 --- !u!1 &824236218
 GameObject:
   m_ObjectHideFlags: 0
@@ -6554,6 +6586,7 @@ GameObject:
   - component: {fileID: 1055776039}
   - component: {fileID: 1055776045}
   - component: {fileID: 1055776046}
+  - component: {fileID: 1055776047}
   m_Layer: 0
   m_Name: MeshSampling1
   m_TagString: Untagged
@@ -6706,7 +6739,7 @@ VisualEffect:
       m_Array: []
     m_NamedObject:
       m_Array:
-      - m_Value: {fileID: 2800000, guid: 43388744b0c935e43815b2b47eb70e11, type: 3}
+      - m_Value: {fileID: 0}
         m_Name: Texture
         m_Overridden: 1
       - m_Value: {fileID: 2800000, guid: 260c875ee8b67ba4dbb5d1c5f6cda417, type: 3}
@@ -6758,6 +6791,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainTextureArray: {fileID: 18700000, guid: 9ca2efb927080b0418c628318c580e13, type: 2}
   targetQuad: {fileID: 1792919083}
+--- !u!114 &1055776047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1055776037}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d35ee58ef6dbd2042a3a16172fdc5561, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vfx: {fileID: 1055776040}
+  texturePropertyName: Texture
 --- !u!1001 &1067688942
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9604,6 +9651,7 @@ GameObject:
   - component: {fileID: 1476358519}
   - component: {fileID: 1476358518}
   - component: {fileID: 1476358521}
+  - component: {fileID: 1476358522}
   m_Layer: 0
   m_Name: TextureVFX
   m_TagString: Untagged
@@ -9713,11 +9761,27 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1476358517}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4b19af53131f02240bef38d538481fd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sourceMode: 0
+  sourceVFX: {fileID: 0}
+  texturePropertyName: Texture
+--- !u!114 &1476358522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1476358517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d35ee58ef6dbd2042a3a16172fdc5561, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vfx: {fileID: 1476358519}
   texturePropertyName: Texture
 --- !u!1 &1476873690
 GameObject:
@@ -15630,6 +15694,53 @@ Transform:
   - {fileID: 184148075}
   m_Father: {fileID: 1476873691}
   m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2006580179
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2006580181}
+  - component: {fileID: 2006580180}
+  m_Layer: 0
+  m_Name: GameObject (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2006580180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2006580179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b19af53131f02240bef38d538481fd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sourceMode: 0
+  sourceVFX: {fileID: 0}
+  texturePropertyName: Texture
+--- !u!4 &2006580181
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2006580179}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -7.4469123, y: -3.5324202, z: 7.2869997}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2011254111
 GameObject:
