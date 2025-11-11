@@ -1,6 +1,7 @@
 {
-    "files.exclude": {
-        "**/*.meta": true
-    },
-    "dotnet.defaultSolution": "Main.sln"
+  "files.exclude": {
+    "**/*.meta": true,
+    "**/*.csproj": true
+  },
+  "dotnet.defaultSolution": "Main.sln"
 }
