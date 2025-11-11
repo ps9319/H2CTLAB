@@ -20,6 +20,20 @@ public class VFXManager : MonoBehaviour
     [Header("Delay Settings")]
     public float startDelay = 0f;
 
+    private void Awake()
+    {
+        // 모든 VFX를 꺼줌
+        foreach (var group in vfxGroups)
+        {
+            if (group == null || !group.enabled) continue;
+            foreach (var vfx in group.vfxList)
+            {
+                if (vfx != null && vfx.gameObject.activeSelf)
+                    vfx.gameObject.SetActive(false);
+            }
+        }
+    }
+
     private void OnEnable()
     {
         PlayAll();
