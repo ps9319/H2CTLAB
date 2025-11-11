@@ -68,7 +68,6 @@ public class EventListener : MonoBehaviour
 
     // --- 중복 방지를 위한 마지막 처리 timestamp ---
     private Timestamp lastProcessedTimestamp = new Timestamp();
-    private bool isInitialSnapshot = true; // 초기 스냅샷 무시용 플래그
 
     void Awake()
     {
@@ -118,80 +117,91 @@ public class EventListener : MonoBehaviour
         }
     }
 
-    private void ListenForConfigChanges()
+    private async void ListenForConfigChanges()
+{
+    DocumentReference configRef = db.Collection(CONFIG_COLLECTION).Document(CONFIG_DOCUMENT);
+
+    // 🔥 리스너 등록 전에 현재 timestamp를 먼저 읽어서 초기화
+    try
     {
-        DocumentReference configRef = db.Collection(CONFIG_COLLECTION).Document(CONFIG_DOCUMENT);
-
-        configListenerRegistration = configRef.Listen(async snapshot =>
+        DocumentSnapshot initialSnapshot = await configRef.GetSnapshotAsync();
+        
+        if (initialSnapshot.Exists && initialSnapshot.TryGetValue("updated_at", out object timestampObj))
         {
-            if (!snapshot.Exists)
+            lastProcessedTimestamp = (Timestamp)timestampObj;
+            Debug.Log($"[Listen] 초기 timestamp 설정: {lastProcessedTimestamp.ToDateTime():yyyy-MM-dd HH:mm:ss}");
+        }
+        else
+        {
+            Debug.LogWarning("[Listen] 초기 문서를 찾을 수 없습니다.");
+        }
+    }
+    catch (System.Exception e)
+    {
+        Debug.LogError($"[Listen] 초기 timestamp 읽기 실패: {e.Message}");
+    }
+
+    // 이제 리스너 등록
+    configListenerRegistration = configRef.Listen(async snapshot =>
+    {
+        if (!snapshot.Exists)
+        {
+            Debug.LogWarning("[Listen] config/current_task 문서가 존재하지 않습니다.");
+            return;
+        }
+
+        if (snapshot.TryGetValue("updated_at", out object timestampObj) &&
+            snapshot.TryGetValue("matched_island_id", out object islandIdObj) &&
+            snapshot.TryGetValue("sketch_json", out object sketchJsonObj))
+        {
+            Timestamp currentTimestamp = (Timestamp)timestampObj;
+            int matchedIslandId = (int)(long)islandIdObj;
+
+            string sketchJson;
+            if (sketchJsonObj is string str)
             {
-                Debug.LogWarning("[Listen] config/current_task 문서가 존재하지 않습니다.");
-                return;
+                sketchJson = str;
             }
-
-            if (snapshot.TryGetValue("updated_at", out object timestampObj) &&
-                snapshot.TryGetValue("matched_island_id", out object islandIdObj) &&
-                snapshot.TryGetValue("sketch_json", out object sketchJsonObj))
+            else if (sketchJsonObj is Dictionary<string, object> dict)
             {
-                Timestamp currentTimestamp = (Timestamp)timestampObj;
-                int matchedIslandId = (int)(long)islandIdObj;
-
-                // Dictionary와 string 모두 처리
-                string sketchJson;
-                if (sketchJsonObj is string str)
-                {
-                    sketchJson = str;
-                }
-                else if (sketchJsonObj is Dictionary<string, object> dict)
-                {
-                    // Dictionary를 JSON 문자열로 변환
-                    sketchJson = Newtonsoft.Json.JsonConvert.SerializeObject(dict);
-                }
-                else
-                {
-                    Debug.LogError($"[Listen] sketch_json 타입 오류: {sketchJsonObj.GetType()}");
-                    return;
-                }
-
-                Debug.Log($"[Listen] 변환된 JSON: {sketchJson}");
-
-                if (isInitialSnapshot)
-                {
-                    lastProcessedTimestamp = currentTimestamp;
-                    isInitialSnapshot = false;
-                    Debug.Log("[Listen] 초기 스냅샷 수신 - 큐에 추가하지 않음.");
-                    return;
-                }
-
-                if (currentTimestamp.Equals(lastProcessedTimestamp))
-                {
-                    Debug.Log($"[Listen] 이미  처리된 요청. 건너뜀.");
-                    return;
-                }
-
-                // 🔥 이미지를 큐에 넣을 때 다운로드 (updated_at을 고유 식별자로 사용)
-                string imagePath = await DownloadIslandImageWithUniqueFileName(matchedIslandId, currentTimestamp);
-                
-                if (string.IsNullOrEmpty(imagePath))
-                {
-                    Debug.LogError("[Listen] 이미지 다운로드 실패. 큐에 추가하지 않음.");
-                    return;
-                }
-
-                taskQueue.Enqueue((matchedIslandId, sketchJson, imagePath));
-                lastProcessedTimestamp = currentTimestamp;
-                Debug.Log($"[Queue] Island ID {matchedIslandId} + JSON + 이미지({imagePath}) 추가. 큐 크기: {taskQueue.Count}");
+                sketchJson = Newtonsoft.Json.JsonConvert.SerializeObject(dict);
             }
             else
             {
-                Debug.LogWarning("[Listen] config 문서에 필수 필드가 없습니다.");
+                Debug.LogError($"[Listen] sketch_json 타입 오류: {sketchJsonObj.GetType()}");
+                return;
             }
-        });
 
-        Debug.Log("[EventListener] Firestore Listen 시작");
-    }
+            Debug.Log($"[Listen] 변환된 JSON: {sketchJson}");
 
+            // 🔥 timestamp 비교로 중복 방지
+            if (currentTimestamp.CompareTo(lastProcessedTimestamp) <= 0)
+            {
+                Debug.Log($"[Listen] 이미 처리된 요청 (current: {currentTimestamp.ToDateTime():HH:mm:ss}, last: {lastProcessedTimestamp.ToDateTime():HH:mm:ss}). 건너뜀.");
+                return;
+            }
+
+            // 🔥 이미지를 큐에 넣을 때 다운로드
+            string imagePath = await DownloadIslandImageWithUniqueFileName(matchedIslandId, currentTimestamp);
+
+            if (string.IsNullOrEmpty(imagePath))
+            {
+                Debug.LogError("[Listen] 이미지 다운로드 실패. 큐에 추가하지 않음.");
+                return;
+            }
+
+            taskQueue.Enqueue((matchedIslandId, sketchJson, imagePath));
+            lastProcessedTimestamp = currentTimestamp;
+            Debug.Log($"[Queue] Island ID {matchedIslandId} + JSON + 이미지({imagePath}) 추가. 큐 크기: {taskQueue.Count}");
+        }
+        else
+        {
+            Debug.LogWarning("[Listen] config 문서에 필수 필드가 없습니다.");
+        }
+    });
+
+    Debug.Log("[EventListener] Firestore Listen 시작");
+}
 
     IEnumerator ProcessQueue()
     {
