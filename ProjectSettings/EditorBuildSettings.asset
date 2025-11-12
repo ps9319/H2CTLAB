@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
-    path: Assets/Project/_Scene/TestScene.unity
+    path: Assets/Project/_Scene/_StartScene.unity
     guid: fc56a272fb9d49e4fa8ea24a28c01e2d
   - enabled: 1
     path: Assets/Project/_Scene/natural/winter.unity
