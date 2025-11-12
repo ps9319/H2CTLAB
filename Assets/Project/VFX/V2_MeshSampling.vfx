@@ -53,9 +53,9 @@ MonoBehaviour:
     collapsed: 1
   uiBounds:
     serializedVersion: 2
-    x: -501
+    x: -500
     y: -518
-    width: 1876
+    width: 1875
     height: 2474
 --- !u!114 &114350483966674976
 MonoBehaviour:
@@ -231,8 +231,8 @@ MonoBehaviour:
     max: Infinity
     enumValues: []
     descendantCount: 0
-  - name: New Color
-    path: New Color
+  - name: Color
+    path: Color
     tooltip: 
     sheetType: m_Vector4f
     realType: Color
@@ -7313,7 +7313,7 @@ MonoBehaviour:
   m_InputSlots: []
   m_OutputSlots:
   - {fileID: 8926484042661615709}
-  m_ExposedName: New Color
+  m_ExposedName: Color
   m_Exposed: 1
   m_Order: 13
   m_Category: 
@@ -7334,7 +7334,7 @@ MonoBehaviour:
     linkedSlots:
     - outputSlot: {fileID: 8926484042661615709}
       inputSlot: {fileID: 8926484042661615492}
-    position: {x: 436.31216, y: 350.52356}
+    position: {x: 409, y: 360}
     expandedSlots: []
     expanded: 0
 --- !u!114 &8926484042661615709
