@@ -15,8 +15,8 @@ public class ApplyParentVFXTexture : MonoBehaviour
 
     public string texturePropertyName = "Texture"; // 노출 프로퍼티 이름
 
-    void Start()
-    {
+    void OnEnable()
+    { 
         VisualEffect src = null;
 
         if (sourceMode == SourceMode.Parent)
