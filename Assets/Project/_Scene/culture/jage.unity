@@ -16897,7 +16897,7 @@ MonoBehaviour:
     enabled: 1
   - targets:
     - {fileID: 2069251096}
-    startTime: 44
+    startTime: 42.5
     endTime: Infinity
     enabled: 1
 --- !u!1001 &2099633042
