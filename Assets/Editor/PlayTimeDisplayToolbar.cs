@@ -40,6 +40,7 @@ namespace UnityToolbarExtender.Time
             else if (state == PlayModeStateChange.ExitingPlayMode)
             {
                 EditorApplication.update -= UpdateTimer;
+                timeScaleSliderValue = 1f; // 플레이모드 종료 시 슬라이더 초기화
             }
         }
 

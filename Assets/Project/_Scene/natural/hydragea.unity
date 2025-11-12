@@ -709,7 +709,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &876723367
 Transform:
   m_ObjectHideFlags: 0
@@ -893,7 +893,7 @@ VisualEffect:
         m_Overridden: 1
     m_Vector4f:
       m_Array:
-      - m_Value: {x: 0.3486546, y: 1.2363214, z: 2.1239884, w: 0}
+      - m_Value: {x: 0.43698224, y: 1.5294378, z: 2.6082377, w: 0}
         m_Name: color
         m_Overridden: 1
     m_Uint:
@@ -1094,7 +1094,7 @@ VisualEffect:
       m_Array: []
     m_NamedObject:
       m_Array:
-      - m_Value: {fileID: 0}
+      - m_Value: {fileID: 2800000, guid: f9d248e23eb6d774eafea52e248c36a3, type: 3}
         m_Name: Texture
         m_Overridden: 1
       - m_Value: {fileID: 2800000, guid: 260c875ee8b67ba4dbb5d1c5f6cda417, type: 3}
@@ -1320,7 +1320,7 @@ VisualEffect:
         m_Overridden: 1
     m_Vector4f:
       m_Array:
-      - m_Value: {x: 0.3486546, y: 1.2363214, z: 2.1239884, w: 0}
+      - m_Value: {x: 0.43698224, y: 1.5294378, z: 2.6082377, w: 0}
         m_Name: color
         m_Overridden: 1
     m_Uint:
@@ -2295,7 +2295,7 @@ VisualEffect:
       m_Array: []
     m_NamedObject:
       m_Array:
-      - m_Value: {fileID: 0}
+      - m_Value: {fileID: 2800000, guid: f9d248e23eb6d774eafea52e248c36a3, type: 3}
         m_Name: Texture
         m_Overridden: 1
       - m_Value: {fileID: 18700000, guid: 00741346ccf5b6841855671d3dd97a05, type: 2}
