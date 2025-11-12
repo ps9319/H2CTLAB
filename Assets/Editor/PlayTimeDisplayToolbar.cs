@@ -55,13 +55,15 @@ namespace UnityToolbarExtender.Time
         {
             GUILayout.FlexibleSpace();
 
-            // 슬라이더로 Time.timeScale 조작
+            // 항상 현재 Time.timeScale 값을 슬라이더에 반영
+            timeScaleSliderValue = UnityEngine.Time.timeScale;
+
             GUILayout.Label("TimeScale", PlayTimeToolbarStyles.timeLabelStyle, GUILayout.ExpandHeight(true));
             float newValue = GUILayout.HorizontalSlider(timeScaleSliderValue, 0f, 3f, GUILayout.Width(80));
-            if (Math.Abs(newValue - timeScaleSliderValue) > 0.001f)
+            if (Math.Abs(newValue - UnityEngine.Time.timeScale) > 0.001f)
             {
+                UnityEngine.Time.timeScale = newValue;
                 timeScaleSliderValue = newValue;
-                UnityEngine.Time.timeScale = timeScaleSliderValue;
             }
 
             string timeScaleString = $"{UnityEngine.Time.timeScale:F2}x";
