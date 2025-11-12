@@ -123,6 +123,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b19af53131f02240bef38d538481fd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sourceMode: 0
+  sourceVFX: {fileID: 0}
   texturePropertyName: Texture
 --- !u!1 &4358709673174115669
 GameObject:

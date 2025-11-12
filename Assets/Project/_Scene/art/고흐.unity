@@ -7164,7 +7164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b19af53131f02240bef38d538481fd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sourceMode: 0
+  sourceMode: 1
   sourceVFX: {fileID: 450522290}
   texturePropertyName: Texture
 --- !u!1 &1041031574
@@ -12594,7 +12594,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b19af53131f02240bef38d538481fd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sourceMode: 0
+  sourceMode: 1
   sourceVFX: {fileID: 1176051674}
   texturePropertyName: Texture
 --- !u!1 &1920621382

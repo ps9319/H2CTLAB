@@ -116,7 +116,7 @@ public class MeshSamplingAsignTxArr : MonoBehaviour
         }
         else
         {
-            int texIndex = Random.Range(0, mainTextureArray.depth - 1); // 마지막은 흰색
+            int texIndex = Random.Range(0, mainTextureArray.depth - 2); // 마지막은 흰색
             vfx.SetInt(TexIndexPropertyName, texIndex);
             vfx.SetBool(UseSetColorPropertyName, false);
         }
