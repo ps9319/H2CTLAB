@@ -1311,7 +1311,7 @@ VisualEffect:
         m_Overridden: 1
     m_Vector4f:
       m_Array:
-      - m_Value: {x: 2.6218934, y: 0.42332652, z: 0.09558986, w: 0}
+      - m_Value: {x: 2.7857616, y: 0.34139237, z: 0.013655695, w: 1}
         m_Name: color
         m_Overridden: 1
     m_Uint:
@@ -1366,6 +1366,7 @@ GameObject:
   - component: {fileID: 1055776039}
   - component: {fileID: 1055776045}
   - component: {fileID: 1055776046}
+  - component: {fileID: 1055776047}
   m_Layer: 0
   m_Name: MeshSampling1
   m_TagString: Untagged
@@ -1515,7 +1516,7 @@ VisualEffect:
       m_Array: []
     m_NamedObject:
       m_Array:
-      - m_Value: {fileID: 0}
+      - m_Value: {fileID: 2800000, guid: 59a2644f25be9c741b68ae8fa47b7040, type: 3}
         m_Name: Texture
         m_Overridden: 1
       - m_Value: {fileID: 2800000, guid: 260c875ee8b67ba4dbb5d1c5f6cda417, type: 3}
@@ -1567,6 +1568,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainTextureArray: {fileID: 18700000, guid: 7577c7924ce483548859dc6597df5835, type: 2}
   targetQuad: {fileID: 386532083}
+--- !u!114 &1055776047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1055776037}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d35ee58ef6dbd2042a3a16172fdc5561, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vfx: {fileID: 1055776040}
+  texturePropertyName: Texture
 --- !u!1 &1227249620
 GameObject:
   m_ObjectHideFlags: 0
@@ -1741,7 +1756,7 @@ VisualEffect:
         m_Overridden: 1
     m_Vector4f:
       m_Array:
-      - m_Value: {x: 2.6218934, y: 0.42332652, z: 0.09558986, w: 0}
+      - m_Value: {x: 2.7857616, y: 0.34139237, z: 0.013655695, w: 1}
         m_Name: color
         m_Overridden: 1
     m_Uint:
@@ -2152,6 +2167,7 @@ GameObject:
   - component: {fileID: 1885872538}
   - component: {fileID: 1885872540}
   - component: {fileID: 1885872541}
+  - component: {fileID: 1885872542}
   m_Layer: 0
   m_Name: MeshSampling2
   m_TagString: Untagged
@@ -2301,7 +2317,7 @@ VisualEffect:
       m_Array: []
     m_NamedObject:
       m_Array:
-      - m_Value: {fileID: 0}
+      - m_Value: {fileID: 2800000, guid: 59a2644f25be9c741b68ae8fa47b7040, type: 3}
         m_Name: Texture
         m_Overridden: 1
       - m_Value: {fileID: 18700000, guid: 7577c7924ce483548859dc6597df5835, type: 2}
@@ -2350,6 +2366,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainTextureArray: {fileID: 18700000, guid: 7577c7924ce483548859dc6597df5835, type: 2}
   targetQuad: {fileID: 5183353}
+--- !u!114 &1885872542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1885872532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d35ee58ef6dbd2042a3a16172fdc5561, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vfx: {fileID: 1885872539}
+  texturePropertyName: Texture
 --- !u!1 &2069251096
 GameObject:
   m_ObjectHideFlags: 0
@@ -2514,7 +2544,7 @@ MonoBehaviour:
     enabled: 1
   - targets:
     - {fileID: 2069251096}
-    startTime: 30
+    startTime: 33
     endTime: Infinity
     enabled: 1
 --- !u!4 &3942907859292105380
@@ -2559,6 +2589,7 @@ GameObject:
   - component: {fileID: 3942907859292105387}
   - component: {fileID: 3942907859292105386}
   - component: {fileID: 3942907859292105381}
+  - component: {fileID: 3942907859292105388}
   m_Layer: 0
   m_Name: TextureVFX
   m_TagString: Untagged
@@ -2646,6 +2677,20 @@ VisualEffect:
       m_Array: []
     m_Bool:
       m_Array: []
+--- !u!114 &3942907859292105388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3942907859292105385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d35ee58ef6dbd2042a3a16172fdc5561, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vfx: {fileID: 3942907859292105387}
+  texturePropertyName: Texture
 --- !u!1 &4606747344338702762
 GameObject:
   m_ObjectHideFlags: 0
@@ -2865,6 +2910,7 @@ GameObject:
   - component: {fileID: 4908683017250291980}
   - component: {fileID: 4908683017250291981}
   - component: {fileID: 4908683017250291970}
+  - component: {fileID: 4908683017250291983}
   m_Layer: 0
   m_Name: TextureVFX
   m_TagString: Untagged
@@ -2872,6 +2918,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &4908683017250291983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4908683017250291982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d35ee58ef6dbd2042a3a16172fdc5561, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vfx: {fileID: 4908683017250291980}
+  texturePropertyName: Texture
 --- !u!4 &5236527932371460424
 Transform:
   m_ObjectHideFlags: 0

@@ -767,7 +767,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 525963691}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.32628, y: -4.1237197, z: 4.1237197}
+  m_LocalPosition: {x: 5.32628, y: -4.1237197, z: 9.12372}
   m_LocalScale: {x: 8.247439, y: 8.247439, z: 0.041237198}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1026,6 +1026,7 @@ GameObject:
   - component: {fileID: 1055776039}
   - component: {fileID: 1055776045}
   - component: {fileID: 1055776046}
+  - component: {fileID: 1055776047}
   m_Layer: 0
   m_Name: MeshSampling1
   m_TagString: Untagged
@@ -1041,7 +1042,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1055776037}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.25, y: 0, z: 0}
+  m_LocalPosition: {x: -7.25, y: 0, z: 5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1172,7 +1173,7 @@ VisualEffect:
       m_Array: []
     m_NamedObject:
       m_Array:
-      - m_Value: {fileID: 2800000, guid: 97f0b2fabf03375498d0b703ab65155e, type: 3}
+      - m_Value: {fileID: 2800000, guid: c2bcbd6f44d0ca34a96c4457ba7ef880, type: 3}
         m_Name: Texture
         m_Overridden: 1
       - m_Value: {fileID: 2800000, guid: 260c875ee8b67ba4dbb5d1c5f6cda417, type: 3}
@@ -1224,6 +1225,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainTextureArray: {fileID: 18700000, guid: 2567e9856da76cb4fb814b53e456be3f, type: 2}
   targetQuad: {fileID: 386532083}
+--- !u!114 &1055776047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1055776037}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d35ee58ef6dbd2042a3a16172fdc5561, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vfx: {fileID: 1055776040}
+  texturePropertyName: Texture
 --- !u!1 &1227249620
 GameObject:
   m_ObjectHideFlags: 0
@@ -1429,7 +1444,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1308773056}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -11.37372, y: -4.1237197, z: 4.1237197}
+  m_LocalPosition: {x: -11.37372, y: -4.1237197, z: 9.12372}
   m_LocalScale: {x: 8.247439, y: 8.247439, z: 0.041237198}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1953,7 +1968,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1885872532}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9.45, y: 0, z: 0}
+  m_LocalPosition: {x: 9.45, y: 0, z: 5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2084,7 +2099,7 @@ VisualEffect:
       m_Array: []
     m_NamedObject:
       m_Array:
-      - m_Value: {fileID: 2800000, guid: 97f0b2fabf03375498d0b703ab65155e, type: 3}
+      - m_Value: {fileID: 2800000, guid: c2bcbd6f44d0ca34a96c4457ba7ef880, type: 3}
         m_Name: Texture
         m_Overridden: 1
       - m_Value: {fileID: 18700000, guid: 2567e9856da76cb4fb814b53e456be3f, type: 2}
@@ -2188,7 +2203,7 @@ MonoBehaviour:
     stereoPacking: 0
   _autoOpen: 1
   _autoPlayOnStart: 1
-  _loop: 0
+  _loop: 1
   _audioVolume: 1
   _audioBalance: 0
   _audioMuted: 0
@@ -2522,7 +2537,7 @@ MonoBehaviour:
     enabled: 1
   - targets:
     - {fileID: 2069251096}
-    startTime: 30
+    startTime: 34
     endTime: Infinity
     enabled: 1
 --- !u!1 &4606747344338702762
@@ -7504,7 +7519,7 @@ GameObject:
   - component: {fileID: 5236527932371460425}
   - component: {fileID: 5236527932371460430}
   m_Layer: 0
-  m_Name: Exploding Particle (1)
+  m_Name: Exploding Particle2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7594,7 +7609,7 @@ GameObject:
   - component: {fileID: 5236527933835052783}
   - component: {fileID: 5236527933835052776}
   m_Layer: 0
-  m_Name: Exploding Particle
+  m_Name: Exploding Particle1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17366,6 +17381,7 @@ GameObject:
   - component: {fileID: 6041733863534456953}
   - component: {fileID: 6041733863534456952}
   - component: {fileID: 6041733863534456951}
+  - component: {fileID: 6041733863534456956}
   m_Layer: 0
   m_Name: TextureVFX
   m_TagString: Untagged
@@ -17373,3 +17389,17 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &6041733863534456956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6041733863534456955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d35ee58ef6dbd2042a3a16172fdc5561, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vfx: {fileID: 6041733863534456953}
+  texturePropertyName: Texture
