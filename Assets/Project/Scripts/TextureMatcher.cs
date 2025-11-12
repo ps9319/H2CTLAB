@@ -8,27 +8,27 @@ public class TextureMatcher : MonoBehaviour
     [SerializeField] private List<VisualEffect> vfxList;
     [SerializeField] private string texturePropertyName = "Texture"; // VFX 속성 이름
     private List<Texture2D> textureList = new List<Texture2D>();
-    private bool isLoaded = false;
+    private List<bool> vfxLoaded;
 
     void Start()
     {
         LoadTexturesToVFX();
+        vfxLoaded = new List<bool>(new bool[vfxList.Count]);
     }
 
     private void Update()
     {
-        // VFX에 텍스처 설정
-        if (!isLoaded && vfxList != null && vfxList[0].gameObject.activeSelf && textureList.Count == vfxList.Count)
-        {
-            for (int i = 0; i < vfxList.Count; i++)
-            {
-                if (vfxList[i] != null && vfxList[i].gameObject.activeSelf)
-                {
-                    vfxList[i].SetTexture(texturePropertyName, textureList[i]);
-                }
-            }
+        // 텍스처나 VFX가 없으면 return
+        if (vfxList == null || textureList == null || vfxList.Count == 0 || textureList.Count == 0)
+            return;
 
-            isLoaded = true;
+        for (int i = 0; i < vfxList.Count; i++)
+        {
+            if (!vfxLoaded[i] && vfxList[i] != null && vfxList[i].gameObject.activeSelf)
+            {
+                vfxList[i].SetTexture(texturePropertyName, textureList[i]);
+                vfxLoaded[i] = true;
+            }
         }
     }
 
