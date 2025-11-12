@@ -6869,6 +6869,56 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainTextureArray: {fileID: 18700000, guid: 8845bfbf22065e04788e8a8a5616839d, type: 2}
   targetQuad: {fileID: 5183353}
+--- !u!1 &1965904881
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1965904883}
+  - component: {fileID: 1965904882}
+  m_Layer: 0
+  m_Name: TextureMatcher
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1965904882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1965904881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d35ee58ef6dbd2042a3a16172fdc5561, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vfxList:
+  - {fileID: 1055776040}
+  - {fileID: 65273055604977700}
+  - {fileID: 1885872539}
+  - {fileID: 140967314072191203}
+  texturePropertyName: Texture
+--- !u!4 &1965904883
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1965904881}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -12.869089, y: 2.556972, z: 18.71957}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2086808338
 GameObject:
   m_ObjectHideFlags: 0
@@ -6925,11 +6975,6 @@ MonoBehaviour:
     enabled: 1
   - targets:
     - {fileID: 500828879}
-    startTime: 30
-    endTime: Infinity
-    enabled: 1
-  - targets:
-    - {fileID: 695295455568349003}
     startTime: 30
     endTime: Infinity
     enabled: 1
@@ -7024,7 +7069,6 @@ GameObject:
   - component: {fileID: 65273055604977707}
   - component: {fileID: 65273055604977700}
   - component: {fileID: 65273055604977701}
-  - component: {fileID: 65273055604977706}
   m_Layer: 0
   m_Name: TextureVFX
   m_TagString: Untagged
@@ -7032,21 +7076,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &65273055604977706
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 65273055604977702}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b19af53131f02240bef38d538481fd1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sourceMode: 0
-  sourceVFX: {fileID: 0}
-  texturePropertyName: Texture
 --- !u!4 &65273055604977707
 Transform:
   m_ObjectHideFlags: 0
@@ -7073,7 +7102,6 @@ GameObject:
   - component: {fileID: 140967314072191212}
   - component: {fileID: 140967314072191203}
   - component: {fileID: 140967314072191202}
-  - component: {fileID: 140967314072191213}
   m_Layer: 0
   m_Name: TextureVFX
   m_TagString: Untagged
@@ -7176,21 +7204,6 @@ Transform:
   m_Father: {fileID: 1885872533}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &140967314072191213
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 140967314072191201}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b19af53131f02240bef38d538481fd1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sourceMode: 0
-  sourceVFX: {fileID: 0}
-  texturePropertyName: Texture
 --- !u!222 &695295453689786561
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7349,7 +7362,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &695295455568349007
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7382,6 +7395,7 @@ GameObject:
   m_Component:
   - component: {fileID: 695295455698009927}
   - component: {fileID: 695295455698009926}
+  - component: {fileID: 695295455698009928}
   m_Layer: 0
   m_Name: MediaPlayer
   m_TagString: Untagged
@@ -7411,7 +7425,7 @@ MonoBehaviour:
     alphaPacking: 0
     stereoPacking: 0
   _autoOpen: 1
-  _autoPlayOnStart: 1
+  _autoPlayOnStart: 0
   _loop: 1
   _audioVolume: 1
   _audioBalance: 0
@@ -7597,6 +7611,19 @@ Transform:
   m_Father: {fileID: 695295455568349007}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &695295455698009928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 695295455698009920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4076357ba00b16849910693a789c8f1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playDelay: 36
 --- !u!1 &4606747344338702762
 GameObject:
   m_ObjectHideFlags: 0
