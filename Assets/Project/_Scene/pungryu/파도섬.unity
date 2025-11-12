@@ -360,7 +360,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4076357ba00b16849910693a789c8f1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playDelay: 40
+  playDelay: 44
 --- !u!1001 &179386333
 PrefabInstance:
   m_ObjectHideFlags: 0
