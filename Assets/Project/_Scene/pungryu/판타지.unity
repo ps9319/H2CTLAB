@@ -368,6 +368,7 @@ GameObject:
   m_Component:
   - component: {fileID: 538239783}
   - component: {fileID: 538239782}
+  - component: {fileID: 538239784}
   m_Layer: 0
   m_Name: MediaPlayer
   m_TagString: Untagged
@@ -397,7 +398,7 @@ MonoBehaviour:
     alphaPacking: 0
     stereoPacking: 0
   _autoOpen: 1
-  _autoPlayOnStart: 1
+  _autoPlayOnStart: 0
   _loop: 0
   _audioVolume: 1
   _audioBalance: 0
@@ -583,6 +584,19 @@ Transform:
   m_Father: {fileID: 619740837}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &538239784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 538239781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4076357ba00b16849910693a789c8f1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playDelay: 40
 --- !u!1 &619740833
 GameObject:
   m_ObjectHideFlags: 0
@@ -2402,6 +2416,61 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1940579029}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1958120992
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1958120994}
+  - component: {fileID: 1958120993}
+  m_Layer: 0
+  m_Name: TextureMatcher
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1958120993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1958120992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d35ee58ef6dbd2042a3a16172fdc5561, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vfxList:
+  - {fileID: 2040912434}
+  - {fileID: 620531447}
+  - {fileID: 221522599}
+  - {fileID: 1149015646}
+  texturePropertyName: Texture
+--- !u!224 &1958120994
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1958120992}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 26.342018}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -8.410852, y: 2.1108007}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2040912432
 GameObject:
   m_ObjectHideFlags: 0
@@ -2815,7 +2884,6 @@ MonoBehaviour:
   - targets:
     - {fileID: 1289253056}
     - {fileID: 1212926266}
-    - {fileID: 619740833}
     startTime: 40
     endTime: Infinity
     enabled: 1
