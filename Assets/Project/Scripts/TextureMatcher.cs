@@ -15,7 +15,8 @@ public class TextureMatcher : MonoBehaviour
     private void LoadTextureToVFX()
     {
         // EventListener에서 현재 이미지 경로 가져오기
-        string localFilePath = EventListener.Instance.GetCurrentImagePath();
+        string localFilePath = EventListener.Instance?.GetCurrentImagePath() 
+            ?? @"C:\Users\h2ctlab_dev\final\Assets\Project\Resource\old\002_00001_.png";
         
         if (string.IsNullOrEmpty(localFilePath))
         {
