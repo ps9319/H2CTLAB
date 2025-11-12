@@ -239,16 +239,16 @@ $RECYCLE.BIN/
 # End of https://www.toptal.com/developers/gitignore/api/windows,macos,unity,visualstudiocode,rider
 
 # ai 생성 이미지 
-Assets/Scenes/Base/Resource/Images/AI_Images/**/**/*.png
-Assets/Scenes/Base/Resource/Images/AI_Images/**/**/*.png.meta
-Assets/Scenes/Base/Material/AImage/**/*.mat
-Assets/Scenes/Base/Material/AImage/**/*.mat.meta
-Assets/Scenes/0_Base/Material/AImage/
-Assets/Project/Resource/AI_Images/**/**/*.png
-Assets/Project/Resource/AI_Images/**/**/*.png.meta
-Assets/Project/Material/AImage/**/*.mat
-Assets/Project/Material/AImage/**/*.mat.meta
-Assets/Project/Material/AImage/
+# Assets/Scenes/Base/Resource/Images/AI_Images/**/**/*.png
+# Assets/Scenes/Base/Resource/Images/AI_Images/**/**/*.png.meta
+# Assets/Scenes/Base/Material/AImage/**/*.mat
+# Assets/Scenes/Base/Material/AImage/**/*.mat.meta
+# Assets/Scenes/0_Base/Material/AImage/
+# Assets/Project/Resource/AI_Images/**/**/*.png
+# Assets/Project/Resource/AI_Images/**/**/*.png.meta
+# Assets/Project/Material/AImage/**/*.mat
+# Assets/Project/Material/AImage/**/*.mat.meta
+# Assets/Project/Material/AImage/
 
 # Windows Thumbnail Cache
 Thumbs.db
