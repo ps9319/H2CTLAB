@@ -709,7 +709,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &876723367
 Transform:
   m_ObjectHideFlags: 0
@@ -1513,6 +1513,56 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: -24.418, y: -180, z: 4.923}
+--- !u!1 &1463192746
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1463192748}
+  - component: {fileID: 1463192747}
+  m_Layer: 0
+  m_Name: TextureMatcher
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1463192747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1463192746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d35ee58ef6dbd2042a3a16172fdc5561, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vfxList:
+  - {fileID: 1055776040}
+  - {fileID: 8197927490641935008}
+  - {fileID: 1885872539}
+  - {fileID: 7908786779792946367}
+  texturePropertyName: Texture
+--- !u!4 &1463192748
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1463192746}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -11.74286, y: 2.0281017, z: 8.890649}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1508497943
 GameObject:
   m_ObjectHideFlags: 0
@@ -1638,6 +1688,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1566235060}
   - component: {fileID: 1566235061}
+  - component: {fileID: 1566235062}
   m_Layer: 0
   m_Name: MediaPlayer
   m_TagString: Untagged
@@ -1682,7 +1733,7 @@ MonoBehaviour:
     alphaPacking: 0
     stereoPacking: 0
   _autoOpen: 1
-  _autoPlayOnStart: 1
+  _autoPlayOnStart: 0
   _loop: 0
   _audioVolume: 1
   _audioBalance: 0
@@ -1853,6 +1904,19 @@ MonoBehaviour:
     useTextureMips: 0
   m_VideoPath: 
   m_VideoLocation: 2
+--- !u!114 &1566235062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1566235059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4076357ba00b16849910693a789c8f1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playDelay: 35
 --- !u!1 &1573470564
 GameObject:
   m_ObjectHideFlags: 0
@@ -2362,7 +2426,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &2069251097
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2503,11 +2567,6 @@ MonoBehaviour:
     enabled: 1
   - targets:
     - {fileID: 500828879}
-    startTime: 30
-    endTime: Infinity
-    enabled: 1
-  - targets:
-    - {fileID: 2069251096}
     startTime: 30
     endTime: Infinity
     enabled: 1
@@ -17227,21 +17286,6 @@ Transform:
   m_Father: {fileID: 1885872533}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7908786779792946353
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7908786779792946365}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b19af53131f02240bef38d538481fd1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sourceMode: 0
-  sourceVFX: {fileID: 0}
-  texturePropertyName: Texture
 --- !u!1 &7908786779792946365
 GameObject:
   m_ObjectHideFlags: 0
@@ -17253,7 +17297,6 @@ GameObject:
   - component: {fileID: 7908786779792946352}
   - component: {fileID: 7908786779792946367}
   - component: {fileID: 7908786779792946366}
-  - component: {fileID: 7908786779792946353}
   m_Layer: 0
   m_Name: TextureVFX
   m_TagString: Untagged
@@ -17432,7 +17475,6 @@ GameObject:
   - component: {fileID: 8197927490641935023}
   - component: {fileID: 8197927490641935008}
   - component: {fileID: 8197927490641935009}
-  - component: {fileID: 8197927490641935022}
   m_Layer: 0
   m_Name: TextureVFX
   m_TagString: Untagged
@@ -17440,21 +17482,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &8197927490641935022
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8197927490641935010}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b19af53131f02240bef38d538481fd1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sourceMode: 0
-  sourceVFX: {fileID: 0}
-  texturePropertyName: Texture
 --- !u!4 &8197927490641935023
 Transform:
   m_ObjectHideFlags: 0
