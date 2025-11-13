@@ -372,8 +372,24 @@ public class EventListener : MonoBehaviour
     {
         if (scene.name == "_StartScene")
         {
+            // 🔥 씬 재생 완료 후 이미지 삭제
+            if (!string.IsNullOrEmpty(currentImagePath) && File.Exists(currentImagePath))
+            {
+                try
+                {
+                    File.Delete(currentImagePath);
+                    Debug.Log($"[Storage] 사용 완료된 이미지 삭제: {currentImagePath}");
+                    currentImagePath = ""; // 경로 초기화
+                }
+                catch (System.Exception e)
+                {
+                    Debug.LogError($"[Storage] 이미지 삭제 실패: {e.Message}");
+                }
+            }
+
             isScenePlaying = false;
             Debug.Log("[Scene] TestScene 복귀 - 다음 작업 대기 중");
         }
     }
+
 }
