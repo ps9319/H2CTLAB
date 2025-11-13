@@ -5,13 +5,79 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
-    path: Assets/Project/_Scene/_StartScene.unity
+    path: Assets/Project/_Scene/_final/_StartScene.unity
     guid: fc56a272fb9d49e4fa8ea24a28c01e2d
   - enabled: 1
-    path: Assets/Project/_Scene/natural/winter.unity
-    guid: a47db4dda2e3a4b4087bd63c4aaec428
+    path: Assets/Project/_Scene/_final/Art_dansaekhwa.unity
+    guid: 4647e7e58670d234295cfb18963fe4dc
+  - enabled: 1
+    path: Assets/Project/_Scene/_final/Art_klimt.unity
+    guid: d0d68b35d7b62c04b957307a39ca9859
+  - enabled: 1
+    path: Assets/Project/_Scene/_final/Art_monet.unity
+    guid: ca43c10b64f3c5f4f9478c156247f56f
+  - enabled: 1
+    path: Assets/Project/_Scene/_final/Art_origami.unity
+    guid: e38c11ddc43dad14481255f9ce0c8252
+  - enabled: 1
+    path: Assets/Project/_Scene/_final/Art_pollok.unity
+    guid: 81e4d15f86d024742a3ce7248696a4df
+  - enabled: 1
+    path: Assets/Project/_Scene/_final/Art_vangogh.unity
+    guid: db2ff523e820fcd4a9a94d53a5fb90b0
+  - enabled: 1
+    path: Assets/Project/_Scene/_final/Culture_baekja.unity
+    guid: d602323206348d24db706213f2128f50
+  - enabled: 1
+    path: Assets/Project/_Scene/_final/Culture_jage.unity
+    guid: c855c478455a5e14ca6756b5730958af
+  - enabled: 1
+    path: Assets/Project/_Scene/_final/Culture_jasu.unity
+    guid: 7e8554fa13069264cba8622a635138eb
+  - enabled: 1
+    path: Assets/Project/_Scene/_final/Culture_kimhongdo.unity
+    guid: e92d98ced2f816c48a1a422fd06f2d26
+  - enabled: 1
+    path: Assets/Project/_Scene/_final/Culture_sinyunbok.unity
+    guid: 93f5be5d9c7afb044b1181dc5a10bb73
+  - enabled: 1
+    path: Assets/Project/_Scene/_final/Culture_traditional.unity
+    guid: f28d899950c1fb540af1e5f3972ef2b8
+  - enabled: 1
+    path: Assets/Project/_Scene/_final/Nature_autumn.unity
+    guid: 7891e95f6deceaa47a5482ba87a5c504
+  - enabled: 1
+    path: Assets/Project/_Scene/_final/Nature_camelia.unity
+    guid: c3a957b31f6132f448eac2bf412f396c
+  - enabled: 1
+    path: Assets/Project/_Scene/_final/Nature_canola.unity
+    guid: 4c83fa614050a2e4f88b9c394e8da727
+  - enabled: 1
+    path: Assets/Project/_Scene/_final/Nature_cherry.unity
+    guid: 6aac4f258346c11418e56ca6b3f52650
+  - enabled: 1
+    path: Assets/Project/_Scene/_final/Nature_hydragea.unity
+    guid: ea5cef222a0a12348ba581886b680759
+  - enabled: 1
+    path: Assets/Project/_Scene/_final/Nature_winter.unity
+    guid: 80523dc07e8a0c74fbef82c8b7d75d4c
+  - enabled: 1
+    path: Assets/Project/_Scene/_final/Pungryu_constellation.unity
+    guid: 6f26640d99775b446be898c251ec1e41
+  - enabled: 1
+    path: Assets/Project/_Scene/_final/Pungryu_entertainment.unity
+    guid: 9b0e8c5e67e2a3a4e8f00e6a0b497b91
+  - enabled: 1
+    path: Assets/Project/_Scene/_final/Pungryu_fantasy.unity
+    guid: 956322e069b54c94baa6f37d139476fb
+  - enabled: 1
+    path: Assets/Project/_Scene/_final/Pungryu_landscape.unity
+    guid: 78abfe2bb079cf64ca4046d04f2e7646
+  - enabled: 1
+    path: Assets/Project/_Scene/_final/Pungryu_sumuk.unity
+    guid: e5923b6aa42a2014295fa1c0cd572b3d
+  - enabled: 1
+    path: Assets/Project/_Scene/_final/Pungryu_wave.unity
+    guid: da01f0eab038c954eaae05462351ce71
   m_configObjects: {}
