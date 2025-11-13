@@ -1751,7 +1751,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!64 &1470787314
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3695,7 +3695,7 @@ MonoBehaviour:
     - {fileID: 2375103763610336413}
     startTime: 0
     endTime: Infinity
-    enabled: 1
+    enabled: 0
   - vfxList:
     - {fileID: 1297768067}
     - {fileID: 1202190259}
