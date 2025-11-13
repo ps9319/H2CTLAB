@@ -19,7 +19,7 @@ public class EventListener : MonoBehaviour
         { "sinyunbok", "SinyunbokScene" },
         { "jasu", "JasuScene" },
         { "baekja", "BaekjaScene" },
-        { "hanok", "HanokScene" },
+        { "jage", "JageScene" },
         { "traditional", "TraditionalScene" },
     
         // 예술
@@ -35,7 +35,7 @@ public class EventListener : MonoBehaviour
         { "winter", "WinterScene" },
         { "camellia", "CamelliaScene" },
         { "cherry", "CherryScene" },
-        { "summer", "SummerScene" },
+        { "hydragea", "HydrageaScene" },
         { "aurora", "AuroraScene" },
         { "canola", "CanolaScene" },
     
