@@ -11,42 +11,41 @@ using UnityEngine.SceneManagement;
 
 public class EventListener : MonoBehaviour
 {
-    // 클래스 상단에 필드 추가
     private Dictionary<string, string> categorySceneMap = new Dictionary<string, string>()
     {
-        // 문화유산
-        { "kimhongdo", "KimHongdoScene" },
-        { "sinyunbok", "SinyunbokScene" },
-        { "jasu", "JasuScene" },
-        { "baekja", "BaekjaScene" },
-        { "hanok", "HanokScene" },
-        { "traditional", "TraditionalScene" },
+        // 예술 Art
+        { "dansaekhwa", "Art_dansaekhwa" },
+        { "klimt", "Art_klimt" },
+        { "monet", "Art_monet" },
+        { "origami", "Art_origami" },
+        { "pollock", "Art_pollock" },
+        { "vangogh", "Art_vangogh" },
+        
+        // 문화유산 Culture
+        { "baekja", "Culture_baekja" },
+        { "jage", "Culture_jage" },
+        { "jasu", "Culture_jasu" },
+        { "kimhongdo", "Culture_kimhongdo" },
+        { "sinyunbok", "Culture_sinyunbok"},
+        { "traditional", "Culture_traditional" },
     
-        // 예술
-        { "dansaekhwa", "DansaekhwaScene" },
-        { "monet", "MonetScene" },
-        { "vangogh", "VangoghScene" },
-        { "pollock", "PollockScene" },
-        { "origami", "OrigamiScene" },
-        { "klimt", "KlimtScene" },
+        // 자연 Natural
+        { "autumn", "Nature_autumn" },
+        { "camellia", "Nature_camellia" },
+        { "canola", "Nature_canola" },
+        { "cherry", "Nature_cherry" },
+        { "hydragea", "Nature_hydragea" },
+        { "winter", "Nature_winter" },
     
-        // 자연
-        { "autumn", "AutumnScene" },
-        { "winter", "WinterScene" },
-        { "camellia", "CamelliaScene" },
-        { "cherry", "CherryScene" },
-        { "summer", "SummerScene" },
-        { "aurora", "AuroraScene" },
-        { "canola", "CanolaScene" },
-    
-        // 풍류
-        { "constellation", "ConstellationScene" },
-        { "sumuk", "SumukScene" },
-        { "entertainment", "EntertainmentScene" },
-        { "landscape", "LandscapeScene" },
-        { "wave", "WaveScene" },
-        { "fantasy", "FantasyScene" }
+        // 풍류 Pungryu
+        { "constellation", "Pungryu_constellation" },
+        { "sumuk", "Pungryu_sumuk" },
+        { "entertainment", "Pungryu_entertainment" },
+        { "landscape", "Pungryu_landscape" },
+        { "wave", "Pungryu_wave" },
+        { "fantasy", "Pungryu_fantasy" }
     };
+    // 클래스 상단에 필드 추가
     private FirebaseStorage storage;
     private int currentIslandId = -1;
     private string currentSketchJson = "";
