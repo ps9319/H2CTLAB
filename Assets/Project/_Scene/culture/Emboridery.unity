@@ -4883,7 +4883,6 @@ GameObject:
   - component: {fileID: 808711963}
   - component: {fileID: 808711962}
   - component: {fileID: 808711965}
-  - component: {fileID: 808711966}
   m_Layer: 0
   m_Name: TextureVFX
   m_TagString: Untagged
@@ -5000,20 +4999,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sourceMode: 0
   sourceVFX: {fileID: 0}
-  texturePropertyName: Texture
---- !u!114 &808711966
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 808711961}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d35ee58ef6dbd2042a3a16172fdc5561, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  vfx: {fileID: 808711963}
   texturePropertyName: Texture
 --- !u!1 &813581988
 GameObject:
@@ -5325,7 +5310,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d35ee58ef6dbd2042a3a16172fdc5561, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vfx: {fileID: 819309568}
+  vfxList: []
   texturePropertyName: Texture
 --- !u!1 &824236218
 GameObject:
@@ -6427,7 +6412,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d35ee58ef6dbd2042a3a16172fdc5561, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vfx: {fileID: 1055776040}
+  vfxList: []
   texturePropertyName: Texture
 --- !u!1001 &1071641751
 PrefabInstance:
@@ -8611,7 +8596,6 @@ GameObject:
   - component: {fileID: 1476358519}
   - component: {fileID: 1476358518}
   - component: {fileID: 1476358521}
-  - component: {fileID: 1476358522}
   m_Layer: 0
   m_Name: TextureVFX
   m_TagString: Untagged
@@ -8728,20 +8712,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sourceMode: 0
   sourceVFX: {fileID: 0}
-  texturePropertyName: Texture
---- !u!114 &1476358522
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1476358517}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d35ee58ef6dbd2042a3a16172fdc5561, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  vfx: {fileID: 1476358519}
   texturePropertyName: Texture
 --- !u!1 &1476873690
 GameObject:
@@ -9857,6 +9827,56 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1600787116}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1603155823
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1603155825}
+  - component: {fileID: 1603155824}
+  m_Layer: 0
+  m_Name: TextureMatcher
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1603155824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1603155823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d35ee58ef6dbd2042a3a16172fdc5561, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vfxList:
+  - {fileID: 1055776040}
+  - {fileID: 819309568}
+  - {fileID: 1476358519}
+  - {fileID: 808711963}
+  texturePropertyName: Texture
+--- !u!4 &1603155825
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1603155823}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -12.370277, y: 1.5987123, z: 13.633181}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1631317753
 GameObject:
   m_ObjectHideFlags: 0
@@ -10758,6 +10778,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1643816213}
   - component: {fileID: 1643816212}
+  - component: {fileID: 1643816214}
   m_Layer: 0
   m_Name: MediaPlayer
   m_TagString: Untagged
@@ -10787,7 +10808,7 @@ MonoBehaviour:
     alphaPacking: 0
     stereoPacking: 0
   _autoOpen: 1
-  _autoPlayOnStart: 1
+  _autoPlayOnStart: 0
   _loop: 1
   _audioVolume: 1
   _audioBalance: 0
@@ -10973,6 +10994,19 @@ Transform:
   m_Father: {fileID: 2069251100}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1643816214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1643816211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4076357ba00b16849910693a789c8f1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playDelay: 45
 --- !u!1001 &1674502178
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15678,7 +15712,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &2069251097
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15730,7 +15764,7 @@ Canvas:
   serializedVersion: 3
   m_RenderMode: 1
   m_Camera: {fileID: 295536615}
-  m_PlaneDistance: 30
+  m_PlaneDistance: 50
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
@@ -15828,11 +15862,6 @@ MonoBehaviour:
     - {fileID: 1784385483}
     startTime: 26
     endTime: 50
-    enabled: 1
-  - targets:
-    - {fileID: 2069251096}
-    startTime: 42.5
-    endTime: Infinity
     enabled: 1
 --- !u!1001 &2099633042
 PrefabInstance:
