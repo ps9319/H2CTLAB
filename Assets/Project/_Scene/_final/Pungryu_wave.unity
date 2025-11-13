@@ -4037,7 +4037,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c1115b6cd478b6418dfbde57b56db60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jsonSource: 0
+  jsonSource: 1
   vfx: {fileID: 2375103765362842738}
   propertyName: positionMap
   sizeProperty: positionMapSize
@@ -4220,7 +4220,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c1115b6cd478b6418dfbde57b56db60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jsonSource: 0
+  jsonSource: 1
   vfx: {fileID: 2375103765540237605}
   propertyName: positionMap
   sizeProperty: positionMapSize
