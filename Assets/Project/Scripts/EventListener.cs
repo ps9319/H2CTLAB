@@ -210,7 +210,7 @@ public class EventListener : MonoBehaviour
     {
         while (true)
         {
-            if (SceneManager.GetActiveScene().name == "TestScene" &&
+            if (SceneManager.GetActiveScene().name == "_StartScene" &&
                 taskQueue.Count > 0 &&
                 !isScenePlaying)
             {
@@ -370,7 +370,7 @@ public class EventListener : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        if (scene.name == "TestScene")
+        if (scene.name == "_StartScene")
         {
             isScenePlaying = false;
             Debug.Log("[Scene] TestScene 복귀 - 다음 작업 대기 중");
