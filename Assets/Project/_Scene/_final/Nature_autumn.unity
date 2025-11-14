@@ -1579,13 +1579,13 @@ VisualEffect:
       m_Array: []
     m_NamedObject:
       m_Array:
-      - m_Value: {fileID: 2800000, guid: 59a2644f25be9c741b68ae8fa47b7040, type: 3}
+      - m_Value: {fileID: 0}
         m_Name: Texture
         m_Overridden: 1
       - m_Value: {fileID: 2800000, guid: 260c875ee8b67ba4dbb5d1c5f6cda417, type: 3}
         m_Name: New Texture2D
         m_Overridden: 1
-      - m_Value: {fileID: 18700000, guid: 7577c7924ce483548859dc6597df5835, type: 2}
+      - m_Value: {fileID: 18700000, guid: f4ee8a86e395ded41999f4318bf1049c, type: 2}
         m_Name: particleTextureArr
         m_Overridden: 1
     m_Bool:
@@ -1629,7 +1629,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8f733d97673dfe448d32926d8eeefe4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainTextureArray: {fileID: 18700000, guid: 7577c7924ce483548859dc6597df5835, type: 2}
+  mainTextureArray: {fileID: 18700000, guid: f4ee8a86e395ded41999f4318bf1049c, type: 2}
   targetQuad: {fileID: 386532083}
 --- !u!1 &1227249620
 GameObject:
@@ -2409,10 +2409,10 @@ VisualEffect:
       m_Array: []
     m_NamedObject:
       m_Array:
-      - m_Value: {fileID: 2800000, guid: 59a2644f25be9c741b68ae8fa47b7040, type: 3}
+      - m_Value: {fileID: 0}
         m_Name: Texture
         m_Overridden: 1
-      - m_Value: {fileID: 18700000, guid: 7577c7924ce483548859dc6597df5835, type: 2}
+      - m_Value: {fileID: 18700000, guid: f4ee8a86e395ded41999f4318bf1049c, type: 2}
         m_Name: particleTextureArr
         m_Overridden: 1
     m_Bool:
@@ -2456,7 +2456,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8f733d97673dfe448d32926d8eeefe4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainTextureArray: {fileID: 18700000, guid: 7577c7924ce483548859dc6597df5835, type: 2}
+  mainTextureArray: {fileID: 18700000, guid: f4ee8a86e395ded41999f4318bf1049c, type: 2}
   targetQuad: {fileID: 5183353}
 --- !u!1 &2069251096
 GameObject:
