@@ -430,7 +430,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8f733d97673dfe448d32926d8eeefe4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainTextureArray: {fileID: 18700000, guid: fd22bc8a0f116f44ca9862bd6205b465, type: 2}
+  mainTextureArray: {fileID: 18700000, guid: 5999c99ed7dba514da2ba9bbb4cff467, type: 2}
   targetQuad: {fileID: 2375103765620079281}
 --- !u!73398921 &221522598
 VFXRenderer:
@@ -540,10 +540,10 @@ VisualEffect:
       m_Array: []
     m_NamedObject:
       m_Array:
-      - m_Value: {fileID: 18700000, guid: fd22bc8a0f116f44ca9862bd6205b465, type: 2}
+      - m_Value: {fileID: 18700000, guid: 5999c99ed7dba514da2ba9bbb4cff467, type: 2}
         m_Name: particleTextureArr
         m_Overridden: 1
-      - m_Value: {fileID: 2800000, guid: a71f5f4c1f4882444951c9c0f25d8481, type: 3}
+      - m_Value: {fileID: 0}
         m_Name: Texture
         m_Overridden: 1
     m_Bool:
@@ -1144,7 +1144,7 @@ VisualEffect:
       m_Array: []
     m_NamedObject:
       m_Array:
-      - m_Value: {fileID: 18700000, guid: b154445882b912d42acf52fec16c942c, type: 2}
+      - m_Value: {fileID: 18700000, guid: ecac19f320f9c6646b6811561cf6b051, type: 2}
         m_Name: Texture2DArray
         m_Overridden: 1
     m_Bool:
@@ -1480,7 +1480,7 @@ VisualEffect:
       m_Array: []
     m_NamedObject:
       m_Array:
-      - m_Value: {fileID: 18700000, guid: b154445882b912d42acf52fec16c942c, type: 2}
+      - m_Value: {fileID: 18700000, guid: ecac19f320f9c6646b6811561cf6b051, type: 2}
         m_Name: Texture2DArray
         m_Overridden: 1
     m_Bool:
@@ -2643,10 +2643,10 @@ VisualEffect:
       m_Array: []
     m_NamedObject:
       m_Array:
-      - m_Value: {fileID: 18700000, guid: fd22bc8a0f116f44ca9862bd6205b465, type: 2}
+      - m_Value: {fileID: 18700000, guid: 5999c99ed7dba514da2ba9bbb4cff467, type: 2}
         m_Name: particleTextureArr
         m_Overridden: 1
-      - m_Value: {fileID: 2800000, guid: a71f5f4c1f4882444951c9c0f25d8481, type: 3}
+      - m_Value: {fileID: 0}
         m_Name: Texture
         m_Overridden: 1
     m_Bool:
@@ -2682,7 +2682,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8f733d97673dfe448d32926d8eeefe4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainTextureArray: {fileID: 18700000, guid: fd22bc8a0f116f44ca9862bd6205b465, type: 2}
+  mainTextureArray: {fileID: 18700000, guid: 5999c99ed7dba514da2ba9bbb4cff467, type: 2}
   targetQuad: {fileID: 2375103765278767604}
 --- !u!95 &2040912437
 Animator:
@@ -3390,7 +3390,7 @@ VisualEffect:
       m_Array: []
     m_NamedObject:
       m_Array:
-      - m_Value: {fileID: 18700000, guid: b154445882b912d42acf52fec16c942c, type: 2}
+      - m_Value: {fileID: 18700000, guid: ecac19f320f9c6646b6811561cf6b051, type: 2}
         m_Name: Texture2DArray
         m_Overridden: 1
     m_Bool:
