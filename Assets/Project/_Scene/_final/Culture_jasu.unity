@@ -10812,11 +10812,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 638c870cac4da414fba921606d504407, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _mediaSource: 0
+  _mediaSource: 1
   _mediaReference: {fileID: 11400000, guid: 40434be6c19e0084f8d6ecb4df4c69e6, type: 2}
   _mediaPath:
     _pathType: 2
-    _path: 
+    _path: "culture/\uC790\uC218.mp4"
   _fallbackMediaHints:
     transparency: 0
     alphaPacking: 0
