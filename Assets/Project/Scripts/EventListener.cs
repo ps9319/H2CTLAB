@@ -18,7 +18,7 @@ public class EventListener : MonoBehaviour
         { "klimt", "Art_klimt" },
         { "monet", "Art_monet" },
         { "origami", "Art_origami" },
-        { "pollock", "Art_pollock" },
+        { "pollock", "Art_pollok" },
         { "vangogh", "Art_vangogh" },
         
         // 문화유산 Culture
@@ -31,7 +31,7 @@ public class EventListener : MonoBehaviour
     
         // 자연 Natural
         { "autumn", "Nature_autumn" },
-        { "camellia", "Nature_camellia" },
+        { "camellia", "Nature_camelia" },
         { "canola", "Nature_canola" },
         { "cherry", "Nature_cherry" },
         { "hydragea", "Nature_hydragea" },
@@ -39,10 +39,10 @@ public class EventListener : MonoBehaviour
     
         // 풍류 Pungryu
         { "constellation", "Pungryu_constellation" },
-        { "sumuk", "Pungryu_sumuk" },
         { "entertainment", "Pungryu_entertainment" },
         { "landscape", "Pungryu_landscape" },
         { "wave", "Pungryu_wave" },
+        { "sumuk", "Pungryu_sumuk" },
         { "fantasy", "Pungryu_fantasy" }
     };
     // 클래스 상단에 필드 추가
