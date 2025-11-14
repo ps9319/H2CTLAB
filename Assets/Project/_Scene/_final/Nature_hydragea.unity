@@ -476,7 +476,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 295536613}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -1.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1138,13 +1138,13 @@ VisualEffect:
       m_Array: []
     m_NamedObject:
       m_Array:
-      - m_Value: {fileID: 2800000, guid: f9d248e23eb6d774eafea52e248c36a3, type: 3}
+      - m_Value: {fileID: 0}
         m_Name: Texture
         m_Overridden: 1
       - m_Value: {fileID: 2800000, guid: 260c875ee8b67ba4dbb5d1c5f6cda417, type: 3}
         m_Name: New Texture2D
         m_Overridden: 1
-      - m_Value: {fileID: 18700000, guid: 00741346ccf5b6841855671d3dd97a05, type: 2}
+      - m_Value: {fileID: 18700000, guid: a1aab6c1eb9801d49b383e916595e933, type: 2}
         m_Name: particleTextureArr
         m_Overridden: 1
     m_Bool:
@@ -1188,7 +1188,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8f733d97673dfe448d32926d8eeefe4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainTextureArray: {fileID: 18700000, guid: 00741346ccf5b6841855671d3dd97a05, type: 2}
+  mainTextureArray: {fileID: 18700000, guid: a1aab6c1eb9801d49b383e916595e933, type: 2}
   targetQuad: {fileID: 386532083}
 --- !u!1 &1227249620
 GameObject:
@@ -1771,7 +1771,7 @@ MonoBehaviour:
   _mediaReference: {fileID: 11400000, guid: 34f20a166ce3b6a43a9a8b7c13a34e70, type: 2}
   _mediaPath:
     _pathType: 2
-    _path: "nature/\uC218\uAD6D_Render.mp4"
+    _path: "Project/Resource/Video/nature/\uC218\uAD6D_Render.mp4"
   _fallbackMediaHints:
     transparency: 0
     alphaPacking: 0
@@ -1960,7 +1960,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4076357ba00b16849910693a789c8f1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playDelay: 35
+  playDelay: 34
 --- !u!1 &1573470564
 GameObject:
   m_ObjectHideFlags: 0
@@ -2403,10 +2403,10 @@ VisualEffect:
       m_Array: []
     m_NamedObject:
       m_Array:
-      - m_Value: {fileID: 2800000, guid: f9d248e23eb6d774eafea52e248c36a3, type: 3}
+      - m_Value: {fileID: 0}
         m_Name: Texture
         m_Overridden: 1
-      - m_Value: {fileID: 18700000, guid: 00741346ccf5b6841855671d3dd97a05, type: 2}
+      - m_Value: {fileID: 18700000, guid: a1aab6c1eb9801d49b383e916595e933, type: 2}
         m_Name: particleTextureArr
         m_Overridden: 1
     m_Bool:
@@ -2450,7 +2450,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8f733d97673dfe448d32926d8eeefe4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainTextureArray: {fileID: 18700000, guid: 00741346ccf5b6841855671d3dd97a05, type: 2}
+  mainTextureArray: {fileID: 18700000, guid: a1aab6c1eb9801d49b383e916595e933, type: 2}
   targetQuad: {fileID: 5183353}
 --- !u!1 &2069251096
 GameObject:

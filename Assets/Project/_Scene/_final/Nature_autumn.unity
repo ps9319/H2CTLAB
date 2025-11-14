@@ -985,8 +985,8 @@ MonoBehaviour:
   _mediaSource: 1
   _mediaReference: {fileID: 11400000, guid: 53e1fb7eca089514a8e4938c1128b351, type: 2}
   _mediaPath:
-    _pathType: 2
-    _path: "nature/\uAC00\uC744_Render.mp4"
+    _pathType: 3
+    _path: "Project/Resource/Video/nature/\uAC00\uC744_Render.mp4"
   _fallbackMediaHints:
     transparency: 0
     alphaPacking: 0

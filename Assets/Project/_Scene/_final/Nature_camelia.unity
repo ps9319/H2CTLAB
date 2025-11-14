@@ -476,7 +476,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 295536613}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -1.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1946,8 +1946,8 @@ MonoBehaviour:
   _mediaSource: 1
   _mediaReference: {fileID: 11400000, guid: 570865629595c6746b770232e216db58, type: 2}
   _mediaPath:
-    _pathType: 2
-    _path: "nature/\uB3D9\uBC31\uAF43_Render.mp4"
+    _pathType: 3
+    _path: "Project/Resource/Video/nature/\uB3D9\uBC31\uAF43_Render.mp4"
   _fallbackMediaHints:
     transparency: 0
     alphaPacking: 0
