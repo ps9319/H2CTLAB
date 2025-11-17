@@ -1727,7 +1727,7 @@ MonoBehaviour:
   _mediaReference: {fileID: 11400000, guid: 34f20a166ce3b6a43a9a8b7c13a34e70, type: 2}
   _mediaPath:
     _pathType: 2
-    _path: "Project/Resource/Video/nature/\uC218\uAD6D_Render.mp4"
+    _path: "nature/\uC218\uAD6D_Render.mp4"
   _fallbackMediaHints:
     transparency: 0
     alphaPacking: 0
@@ -1917,7 +1917,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playDelay: 34
-  repeatCount: 3
+  repeatCount: 1
 --- !u!1 &1573470564
 GameObject:
   m_ObjectHideFlags: 0
