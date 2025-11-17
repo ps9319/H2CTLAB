@@ -13406,7 +13406,7 @@ MonoBehaviour:
     alphaPacking: 0
     stereoPacking: 0
   _autoOpen: 1
-  _autoPlayOnStart: 0
+  _autoPlayOnStart: 1
   _loop: 1
   _audioVolume: 1
   _audioBalance: 0
@@ -13589,8 +13589,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4076357ba00b16849910693a789c8f1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playDelay: 32
-  repeatCount: 3
+  playDelay: 31
+  repeatCount: 4
 --- !u!1 &2070955647
 GameObject:
   m_ObjectHideFlags: 0
