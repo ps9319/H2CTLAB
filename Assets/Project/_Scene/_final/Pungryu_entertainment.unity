@@ -361,6 +361,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playDelay: 47
+  repeatCount: 5
 --- !u!1 &221522594
 GameObject:
   m_ObjectHideFlags: 0

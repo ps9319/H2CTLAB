@@ -7891,13 +7891,13 @@ MonoBehaviour:
   _mediaReference: {fileID: 11400000, guid: 24851c94f685bfc44a47bd3bef73b4ad, type: 2}
   _mediaPath:
     _pathType: 2
-    _path: "culture/\uC2E0\uC724\uBCF5.mp4"
+    _path: "culture/\uC2E0\uC724\uBCF5_Render.mp4"
   _fallbackMediaHints:
     transparency: 0
     alphaPacking: 0
     stereoPacking: 0
   _autoOpen: 1
-  _autoPlayOnStart: 0
+  _autoPlayOnStart: 1
   _loop: 1
   _audioVolume: 1
   _audioBalance: 0
@@ -8081,6 +8081,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playDelay: 44
+  repeatCount: 2
 --- !u!1 &1308773056
 GameObject:
   m_ObjectHideFlags: 0
