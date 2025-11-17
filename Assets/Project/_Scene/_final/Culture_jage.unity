@@ -16974,11 +16974,6 @@ MonoBehaviour:
     startTime: 26
     endTime: 50
     enabled: 1
-  - targets:
-    - {fileID: 1773581969}
-    startTime: 60
-    endTime: Infinity
-    enabled: 1
 --- !u!1001 &2099633042
 PrefabInstance:
   m_ObjectHideFlags: 0
