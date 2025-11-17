@@ -5922,7 +5922,7 @@ VisualEffect:
       m_Array: []
     m_NamedObject:
       m_Array:
-      - m_Value: {fileID: 2800000, guid: 64024ac890538e54f9b0f4574b81c50d, type: 3}
+      - m_Value: {fileID: 0}
         m_Name: Texture
         m_Overridden: 1
       - m_Value: {fileID: 2800000, guid: 260c875ee8b67ba4dbb5d1c5f6cda417, type: 3}
@@ -6820,7 +6820,7 @@ VisualEffect:
       m_Array: []
     m_NamedObject:
       m_Array:
-      - m_Value: {fileID: 2800000, guid: 64024ac890538e54f9b0f4574b81c50d, type: 3}
+      - m_Value: {fileID: 0}
         m_Name: Texture
         m_Overridden: 1
       - m_Value: {fileID: 18700000, guid: 8845bfbf22065e04788e8a8a5616839d, type: 2}
@@ -7426,7 +7426,7 @@ MonoBehaviour:
     stereoPacking: 0
   _autoOpen: 1
   _autoPlayOnStart: 0
-  _loop: 1
+  _loop: 0
   _audioVolume: 1
   _audioBalance: 0
   _audioMuted: 0
@@ -7623,7 +7623,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4076357ba00b16849910693a789c8f1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playDelay: 36
+  playDelay: 33.5
   repeatCount: 4
 --- !u!1 &4606747344338702762
 GameObject:
