@@ -3251,8 +3251,8 @@ MonoBehaviour:
     alphaPacking: 0
     stereoPacking: 0
   _autoOpen: 1
-  _autoPlayOnStart: 0
-  _loop: 1
+  _autoPlayOnStart: 1
+  _loop: 0
   _audioVolume: 1
   _audioBalance: 0
   _audioMuted: 0
@@ -3435,6 +3435,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playDelay: 44
+  repeatCount: 2
 --- !u!1 &424517403
 GameObject:
   m_ObjectHideFlags: 0

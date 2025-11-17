@@ -361,6 +361,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playDelay: 44
+  repeatCount: 1
 --- !u!1001 &179386333
 PrefabInstance:
   m_ObjectHideFlags: 0

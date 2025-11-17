@@ -597,6 +597,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playDelay: 47
+  repeatCount: 1
 --- !u!1 &619740833
 GameObject:
   m_ObjectHideFlags: 0
@@ -2922,6 +2923,7 @@ MonoBehaviour:
   - targets:
     - {fileID: 2375103765261756811}
     - {fileID: 1093889930}
+    - {fileID: 1470787313}
     startTime: 0
     endTime: 44
     enabled: 1
