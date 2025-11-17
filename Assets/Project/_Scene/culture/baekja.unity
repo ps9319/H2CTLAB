@@ -5650,7 +5650,7 @@ VisualEffect:
       m_Array: []
     m_NamedObject:
       m_Array:
-      - m_Value: {fileID: 2800000, guid: a09183065fa48e64d8efdbf81450baf7, type: 3}
+      - m_Value: {fileID: 0}
         m_Name: Texture
         m_Overridden: 1
       - m_Value: {fileID: 2800000, guid: 260c875ee8b67ba4dbb5d1c5f6cda417, type: 3}
@@ -6341,7 +6341,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c1115b6cd478b6418dfbde57b56db60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jsonSource: 0
+  jsonSource: 1
   vfx: {fileID: 972016560}
   propertyName: positionMap
   sizeProperty: positionMapSize
@@ -6708,7 +6708,7 @@ VisualEffect:
       m_Array: []
     m_NamedObject:
       m_Array:
-      - m_Value: {fileID: 2800000, guid: a09183065fa48e64d8efdbf81450baf7, type: 3}
+      - m_Value: {fileID: 0}
         m_Name: Texture
         m_Overridden: 1
       - m_Value: {fileID: 2800000, guid: 260c875ee8b67ba4dbb5d1c5f6cda417, type: 3}
@@ -8166,7 +8166,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c1115b6cd478b6418dfbde57b56db60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jsonSource: 0
+  jsonSource: 1
   vfx: {fileID: 1308773058}
   propertyName: positionMap
   sizeProperty: positionMapSize
