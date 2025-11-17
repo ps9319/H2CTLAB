@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
@@ -80,6 +81,33 @@ public class EventListener : MonoBehaviour
         instance = this;
         DontDestroyOnLoad(gameObject);
         Debug.Log("[EventListener] 싱글톤 생성 및 DontDestroyOnLoad 적용");
+    }
+
+    void Update()
+    {
+        // 🔥 테스트용: Q 키로 0번 씬(_StartScene)으로 복귀
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            Debug.Log("[Test] Q 키 입력 감지 - 0번 씬으로 복귀");
+        
+            // 현재 재생 중인 이미지 삭제
+            if (!string.IsNullOrEmpty(currentImagePath) && File.Exists(currentImagePath))
+            {
+                try
+                {
+                    File.Delete(currentImagePath);
+                    Debug.Log($"[Storage] 강제 복귀 시 이미지 삭제: {currentImagePath}");
+                    currentImagePath = "";
+                }
+                catch (System.Exception e)
+                {
+                    Debug.LogError($"[Storage] 이미지 삭제 실패: {e.Message}");
+                }
+            }
+        
+            isScenePlaying = false;
+            SceneManager.LoadScene(0);
+        }
     }
 
     void Start()

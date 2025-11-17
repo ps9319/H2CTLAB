@@ -27,7 +27,7 @@ public class MeshSamplingAsignTxArr : MonoBehaviour
 
     void Awake()
     {
-        Initialize();
+        // Initialize();
     }
 
     void Start()

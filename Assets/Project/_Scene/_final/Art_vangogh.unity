@@ -13396,18 +13396,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 638c870cac4da414fba921606d504407, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _mediaSource: 0
+  _mediaSource: 1
   _mediaReference: {fileID: 11400000, guid: e4d15c54e9f118a4985b085ab257a33b, type: 2}
   _mediaPath:
     _pathType: 2
-    _path: 
+    _path: art/VanGogh_Render.mp4
   _fallbackMediaHints:
     transparency: 0
     alphaPacking: 0
     stereoPacking: 0
   _autoOpen: 1
-  _autoPlayOnStart: 1
-  _loop: 1
+  _autoPlayOnStart: 0
+  _loop: 0
   _audioVolume: 1
   _audioBalance: 0
   _audioMuted: 0
