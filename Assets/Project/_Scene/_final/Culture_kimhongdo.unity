@@ -17139,11 +17139,6 @@ MonoBehaviour:
     startTime: 26
     endTime: 50
     enabled: 1
-  - targets:
-    - {fileID: 1107356431}
-    startTime: 60
-    endTime: Infinity
-    enabled: 1
 --- !u!1 &2090006196
 GameObject:
   m_ObjectHideFlags: 0

@@ -2931,11 +2931,6 @@ MonoBehaviour:
     startTime: 40
     endTime: Infinity
     enabled: 1
-  - targets:
-    - {fileID: 796424494}
-    startTime: 60
-    endTime: Infinity
-    enabled: 1
 --- !u!1 &2375103764031541552
 GameObject:
   m_ObjectHideFlags: 0
