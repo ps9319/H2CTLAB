@@ -1176,6 +1176,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playDelay: 36.5
+  repeatCount: 3
 --- !u!1 &876723366
 GameObject:
   m_ObjectHideFlags: 0
@@ -1883,50 +1884,6 @@ MonoBehaviour:
   jsonFile: {fileID: 4900000, guid: 9314c37542a13804eb7a82b99a09596e, type: 3}
   targetQuad: {fileID: 386532083}
   quadLocalOffset: {x: -0.5, y: -0.5, z: 50}
---- !u!1 &1425645966
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1425645968}
-  - component: {fileID: 1425645967}
-  m_Layer: 0
-  m_Name: SceneEnder
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &1425645967
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1425645966}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2be9a4e659580a4f95ef11c456c4410, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &1425645968
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1425645966}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.6642256, y: 2.821706, z: 15.30303}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 11
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1508497943
 GameObject:
   m_ObjectHideFlags: 0
@@ -2618,11 +2575,6 @@ MonoBehaviour:
   - targets:
     - {fileID: 500828879}
     startTime: 30
-    endTime: Infinity
-    enabled: 1
-  - targets:
-    - {fileID: 1425645966}
-    startTime: 60
     endTime: Infinity
     enabled: 1
 --- !u!4 &3942907859292105380
