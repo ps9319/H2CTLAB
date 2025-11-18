@@ -259,7 +259,5 @@ pr.bat
 
 ###
 Assets/AVProVideo
-Assets/StreamingAssets
-Assets/StreamingAssets.meta
 Assets/Package/AVProVideo
 AVProVideo.meta
