@@ -574,7 +574,7 @@ MonoBehaviour:
     stereoPacking: 0
   _autoOpen: 1
   _autoPlayOnStart: 1
-  _loop: 0
+  _loop: 1
   _audioVolume: 1
   _audioBalance: 0
   _audioMuted: 0
