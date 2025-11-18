@@ -155,13 +155,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c1115b6cd478b6418dfbde57b56db60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  jsonSource: 0
   vfx: {fileID: 3752054037198311974}
   propertyName: positionMap
   sizeProperty: positionMapSize
   jsonFile: {fileID: 4900000, guid: 9314c37542a13804eb7a82b99a09596e, type: 3}
   targetQuad: {fileID: 0}
   quadLocalOffset: {x: -0.5, y: -0.6, z: 0}
-  quadScaleOffset: 0.9
 --- !u!114 &3752054037198311896
 MonoBehaviour:
   m_ObjectHideFlags: 0
