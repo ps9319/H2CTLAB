@@ -161,13 +161,12 @@
       "url": "https://packages.unity.com"
     },
     "jp.keijiro.klak.ndi": {
-      "version": "2.1.5",
+      "version": "file:jp.keijiro.klak.ndi",
       "depth": 0,
-      "source": "registry",
+      "source": "embedded",
       "dependencies": {
         "com.unity.modules.screencapture": "1.0.0"
-      },
-      "url": "https://registry.npmjs.com"
+      }
     },
     "com.unity.modules.ai": {
       "version": "1.0.0",
