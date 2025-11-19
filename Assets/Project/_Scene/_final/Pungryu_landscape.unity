@@ -654,7 +654,7 @@ PrefabInstance:
     - target: {fileID: 168510826369863874, guid: 233238481f6c4ab4a8de4fd1f2f555e1,
         type: 3}
       propertyPath: _autoPlayOnStart
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 168510826369863874, guid: 233238481f6c4ab4a8de4fd1f2f555e1,
         type: 3}
