@@ -5520,7 +5520,7 @@ VisualEffect:
       - m_Value: 1
         m_Name: scale
         m_Overridden: 1
-      - m_Value: 0.05
+      - m_Value: 0
         m_Name: emission
         m_Overridden: 1
     m_Vector2f:
@@ -5545,7 +5545,7 @@ VisualEffect:
       - m_Value: {x: 0.97, y: 0.97, z: 0.97}
         m_Name: canvas_scale
         m_Overridden: 1
-      - m_Value: {x: 1.9547312, y: 1.931516, z: 0.0096}
+      - m_Value: {x: 0, y: 0, z: 0}
         m_Name: targetQuadScale
         m_Overridden: 1
     m_Vector4f:
@@ -6578,7 +6578,7 @@ VisualEffect:
       - m_Value: 0.21134984
         m_Name: alpha
         m_Overridden: 1
-      - m_Value: 0.05
+      - m_Value: 0
         m_Name: emission
         m_Overridden: 1
     m_Vector2f:
@@ -6603,7 +6603,7 @@ VisualEffect:
       - m_Value: {x: 0.97, y: 0.97, z: 0.97}
         m_Name: canvas_scale
         m_Overridden: 1
-      - m_Value: {x: 1.9472538, y: 1.9265264, z: 0.0096}
+      - m_Value: {x: 0, y: 0, z: 0}
         m_Name: targetQuadScale
         m_Overridden: 1
     m_Vector4f:
