@@ -108,6 +108,17 @@ public class EventListener : MonoBehaviour
             isScenePlaying = false;
             SceneManager.LoadScene(0);
         }
+        
+        // T 누르면 다음 씬으로 (빌드 설정에 등록된 씬 기준)
+        // TODO 삭제 필요
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            int current = SceneManager.GetActiveScene().buildIndex;
+            int count = SceneManager.sceneCountInBuildSettings;
+            int next = (current + 1) % Mathf.Max(1, count); // 안전 처리
+            Debug.Log($"[Scene] T pressed: loading scene index {next}");
+            SceneManager.LoadScene(next);
+        }
     }
 
     void Start()
