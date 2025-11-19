@@ -268,7 +268,7 @@ VisualEffect:
       - m_Value: 0
         m_Name: zPosition
         m_Overridden: 1
-      - m_Value: 1
+      - m_Value: 0.6
         m_Name: rangeRatio
         m_Overridden: 1
       - m_Value: 5
@@ -2190,7 +2190,7 @@ VisualEffect:
       - m_Value: 0
         m_Name: zPosition
         m_Overridden: 1
-      - m_Value: 1
+      - m_Value: 0.6
         m_Name: rangeRatio
         m_Overridden: 1
       - m_Value: 5
