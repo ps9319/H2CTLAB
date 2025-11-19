@@ -620,7 +620,7 @@ VisualEffect:
       - m_Value: 0
         m_Name: diffusion
         m_Overridden: 1
-      - m_Value: 1000
+      - m_Value: 1
         m_Name: spawnRatio
         m_Overridden: 1
     m_Vector2f:
@@ -11657,7 +11657,7 @@ VisualEffect:
       - m_Value: 0
         m_Name: diffusion
         m_Overridden: 1
-      - m_Value: 1000
+      - m_Value: 1
         m_Name: spawnRatio
         m_Overridden: 1
     m_Vector2f:
