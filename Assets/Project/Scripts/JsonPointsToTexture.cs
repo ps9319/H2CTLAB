@@ -173,7 +173,7 @@ public class JsonPointsToTexture : MonoBehaviour
         }
         catch (Exception e)
         {
-            Debug.LogError($"[JsonPointsToTexture] JSON 처리 실패: {e.Message}");
+            // Debug.LogError($"[JsonPointsToTexture] JSON 처리 실패: {e.Message}");
         }
     }
 

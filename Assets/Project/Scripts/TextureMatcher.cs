@@ -40,13 +40,13 @@ public class TextureMatcher : MonoBehaviour
 
         if (string.IsNullOrEmpty(localFilePath))
         {
-            Debug.LogError("EventListener에서 이미지 경로를 가져올 수 없습니다.");
+            // Debug.LogError("EventListener에서 이미지 경로를 가져올 수 없습니다.");
             return;
         }
 
         if (!File.Exists(localFilePath))
         {
-            Debug.LogError($"파일을 찾을 수 없습니다: {localFilePath}");
+            // Debug.LogError($"파일을 찾을 수 없습니다: {localFilePath}");
             return;
         }
 
@@ -58,11 +58,11 @@ public class TextureMatcher : MonoBehaviour
             texture.LoadImage(fileData);
 
 
-            Debug.Log($"Texture 로드 성공: {localFilePath}");
+            // Debug.Log($"Texture 로드 성공: {localFilePath}");
         }
         catch (System.Exception ex)
         {
-            Debug.LogError($"텍스처 로드 실패: {ex.Message}");
+            // Debug.LogError($"텍스처 로드 실패: {ex.Message}");
         }
     }
 }

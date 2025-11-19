@@ -80,7 +80,7 @@ public class EventListener : MonoBehaviour
 
         instance = this;
         DontDestroyOnLoad(gameObject);
-        Debug.Log("[EventListener] 싱글톤 생성 및 DontDestroyOnLoad 적용");
+        // Debug.Log("[EventListener] 싱글톤 생성 및 DontDestroyOnLoad 적용");
     }
 
     void Update()
@@ -96,12 +96,12 @@ public class EventListener : MonoBehaviour
                 try
                 {
                     File.Delete(currentImagePath);
-                    Debug.Log($"[Storage] 강제 복귀 시 이미지 삭제: {currentImagePath}");
+                    // Debug.Log($"[Storage] 강제 복귀 시 이미지 삭제: {currentImagePath}");
                     currentImagePath = "";
                 }
                 catch (System.Exception e)
                 {
-                    Debug.LogError($"[Storage] 이미지 삭제 실패: {e.Message}");
+                    // Debug.LogError($"[Storage] 이미지 삭제 실패: {e.Message}");
                 }
             }
         
@@ -116,7 +116,7 @@ public class EventListener : MonoBehaviour
             int current = SceneManager.GetActiveScene().buildIndex;
             int count = SceneManager.sceneCountInBuildSettings;
             int next = (current + 1) % Mathf.Max(1, count); // 안전 처리
-            Debug.Log($"[Scene] T pressed: loading scene index {next}");
+            // Debug.Log($"[Scene] T pressed: loading scene index {next}");
             SceneManager.LoadScene(next);
         }
     }
@@ -131,14 +131,14 @@ public class EventListener : MonoBehaviour
                 db = FirebaseFirestore.DefaultInstance;
                 storage = FirebaseStorage.DefaultInstance;
                 queueCountRef = db.Collection(CONFIG_COLLECTION).Document("tablet_config");
-                Debug.Log("[EventListener] Firebase Firestore 초기화 성공");
+                // Debug.Log("[EventListener] Firebase Firestore 초기화 성공");
 
                 ListenForConfigChanges();
                 StartCoroutine(ProcessQueue());
             }
             else
             {
-                Debug.LogError($"[EventListener] Firebase 종속성 문제: {dependencyStatus}");
+                // Debug.LogError($"[EventListener] Firebase 종속성 문제: {dependencyStatus}");
             }
         });
     }
@@ -148,7 +148,7 @@ public class EventListener : MonoBehaviour
         if (configListenerRegistration != null)
         {
             configListenerRegistration.Dispose();
-            Debug.Log("[EventListener] Firestore Listener 해제");
+            // Debug.Log("[EventListener] Firestore Listener 해제");
         }
 
         if (instance == this)
@@ -169,16 +169,16 @@ public class EventListener : MonoBehaviour
         if (initialSnapshot.Exists && initialSnapshot.TryGetValue("updated_at", out object timestampObj))
         {
             lastProcessedTimestamp = (Timestamp)timestampObj;
-            Debug.Log($"[Listen] 초기 timestamp 설정: {lastProcessedTimestamp.ToDateTime():yyyy-MM-dd HH:mm:ss}");
+            // Debug.Log($"[Listen] 초기 timestamp 설정: {lastProcessedTimestamp.ToDateTime():yyyy-MM-dd HH:mm:ss}");
         }
         else
         {
-            Debug.LogWarning("[Listen] 초기 문서를 찾을 수 없습니다.");
+            // Debug.LogWarning("[Listen] 초기 문서를 찾을 수 없습니다.");
         }
     }
     catch (System.Exception e)
     {
-        Debug.LogError($"[Listen] 초기 timestamp 읽기 실패: {e.Message}");
+        // Debug.LogError($"[Listen] 초기 timestamp 읽기 실패: {e.Message}");
     }
 
     // 이제 리스너 등록
@@ -186,7 +186,7 @@ public class EventListener : MonoBehaviour
     {
         if (!snapshot.Exists)
         {
-            Debug.LogWarning("[Listen] config/current_task 문서가 존재하지 않습니다.");
+            // Debug.LogWarning("[Listen] config/current_task 문서가 존재하지 않습니다.");
             return;
         }
 
@@ -208,16 +208,16 @@ public class EventListener : MonoBehaviour
             }
             else
             {
-                Debug.LogError($"[Listen] sketch_json 타입 오류: {sketchJsonObj.GetType()}");
+                // Debug.LogError($"[Listen] sketch_json 타입 오류: {sketchJsonObj.GetType()}");
                 return;
             }
 
-            Debug.Log($"[Listen] 변환된 JSON: {sketchJson}");
+            // Debug.Log($"[Listen] 변환된 JSON: {sketchJson}");
 
             // 🔥 timestamp 비교로 중복 방지
             if (currentTimestamp.CompareTo(lastProcessedTimestamp) <= 0)
             {
-                Debug.Log($"[Listen] 이미 처리된 요청 (current: {currentTimestamp.ToDateTime():HH:mm:ss}, last: {lastProcessedTimestamp.ToDateTime():HH:mm:ss}). 건너뜀.");
+                // Debug.Log($"[Listen] 이미 처리된 요청 (current: {currentTimestamp.ToDateTime():HH:mm:ss}, last: {lastProcessedTimestamp.ToDateTime():HH:mm:ss}). 건너뜀.");
                 return;
             }
 
@@ -226,23 +226,23 @@ public class EventListener : MonoBehaviour
 
             if (string.IsNullOrEmpty(imagePath))
             {
-                Debug.LogError("[Listen] 이미지 다운로드 실패. 큐에 추가하지 않음.");
+                // Debug.LogError("[Listen] 이미지 다운로드 실패. 큐에 추가하지 않음.");
                 return;
             }
 
             taskQueue.Enqueue((matchedIslandId, sketchJson, imagePath));
             lastProcessedTimestamp = currentTimestamp;
-            Debug.Log($"[Queue] Island ID {matchedIslandId} + JSON + 이미지({imagePath}) 추가. 큐 크기: {taskQueue.Count}");
+            // Debug.Log($"[Queue] Island ID {matchedIslandId} + JSON + 이미지({imagePath}) 추가. 큐 크기: {taskQueue.Count}");
             
             UpdateQueueCount(); // 🔥 Enqueue 시 Firestore 동기화
         }
         else
         {
-            Debug.LogWarning("[Listen] config 문서에 필수 필드가 없습니다.");
+            // Debug.LogWarning("[Listen] config 문서에 필수 필드가 없습니다.");
         }
     });
 
-    Debug.Log("[EventListener] Firestore Listen 시작");
+    // Debug.Log("[EventListener] Firestore Listen 시작");
 }
 
     IEnumerator ProcessQueue()
@@ -284,20 +284,20 @@ public class EventListener : MonoBehaviour
                 if (json?["drawingData"]?["category"] != null)
                 {
                     category = json["drawingData"]["category"].ToString();
-                    Debug.Log($"[Queue] 파싱된 Category: {category}");
+                    // Debug.Log($"[Queue] 파싱된 Category: {category}");
                 }
                 else
                 {
-                    Debug.LogWarning("[Queue] category 경로를 찾을 수 없음. 기본값(wave) 사용.");
+                    // Debug.LogWarning("[Queue] category 경로를 찾을 수 없음. 기본값(wave) 사용.");
                 }
             }
 
-            Debug.Log($"[Queue] Island ID {islandId}, Category: {category}, 이미지: {imagePath} 처리 시작.");
+            // Debug.Log($"[Queue] Island ID {islandId}, Category: {category}, 이미지: {imagePath} 처리 시작.");
         }
         catch (System.Exception e)
         {
-            Debug.LogError($"[Queue] JSON 파싱 실패: {e.Message}");
-            Debug.LogError($"[Queue] 받은 JSON: {sketchJson}");
+            // Debug.LogError($"[Queue] JSON 파싱 실패: {e.Message}");
+            // Debug.LogError($"[Queue] 받은 JSON: {sketchJson}");
         }
 
         // 이미지는 이미 다운로드되어 있으므로 바로 씬 로드
@@ -320,16 +320,16 @@ public class EventListener : MonoBehaviour
 
             StorageReference storageRef = storage.GetReference(storagePath);
         
-            Debug.Log($"[Storage] 다운로드 시작: {storagePath} → {localPath}");
+            // Debug.Log($"[Storage] 다운로드 시작: {storagePath} → {localPath}");
 
             await storageRef.GetFileAsync(localPath);
 
-            Debug.Log($"[Storage] 다운로드 완료: {localPath}");
+            // Debug.Log($"[Storage] 다운로드 완료: {localPath}");
             return localPath;
         }
         catch (System.Exception e)
         {
-            Debug.LogError($"[Storage] 이미지 다운로드 실패: {e.Message}");
+            // Debug.LogError($"[Storage] 이미지 다운로드 실패: {e.Message}");
             return null;
         }
     }
@@ -342,11 +342,11 @@ public class EventListener : MonoBehaviour
         try
         {
             await queueCountRef.UpdateAsync("QUEUE_COUNT", taskQueue.Count);
-            Debug.Log($"[Firestore] QUEUE_COUNT 업데이트: {taskQueue.Count}");
+            // Debug.Log($"[Firestore] QUEUE_COUNT 업데이트: {taskQueue.Count}");
         }
         catch (System.Exception e)
         {
-            Debug.LogError($"[Firestore] QUEUE_COUNT 업데이트 실패: {e.Message}");
+            // Debug.LogError($"[Firestore] QUEUE_COUNT 업데이트 실패: {e.Message}");
         }
     }
     
@@ -358,12 +358,12 @@ public class EventListener : MonoBehaviour
     
         if (categorySceneMap.TryGetValue(normalizedCategory, out string sceneToLoad))
         {
-            Debug.Log($"[Scene] Category '{category}' → {sceneToLoad} 로드");
+            // Debug.Log($"[Scene] Category '{category}' → {sceneToLoad} 로드");
             SceneManager.LoadScene(sceneToLoad);
         }
         else
         {
-            Debug.LogWarning($"[Scene] Category '{category}'는 정의되지 않음. DefaultScene 로드.");
+            // Debug.LogWarning($"[Scene] Category '{category}'는 정의되지 않음. DefaultScene 로드.");
             SceneManager.LoadScene("DefaultScene");
         }
     }
@@ -387,12 +387,12 @@ public class EventListener : MonoBehaviour
             try
             {
                 File.Delete(currentImagePath);
-                Debug.Log($"[Storage] 이미지 삭제 완료: {currentImagePath}");
+                // Debug.Log($"[Storage] 이미지 삭제 완료: {currentImagePath}");
                 currentImagePath = "";
             }
             catch (System.Exception e)
             {
-                Debug.LogError($"[Storage] 이미지 삭제 실패: {e.Message}");
+                // Debug.LogError($"[Storage] 이미지 삭제 실패: {e.Message}");
             }
         }
     }
@@ -417,17 +417,17 @@ public class EventListener : MonoBehaviour
                 try
                 {
                     File.Delete(currentImagePath);
-                    Debug.Log($"[Storage] 사용 완료된 이미지 삭제: {currentImagePath}");
+                    // Debug.Log($"[Storage] 사용 완료된 이미지 삭제: {currentImagePath}");
                     currentImagePath = ""; // 경로 초기화
                 }
                 catch (System.Exception e)
                 {
-                    Debug.LogError($"[Storage] 이미지 삭제 실패: {e.Message}");
+                    // Debug.LogError($"[Storage] 이미지 삭제 실패: {e.Message}");
                 }
             }
 
             isScenePlaying = false;
-            Debug.Log("[Scene] TestScene 복귀 - 다음 작업 대기 중");
+            // Debug.Log("[Scene] TestScene 복귀 - 다음 작업 대기 중");
         }
     }
 
