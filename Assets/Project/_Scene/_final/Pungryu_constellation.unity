@@ -323,7 +323,7 @@ VisualEffect:
       - m_Value: 0
         m_Name: zPosition
         m_Overridden: 1
-      - m_Value: 1
+      - m_Value: 0.6
         m_Name: rangeRatio
         m_Overridden: 1
       - m_Value: 5
@@ -2010,7 +2010,7 @@ VisualEffect:
       - m_Value: 0
         m_Name: zPosition
         m_Overridden: 1
-      - m_Value: 1
+      - m_Value: 0.6
         m_Name: rangeRatio
         m_Overridden: 1
       - m_Value: 5
@@ -2351,7 +2351,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ExecuteInEditor: 1
-  m_Bindings: []
+  m_Bindings:
+  - {fileID: 2375103763610336419}
   m_VisualEffect: {fileID: 2375103763610336413}
 --- !u!114 &2375103763610336419
 MonoBehaviour:
@@ -2891,7 +2892,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ExecuteInEditor: 1
-  m_Bindings: []
+  m_Bindings:
+  - {fileID: 2375103764735575493}
+  - {fileID: 2375103764735575492}
   m_VisualEffect: {fileID: 2375103764735575489}
 --- !u!114 &2375103764735575492
 MonoBehaviour:
@@ -3293,13 +3296,13 @@ VisualEffect:
       - m_Value: 1
         m_Name: alpha
         m_Overridden: 1
-      - m_Value: 0.4
+      - m_Value: 0.25
         m_Name: size
         m_Overridden: 1
-      - m_Value: 0.1
+      - m_Value: 0
         m_Name: thickness
         m_Overridden: 1
-      - m_Value: 20
+      - m_Value: 1000
         m_Name: spawnRatio
         m_Overridden: 1
       - m_Value: 3
@@ -3611,13 +3614,13 @@ VisualEffect:
       - m_Value: 1
         m_Name: alpha
         m_Overridden: 1
-      - m_Value: 0.4
+      - m_Value: 0.25
         m_Name: size
         m_Overridden: 1
-      - m_Value: 0.1
+      - m_Value: 0
         m_Name: thickness
         m_Overridden: 1
-      - m_Value: 20
+      - m_Value: 1000
         m_Name: spawnRatio
         m_Overridden: 1
       - m_Value: 3

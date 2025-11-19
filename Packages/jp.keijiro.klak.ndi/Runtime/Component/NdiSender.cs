@@ -60,7 +60,7 @@ public sealed partial class NdiSender : MonoBehaviour
 
     System.Collections.IEnumerator CaptureCoroutine()
     {
-        var frameInterval = new WaitForSeconds(1.0f / 30.0f); 
+        var frameInterval = new WaitForSeconds(1.0f / 45.0f); 
         var eof = new WaitForEndOfFrame();
 
         while (true)
