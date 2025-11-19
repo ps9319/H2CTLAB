@@ -547,7 +547,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 972016553}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.32628, y: -4.1237197, z: 7.06186}
+  m_LocalPosition: {x: 5.32628, y: -4.1237197, z: 5}
   m_LocalScale: {x: 8.247439, y: 8.247439, z: 0.041237198}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -650,10 +650,10 @@ VisualEffect:
       - m_Value: 1
         m_Name: alpha
         m_Overridden: 1
-      - m_Value: 0.2
+      - m_Value: 0.25
         m_Name: size
         m_Overridden: 1
-      - m_Value: 0.7
+      - m_Value: 0
         m_Name: thickness
         m_Overridden: 1
       - m_Value: 0
@@ -662,7 +662,7 @@ VisualEffect:
       - m_Value: 0
         m_Name: gravity
         m_Overridden: 1
-      - m_Value: 10
+      - m_Value: 1000
         m_Name: spawnRatio
         m_Overridden: 1
     m_Vector2f:
@@ -721,7 +721,7 @@ MonoBehaviour:
   sizeProperty: positionMapSize
   jsonFile: {fileID: 4900000, guid: 9314c37542a13804eb7a82b99a09596e, type: 3}
   targetQuad: {fileID: 5183353}
-  quadLocalOffset: {x: -0.5, y: -0.5, z: 50}
+  quadLocalOffset: {x: -0.5, y: -0.5, z: 0}
 --- !u!1 &1055776037
 GameObject:
   m_ObjectHideFlags: 0
@@ -1077,10 +1077,10 @@ VisualEffect:
       - m_Value: 1
         m_Name: alpha
         m_Overridden: 1
-      - m_Value: 0.2
+      - m_Value: 0.25
         m_Name: size
         m_Overridden: 1
-      - m_Value: 0.7
+      - m_Value: 0
         m_Name: thickness
         m_Overridden: 1
       - m_Value: 0
@@ -1089,7 +1089,7 @@ VisualEffect:
       - m_Value: 0
         m_Name: gravity
         m_Overridden: 1
-      - m_Value: 10
+      - m_Value: 1000
         m_Name: spawnRatio
         m_Overridden: 1
     m_Vector2f:
@@ -1138,7 +1138,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1308773056}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -11.37372, y: -4.1237197, z: 7.06186}
+  m_LocalPosition: {x: -11.37372, y: -4.1237197, z: 5}
   m_LocalScale: {x: 8.247439, y: 8.247439, z: 0.041237198}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1184,7 +1184,7 @@ MonoBehaviour:
   sizeProperty: positionMapSize
   jsonFile: {fileID: 4900000, guid: 9314c37542a13804eb7a82b99a09596e, type: 3}
   targetQuad: {fileID: 386532083}
-  quadLocalOffset: {x: -0.5, y: -0.5, z: 50}
+  quadLocalOffset: {x: -0.5, y: -0.5, z: 0}
 --- !u!1 &1462848131
 GameObject:
   m_ObjectHideFlags: 0
@@ -11630,8 +11630,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 841943582598770748}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9.45, y: 0, z: 2}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.01}
+  m_LocalPosition: {x: 9.45, y: 0, z: 6}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.05}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 876723367}
@@ -16751,8 +16751,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8256813552902988852}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.25, y: 0, z: 2}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.01}
+  m_LocalPosition: {x: -7.25, y: 0, z: 6}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.05}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 876723367}

@@ -608,10 +608,10 @@ VisualEffect:
   m_PropertySheet:
     m_Float:
       m_Array:
-      - m_Value: 0.3
+      - m_Value: 0.25
         m_Name: size
         m_Overridden: 1
-      - m_Value: 0.5
+      - m_Value: 0
         m_Name: thickness
         m_Overridden: 1
       - m_Value: 1
@@ -11727,10 +11727,10 @@ VisualEffect:
   m_PropertySheet:
     m_Float:
       m_Array:
-      - m_Value: 0.3
+      - m_Value: 0.25
         m_Name: size
         m_Overridden: 1
-      - m_Value: 0.5
+      - m_Value: 0
         m_Name: thickness
         m_Overridden: 1
       - m_Value: 1

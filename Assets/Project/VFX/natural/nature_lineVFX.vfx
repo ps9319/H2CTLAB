@@ -20,7 +20,7 @@ MonoBehaviour:
     x: -258
     y: -201
     width: 1898
-    height: 2186
+    height: 2185
 --- !u!114 &114350483966674976
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -182,9 +182,9 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 0
+      m_SerializableObject: 1000
     min: 0
-    max: 20
+    max: 1000
     enumValues: []
     descendantCount: 0
   - name: main texture
@@ -2473,7 +2473,7 @@ MonoBehaviour:
   - {fileID: 8926484042661614659}
   - {fileID: 8926484042661614660}
   m_OutputSlots: []
-  m_Disabled: 1
+  m_Disabled: 0
   repeat: 0
   spawnMode: 0
   delayMode: 0
@@ -2567,7 +2567,7 @@ MonoBehaviour:
   m_InputSlots:
   - {fileID: 8926484042661614662}
   m_OutputSlots: []
-  m_Disabled: 0
+  m_Disabled: 1
   attribute: lifetime
   Composition: 0
   Source: 0
@@ -2623,7 +2623,7 @@ MonoBehaviour:
   m_Parent: {fileID: 114350483966674976}
   m_Children: []
   m_UIPosition: {x: 0, y: 0}
-  m_UICollapsed: 0
+  m_UICollapsed: 1
   m_UISuperCollapsed: 0
   m_InputSlots: []
   m_OutputSlots:
@@ -2703,7 +2703,7 @@ MonoBehaviour:
   m_Parent: {fileID: 114350483966674976}
   m_Children: []
   m_UIPosition: {x: 0, y: 0}
-  m_UICollapsed: 0
+  m_UICollapsed: 1
   m_UISuperCollapsed: 0
   m_InputSlots: []
   m_OutputSlots:
@@ -3354,7 +3354,7 @@ MonoBehaviour:
   m_Parent: {fileID: 114350483966674976}
   m_Children: []
   m_UIPosition: {x: 0, y: 0}
-  m_UICollapsed: 0
+  m_UICollapsed: 1
   m_UISuperCollapsed: 0
   m_InputSlots: []
   m_OutputSlots:
@@ -4330,7 +4330,7 @@ MonoBehaviour:
   m_InputSlots:
   - {fileID: 8926484042661614880}
   m_OutputSlots: []
-  m_Disabled: 0
+  m_Disabled: 1
 --- !u!114 &8926484042661614880
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4452,7 +4452,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: UnityEngine.Texture2D, UnityEngine.CoreModule, Version=0.0.0.0,
           Culture=neutral, PublicKeyToken=null
-      m_SerializableObject: '{"obj":{"fileID":2800000,"guid":"0cf370f7ddaa7f3469795361c497f20d","type":3}}'
+      m_SerializableObject: '{"obj":{"fileID":10307,"guid":"0000000000000000f000000000000000","type":0}}'
     m_Space: 2147483647
   m_Property:
     name: mainTexture
@@ -5648,7 +5648,7 @@ MonoBehaviour:
     m_Type:
       m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
         PublicKeyToken=b77a5c561934e089
-    m_SerializableObject: 20
+    m_SerializableObject: 1000
   m_IsOutput: 0
   m_EnumValues: []
   m_ValueFilter: 1
@@ -5686,7 +5686,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 0
+      m_SerializableObject: 1000
     m_Space: 2147483647
   m_Property:
     name: o
