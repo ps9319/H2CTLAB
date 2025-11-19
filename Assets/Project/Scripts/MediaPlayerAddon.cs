@@ -48,7 +48,7 @@ public class MediaPlayerAddon : MonoBehaviour
         if (eventType == MediaPlayerEvent.EventType.FinishedPlaying)
         {
             currentLoopCount++;
-            Debug.Log($"Loop Count : {currentLoopCount}");
+            // Debug.Log($"Loop Count : {currentLoopCount}");
         
             if (currentLoopCount >= repeatCount)
             {
