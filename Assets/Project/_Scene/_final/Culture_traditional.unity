@@ -6317,10 +6317,10 @@ VisualEffect:
       - m_Value: 1
         m_Name: alpha
         m_Overridden: 1
-      - m_Value: 1
+      - m_Value: 0
         m_Name: thickness
         m_Overridden: 1
-      - m_Value: 20
+      - m_Value: 1000
         m_Name: spawnRatio
         m_Overridden: 1
       - m_Value: 0.5
@@ -7870,10 +7870,10 @@ VisualEffect:
       - m_Value: 1
         m_Name: alpha
         m_Overridden: 1
-      - m_Value: 1
+      - m_Value: 0
         m_Name: thickness
         m_Overridden: 1
-      - m_Value: 20
+      - m_Value: 1000
         m_Name: spawnRatio
         m_Overridden: 1
     m_Vector2f:

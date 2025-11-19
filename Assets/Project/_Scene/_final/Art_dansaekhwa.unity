@@ -608,10 +608,10 @@ VisualEffect:
   m_PropertySheet:
     m_Float:
       m_Array:
-      - m_Value: 0.3
+      - m_Value: 0.25
         m_Name: size
         m_Overridden: 1
-      - m_Value: 0.5
+      - m_Value: 0
         m_Name: thickness
         m_Overridden: 1
       - m_Value: 1
@@ -619,6 +619,9 @@ VisualEffect:
         m_Overridden: 1
       - m_Value: 0
         m_Name: diffusion
+        m_Overridden: 1
+      - m_Value: 1000
+        m_Name: spawnRatio
         m_Overridden: 1
     m_Vector2f:
       m_Array: []
@@ -633,7 +636,7 @@ VisualEffect:
       m_Array: []
     m_Int:
       m_Array:
-      - m_Value: 1458
+      - m_Value: 2014
         m_Name: positionMapSize
         m_Overridden: 1
     m_Matrix4x4f:
@@ -680,7 +683,7 @@ MonoBehaviour:
   vfx: {fileID: 114346967}
   propertyName: positionMap
   sizeProperty: positionMapSize
-  jsonFile: {fileID: 4900000, guid: 9314c37542a13804eb7a82b99a09596e, type: 3}
+  jsonFile: {fileID: 4900000, guid: 6e716d65b97a1664788403b310b84ed3, type: 3}
   targetQuad: {fileID: 2030656809}
   quadLocalOffset: {x: -0.5, y: -0.5, z: 0}
 --- !u!95 &114346970
@@ -11582,7 +11585,7 @@ MonoBehaviour:
   vfx: {fileID: 1846272441}
   propertyName: positionMap
   sizeProperty: positionMapSize
-  jsonFile: {fileID: 4900000, guid: 9314c37542a13804eb7a82b99a09596e, type: 3}
+  jsonFile: {fileID: 4900000, guid: 6e716d65b97a1664788403b310b84ed3, type: 3}
   targetQuad: {fileID: 70364194}
   quadLocalOffset: {x: -0.5, y: -0.5, z: 0}
 --- !u!73398921 &1846272440
@@ -11642,10 +11645,10 @@ VisualEffect:
   m_PropertySheet:
     m_Float:
       m_Array:
-      - m_Value: 0.3
+      - m_Value: 0.25
         m_Name: size
         m_Overridden: 1
-      - m_Value: 0.5
+      - m_Value: 0
         m_Name: thickness
         m_Overridden: 1
       - m_Value: 1
@@ -11653,6 +11656,9 @@ VisualEffect:
         m_Overridden: 1
       - m_Value: 0
         m_Name: diffusion
+        m_Overridden: 1
+      - m_Value: 1000
+        m_Name: spawnRatio
         m_Overridden: 1
     m_Vector2f:
       m_Array: []
@@ -11667,7 +11673,7 @@ VisualEffect:
       m_Array: []
     m_Int:
       m_Array:
-      - m_Value: 1458
+      - m_Value: 2014
         m_Name: positionMapSize
         m_Overridden: 1
     m_Matrix4x4f:
