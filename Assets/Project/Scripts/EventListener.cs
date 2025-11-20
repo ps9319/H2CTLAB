@@ -243,10 +243,7 @@ public class EventListener : MonoBehaviour
                 !isScenePlaying)
             {
                 isScenePlaying = true;
-                var (islandId, sketchJson, imagePath) = taskQueue.Dequeue();
-                
-                UpdateQueueCount(); // 🔥 Dequeue 시 Firestore 동기화
-                
+                var (islandId, sketchJson, imagePath) = taskQueue.Peek();
                 
                 currentIslandId = islandId;
                 currentSketchJson = sketchJson;
@@ -254,6 +251,9 @@ public class EventListener : MonoBehaviour
 
                 // 별도 코루틴으로 처리
                 yield return StartCoroutine(ProcessSingleTask(islandId, sketchJson, imagePath));
+                UpdateQueueCount(); // 🔥 Dequeue 시 Firestore 동기화
+                taskQueue.Dequeue();
+                UpdateQueueCount();
             }
 
             yield return new WaitForSeconds(0.5f);
