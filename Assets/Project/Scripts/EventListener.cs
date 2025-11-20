@@ -290,8 +290,7 @@ public class EventListener : MonoBehaviour
         }
 
         // 이미지는 이미 다운로드되어 있으므로 바로 씬 로드
-        // LoadSceneByCategory(category);
-        yield return StartCoroutine(LoadSceneByCategoryAsync(category));
+        LoadSceneByCategory(category);
         yield break;
     }
     
@@ -356,27 +355,6 @@ public class EventListener : MonoBehaviour
             // Debug.LogWarning($"[Scene] Category '{category}'는 정의되지 않음. DefaultScene 로드.");
             SceneManager.LoadScene("DefaultScene");
         }
-    }
-    
-    private IEnumerator LoadSceneByCategoryAsync(string category)
-    {
-        string normalizedCategory = category.ToLower().Trim();
-        string sceneToLoad = categorySceneMap.TryGetValue(normalizedCategory, out var s) ? s : "DefaultScene";
-
-        // 비동기 로드 시작, 자동 전환 막기
-        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneToLoad);
-        asyncLoad.allowSceneActivation = false;
-
-        // 로딩 진행률 0.9까지 대기 (0.9가 로딩 완료 직전)
-        while (asyncLoad.progress < 0.9f)
-        {
-            yield return null;
-        }
-
-        // 여기서 대기하거나, 버튼/조건에 따라 씬 활성화
-        yield return new WaitForSeconds(1f);
-
-        asyncLoad.allowSceneActivation = true;
     }
     
     public string GetCurrentSketchJson()
