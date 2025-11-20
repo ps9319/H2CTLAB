@@ -10380,7 +10380,7 @@ VisualEffect:
         m_Overridden: 1
     m_Vector4f:
       m_Array:
-      - m_Value: {x: 2.133334, y: 0.83769655, z: 1.0722516, w: 0}
+      - m_Value: {x: 2.9960785, y: 0.89882356, z: 1.2801423, w: 0}
         m_Name: color
         m_Overridden: 1
     m_Uint:
@@ -10807,7 +10807,7 @@ VisualEffect:
         m_Overridden: 1
     m_Vector4f:
       m_Array:
-      - m_Value: {x: 2.133334, y: 0.83769655, z: 1.0722516, w: 0}
+      - m_Value: {x: 2.9960785, y: 0.89882356, z: 1.2801423, w: 0}
         m_Name: color
         m_Overridden: 1
     m_Uint:
