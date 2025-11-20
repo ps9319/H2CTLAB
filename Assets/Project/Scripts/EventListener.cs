@@ -101,7 +101,7 @@ public class EventListener : MonoBehaviour
                 }
                 catch (System.Exception e)
                 {
-                    // Debug.LogError($"[Storage] 이미지 삭제 실패: {e.Message}");
+                    Debug.LogError($"[Storage] 이미지 삭제 실패: {e.Message}");
                 }
             }
         
@@ -132,7 +132,7 @@ public class EventListener : MonoBehaviour
                 storage = FirebaseStorage.DefaultInstance;
                 queueCountRef = db.Collection(CONFIG_COLLECTION).Document("tablet_config");
                 // Debug.Log("[EventListener] Firebase Firestore 초기화 성공");
-
+ 
                 ListenForConfigChanges();
                 StartCoroutine(ProcessQueue());
             }
@@ -178,7 +178,7 @@ public class EventListener : MonoBehaviour
     }
     catch (System.Exception e)
     {
-        // Debug.LogError($"[Listen] 초기 timestamp 읽기 실패: {e.Message}");
+        Debug.LogError($"[Listen] 초기 timestamp 읽기 실패: {e.Message}");
     }
 
     // 이제 리스너 등록
@@ -296,8 +296,8 @@ public class EventListener : MonoBehaviour
         }
         catch (System.Exception e)
         {
-            // Debug.LogError($"[Queue] JSON 파싱 실패: {e.Message}");
-            // Debug.LogError($"[Queue] 받은 JSON: {sketchJson}");
+            Debug.LogError($"[Queue] JSON 파싱 실패: {e.Message}");
+            Debug.LogError($"[Queue] 받은 JSON: {sketchJson}");
         }
 
         // 이미지는 이미 다운로드되어 있으므로 바로 씬 로드
@@ -329,7 +329,7 @@ public class EventListener : MonoBehaviour
         }
         catch (System.Exception e)
         {
-            // Debug.LogError($"[Storage] 이미지 다운로드 실패: {e.Message}");
+            Debug.LogError($"[Storage] 이미지 다운로드 실패: {e.Message}");
             return null;
         }
     }
@@ -346,7 +346,7 @@ public class EventListener : MonoBehaviour
         }
         catch (System.Exception e)
         {
-            // Debug.LogError($"[Firestore] QUEUE_COUNT 업데이트 실패: {e.Message}");
+            Debug.LogError($"[Firestore] QUEUE_COUNT 업데이트 실패: {e.Message}");
         }
     }
     
@@ -392,7 +392,7 @@ public class EventListener : MonoBehaviour
             }
             catch (System.Exception e)
             {
-                // Debug.LogError($"[Storage] 이미지 삭제 실패: {e.Message}");
+                Debug.LogError($"[Storage] 이미지 삭제 실패: {e.Message}");
             }
         }
     }
@@ -422,7 +422,7 @@ public class EventListener : MonoBehaviour
                 }
                 catch (System.Exception e)
                 {
-                    // Debug.LogError($"[Storage] 이미지 삭제 실패: {e.Message}");
+                    Debug.LogError($"[Storage] 이미지 삭제 실패: {e.Message}");
                 }
             }
 
