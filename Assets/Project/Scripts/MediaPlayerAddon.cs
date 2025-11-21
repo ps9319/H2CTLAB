@@ -12,7 +12,8 @@ public class MediaPlayerAddon : MonoBehaviour
     private int currentLoopCount = 0;
 
     public int CurrentLoopCount => currentLoopCount;
-    public int RepeatCount => repeatCount;
+    public int RepeatCount => repeatCount == 1 ? 1 : repeatCount;
+    public float Delay => playDelay;
     public bool IsLastLoop => currentLoopCount >= repeatCount - 1;
     
     // 동영상 길이를 반환하는 속성 추가

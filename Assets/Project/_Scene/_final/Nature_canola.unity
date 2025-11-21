@@ -220,6 +220,90 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5183352}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &17588981
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3031551773049889632, guid: e16968cdf9862944abe4abad28954980,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: d8e0d18d3de7dff47b57cd666702ef23, type: 3}
+    - target: {fileID: 3031551773049889633, guid: e16968cdf9862944abe4abad28954980,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 3031551773049889633, guid: e16968cdf9862944abe4abad28954980,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3031551773049889633, guid: e16968cdf9862944abe4abad28954980,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3031551773049889633, guid: e16968cdf9862944abe4abad28954980,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3031551773049889633, guid: e16968cdf9862944abe4abad28954980,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3031551773049889633, guid: e16968cdf9862944abe4abad28954980,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3031551773049889633, guid: e16968cdf9862944abe4abad28954980,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3031551773049889633, guid: e16968cdf9862944abe4abad28954980,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3031551773049889633, guid: e16968cdf9862944abe4abad28954980,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3031551773049889633, guid: e16968cdf9862944abe4abad28954980,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3031551773049889633, guid: e16968cdf9862944abe4abad28954980,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3031551773049889635, guid: e16968cdf9862944abe4abad28954980,
+        type: 3}
+      propertyPath: m_Name
+      value: Audio Source
+      objectReference: {fileID: 0}
+    - target: {fileID: 3031551773049889638, guid: e16968cdf9862944abe4abad28954980,
+        type: 3}
+      propertyPath: enableFadeIn
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3031551773049889638, guid: e16968cdf9862944abe4abad28954980,
+        type: 3}
+      propertyPath: mediaPlayerAddon
+      value: 
+      objectReference: {fileID: 1324303483}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e16968cdf9862944abe4abad28954980, type: 3}
 --- !u!1 &386532082
 GameObject:
   m_ObjectHideFlags: 0
@@ -1331,6 +1415,18 @@ MonoBehaviour:
   jsonFile: {fileID: 4900000, guid: 9314c37542a13804eb7a82b99a09596e, type: 3}
   targetQuad: {fileID: 386532083}
   quadLocalOffset: {x: -0.5, y: -0.5, z: 0}
+--- !u!114 &1324303483 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 168510826369863885, guid: 233238481f6c4ab4a8de4fd1f2f555e1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1592694530}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4076357ba00b16849910693a789c8f1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1508497943
 GameObject:
   m_ObjectHideFlags: 0
