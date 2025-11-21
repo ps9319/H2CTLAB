@@ -251,7 +251,6 @@ public class EventListener : MonoBehaviour
 
                 // 별도 코루틴으로 처리
                 yield return StartCoroutine(ProcessSingleTask(islandId, sketchJson, imagePath));
-                UpdateQueueCount(); // 🔥 Dequeue 시 Firestore 동기화
                 taskQueue.Dequeue();
                 UpdateQueueCount();
             }
@@ -339,21 +338,20 @@ public class EventListener : MonoBehaviour
         }
     }
     
-    // 기존 DownloadIslandImage 메서드는 제거 가능
+    // 기존 DownloadIslandImage 메서드는 제거 가능 
     
     private void LoadSceneByCategory(string category)
     {
         string normalizedCategory = category.ToLower().Trim();
-    
+
         if (categorySceneMap.TryGetValue(normalizedCategory, out string sceneToLoad))
         {
-            // Debug.Log($"[Scene] Category '{category}' → {sceneToLoad} 로드");
-            SceneManager.LoadScene(sceneToLoad);
+            // Additive로 씬 로드
+            SceneManager.LoadScene(sceneToLoad, LoadSceneMode.Additive);
         }
         else
         {
-            // Debug.LogWarning($"[Scene] Category '{category}'는 정의되지 않음. DefaultScene 로드.");
-            SceneManager.LoadScene("DefaultScene");
+            SceneManager.LoadScene("DefaultScene", LoadSceneMode.Additive);
         }
     }
     
