@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.VFX;
 using Newtonsoft.Json.Linq;
 using System;
+using Google.MiniJSON;
 
 [ExecuteAlways]
 public class JsonPointsToTexture : MonoBehaviour
@@ -54,7 +55,7 @@ public class JsonPointsToTexture : MonoBehaviour
                 if (root?.drawingData?.shapeData == null)
                     return;
 
-                // drawingData에 canvasWidth, canvasHeight가 없으면 기본값 사용
+                // drawingData에 canvasWidth, canvasHeight가 없으면 기본값 사용  
                 canvasWidth = root.drawingData.canvasWidth != 0f ? root.drawingData.canvasWidth : 512f;
                 canvasHeight = root.drawingData.canvasHeight != 0f ? root.drawingData.canvasHeight : 512f;
 
@@ -71,38 +72,48 @@ public class JsonPointsToTexture : MonoBehaviour
                 break;
 
             case JsonSourceType.FirebaseRealtime:
-                if (EventListener.Instance == null)
+                if (EventListener.Instance == null) {
                     return;
+                }
                 string jsonText = EventListener.Instance.GetCurrentSketchJson();
-                if (string.IsNullOrEmpty(jsonText))
+                if (string.IsNullOrEmpty(jsonText)) {
                     return;
+                }
 
                 JObject json = JObject.Parse(jsonText);
                 JObject drawingData = json["drawingData"] as JObject;
-                if (drawingData == null)
+                if (drawingData == null) {
                     return;
+                }
 
-                canvasWidth = drawingData["canvasWidth"]?.ToObject<float>() ?? 512f;
-                canvasHeight = drawingData["canvasHeight"]?.ToObject<float>() ?? 512f;
-
-                JArray shapeData = drawingData["shapeData"] as JArray;
-                if (shapeData == null)
+                var shapeDataObj = drawingData["shapeData"] as JObject;
+                if (shapeDataObj == null) {
                     return;
+                }
 
-                foreach (JObject shape in shapeData)
+                var pointsToken = shapeDataObj["points"];
+                if (pointsToken == null) {
+                    return;
+                }
+
+
+                // 항상 문자열로 온다고 가정 
+                JArray points = JArray.Parse(pointsToken.ToString());
+                if (points == null) {
+                    return;
+                }
+
+
+                for (int i = 0; i < points.Count - 1; i += 2)
                 {
-                    JArray points = shape["points"] as JArray;
-                    if (points == null) continue;
-
-                    foreach (JObject point in points)
-                    {
-                        float x = point["x"]?.ToObject<float>() ?? 0f;
-                        float y = point["y"]?.ToObject<float>() ?? 0f;
-                        allPoints.Add(new Vector2(x, y));
-                    }
+                    float x = points[i]?.ToObject<float>() ?? 0f;
+                    float y = points[i + 1]?.ToObject<float>() ?? 0f;
+                    allPoints.Add(new Vector2(x, y));
                 }
                 break;
         }
+
+
 
         if (allPoints.Count > 0)
         {
@@ -146,7 +157,7 @@ public class JsonPointsToTexture : MonoBehaviour
             if (vfx == null)
                 return;
 
-            // canvasWidth, canvasHeight로 정규화
+            // canvasWidth, canvasHeight로 정규화 
             List<Vector2> normalizedPoints = new List<Vector2>();
             for (int i = 0; i < allPoints.Count; i++)
             {
@@ -173,7 +184,7 @@ public class JsonPointsToTexture : MonoBehaviour
         }
         catch (Exception e)
         {
-            // Debug.LogError($"[JsonPointsToTexture] JSON 처리 실패: {e.Message}");
+            Debug.LogError($"[JsonPointsToTexture] JSON 처리 실패: {e.Message}");
         }
     }
 

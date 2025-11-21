@@ -101,23 +101,12 @@ public class EventListener : MonoBehaviour
                 }
                 catch (System.Exception e)
                 {
-                    // Debug.LogError($"[Storage] 이미지 삭제 실패: {e.Message}");
+                    Debug.LogError($"[Storage] 이미지 삭제 실패: {e.Message}");
                 }
             }
         
             isScenePlaying = false;
             SceneManager.LoadScene(0);
-        }
-        
-        // T 누르면 다음 씬으로 (빌드 설정에 등록된 씬 기준)
-        // TODO 삭제 필요
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            int current = SceneManager.GetActiveScene().buildIndex;
-            int count = SceneManager.sceneCountInBuildSettings;
-            int next = (current + 1) % Mathf.Max(1, count); // 안전 처리
-            // Debug.Log($"[Scene] T pressed: loading scene index {next}");
-            SceneManager.LoadScene(next);
         }
     }
 
@@ -132,7 +121,7 @@ public class EventListener : MonoBehaviour
                 storage = FirebaseStorage.DefaultInstance;
                 queueCountRef = db.Collection(CONFIG_COLLECTION).Document("tablet_config");
                 // Debug.Log("[EventListener] Firebase Firestore 초기화 성공");
-
+ 
                 ListenForConfigChanges();
                 StartCoroutine(ProcessQueue());
             }
@@ -178,7 +167,7 @@ public class EventListener : MonoBehaviour
     }
     catch (System.Exception e)
     {
-        // Debug.LogError($"[Listen] 초기 timestamp 읽기 실패: {e.Message}");
+        Debug.LogError($"[Listen] 초기 timestamp 읽기 실패: {e.Message}");
     }
 
     // 이제 리스너 등록
@@ -254,10 +243,7 @@ public class EventListener : MonoBehaviour
                 !isScenePlaying)
             {
                 isScenePlaying = true;
-                var (islandId, sketchJson, imagePath) = taskQueue.Dequeue();
-                
-                UpdateQueueCount(); // 🔥 Dequeue 시 Firestore 동기화
-                
+                var (islandId, sketchJson, imagePath) = taskQueue.Peek();
                 
                 currentIslandId = islandId;
                 currentSketchJson = sketchJson;
@@ -265,6 +251,9 @@ public class EventListener : MonoBehaviour
 
                 // 별도 코루틴으로 처리
                 yield return StartCoroutine(ProcessSingleTask(islandId, sketchJson, imagePath));
+                UpdateQueueCount(); // 🔥 Dequeue 시 Firestore 동기화
+                taskQueue.Dequeue();
+                UpdateQueueCount();
             }
 
             yield return new WaitForSeconds(0.5f);
@@ -296,8 +285,8 @@ public class EventListener : MonoBehaviour
         }
         catch (System.Exception e)
         {
-            // Debug.LogError($"[Queue] JSON 파싱 실패: {e.Message}");
-            // Debug.LogError($"[Queue] 받은 JSON: {sketchJson}");
+            Debug.LogError($"[Queue] JSON 파싱 실패: {e.Message}");
+            Debug.LogError($"[Queue] 받은 JSON: {sketchJson}");
         }
 
         // 이미지는 이미 다운로드되어 있으므로 바로 씬 로드
@@ -329,7 +318,7 @@ public class EventListener : MonoBehaviour
         }
         catch (System.Exception e)
         {
-            // Debug.LogError($"[Storage] 이미지 다운로드 실패: {e.Message}");
+            Debug.LogError($"[Storage] 이미지 다운로드 실패: {e.Message}");
             return null;
         }
     }
@@ -346,7 +335,7 @@ public class EventListener : MonoBehaviour
         }
         catch (System.Exception e)
         {
-            // Debug.LogError($"[Firestore] QUEUE_COUNT 업데이트 실패: {e.Message}");
+            Debug.LogError($"[Firestore] QUEUE_COUNT 업데이트 실패: {e.Message}");
         }
     }
     
@@ -392,7 +381,7 @@ public class EventListener : MonoBehaviour
             }
             catch (System.Exception e)
             {
-                // Debug.LogError($"[Storage] 이미지 삭제 실패: {e.Message}");
+                Debug.LogError($"[Storage] 이미지 삭제 실패: {e.Message}");
             }
         }
     }
@@ -422,7 +411,7 @@ public class EventListener : MonoBehaviour
                 }
                 catch (System.Exception e)
                 {
-                    // Debug.LogError($"[Storage] 이미지 삭제 실패: {e.Message}");
+                    Debug.LogError($"[Storage] 이미지 삭제 실패: {e.Message}");
                 }
             }
 

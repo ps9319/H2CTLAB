@@ -62,7 +62,7 @@ public class TextureMatcher : MonoBehaviour
         }
         catch (System.Exception ex)
         {
-            // Debug.LogError($"텍스처 로드 실패: {ex.Message}");
+            Debug.LogError($"텍스처 로드 실패: {ex.Message}");
         }
     }
 }
