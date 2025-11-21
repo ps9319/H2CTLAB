@@ -15,11 +15,9 @@ public class MediaPlayerAddon : MonoBehaviour
     public int RepeatCount => repeatCount == 1 ? 1 : repeatCount;
     public float Delay => playDelay;
     public bool IsLastLoop => currentLoopCount >= repeatCount - 1;
-    
+
     // 동영상 길이를 반환하는 속성 추가
-    public float VideoDuration => mediaPlayer != null && mediaPlayer.Info != null 
-        ? (float)mediaPlayer.Info.GetDuration() 
-        : 0f;
+    public float VideoDuration => (float)mediaPlayer.Info.GetDuration();
 
     void Awake()
     {
@@ -51,6 +49,11 @@ public class MediaPlayerAddon : MonoBehaviour
         {
             mediaPlayer.Events.RemoveListener(OnMediaPlayerEvent);
         }
+    }
+
+    public bool getIsPlaying()
+    {
+       return mediaPlayer.Control.IsPlaying();
     }
 
     private void OnMediaPlayerEvent(MediaPlayer mp, MediaPlayerEvent.EventType eventType, ErrorCode errorCode)

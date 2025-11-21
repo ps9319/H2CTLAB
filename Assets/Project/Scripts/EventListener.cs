@@ -118,8 +118,15 @@ public class EventListener : MonoBehaviour
                     Debug.LogError($"[Storage] 이미지 삭제 실패: {e.Message}");
                 }
             }
-            isScenePlaying = false;
-            SceneManager.LoadScene(0);
+            // Additive로 추가된 씬만 언로드, _StartScene은 유지
+            for (int i = 0; i < SceneManager.sceneCount; i++)
+            {
+                Scene scene = SceneManager.GetSceneAt(i);
+                if (scene.name != "_StartScene" && scene.isLoaded)
+                {
+                    SceneManager.UnloadSceneAsync(scene);
+                }
+            }
         }
     }
 
@@ -348,7 +355,10 @@ public class EventListener : MonoBehaviour
                 taskQueue.Dequeue();
                 UpdateQueueCount();
             }
-            defaultVideo.SetActive(true);
+            if(taskQueue.Count == 0)
+            {
+                defaultVideo.SetActive(true);
+            }
         }
     }
 
