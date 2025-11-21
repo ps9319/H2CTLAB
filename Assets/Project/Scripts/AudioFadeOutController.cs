@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Linq.Expressions;
 using UnityEngine;
 
 public class AudioFadeOutController : MonoBehaviour
@@ -46,31 +47,31 @@ public class AudioFadeOutController : MonoBehaviour
 
     void Update()
     {
-        if (!isFadingOut && mediaPlayerAddon.RepeatCount == 1)
-        {
-            float videoDuration = mediaPlayerAddon.VideoDuration;
-            float fadeOutStartTime = videoDuration - FadeoutTime;
-            isFadingOut = true; // 코루틴 시작 전에 플래그 세움
-            StartCoroutine(FadeOutAudio(mediaPlayerAddon.Delay + fadeOutStartTime));
-        }
+        if(!mediaPlayerAddon.getIsPlaying()) return;
+
         if (!isFadingOut && mediaPlayerAddon != null && mediaPlayerAddon.IsLastLoop)
         {
             float videoDuration = mediaPlayerAddon.VideoDuration;
+            Debug.Log($"videoDuration: {videoDuration}");
+            Debug.Log($"FadeoutTime: {FadeoutTime}");
             float fadeOutStartTime = videoDuration - FadeoutTime;
-            isFadingOut = true; // 코루틴 시작 전에 플래그 세움
+            isFadingOut = true; // 코루틴 시작 전에 플래그 세움 
+            Debug.Log($"Delay: {mediaPlayerAddon.Delay}");
             StartCoroutine(FadeOutAudio(fadeOutStartTime));
         }
     }
 
     private IEnumerator FadeOutAudio(float delayTime)
     {
-        Debug.Log($" 페이드아웃 시작");
         isFadingOut = true;
+        Debug.Log($"delayTime:{delayTime}");
 
         if (delayTime > 0f)
         {
             yield return new WaitForSeconds(delayTime);
         }
+
+        Debug.Log($" 페이드아웃 시작");
 
         float startVolume = audioSource.volume;
         float elapsed = 0f;
