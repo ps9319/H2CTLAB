@@ -46,19 +46,19 @@ public class AudioFadeOutController : MonoBehaviour
 
     void Update()
     {
-        if(mediaPlayerAddon.RepeatCount == 1)
+        if (!isFadingOut && mediaPlayerAddon.RepeatCount == 1)
         {
             float videoDuration = mediaPlayerAddon.VideoDuration;
             float fadeOutStartTime = videoDuration - FadeoutTime;
-            StartCoroutine(FadeOutAudio(mediaPlayerAddon.Delay+fadeOutStartTime));
-
+            isFadingOut = true; // 코루틴 시작 전에 플래그 세움
+            StartCoroutine(FadeOutAudio(mediaPlayerAddon.Delay + fadeOutStartTime));
         }
         if (!isFadingOut && mediaPlayerAddon != null && mediaPlayerAddon.IsLastLoop)
         {
             float videoDuration = mediaPlayerAddon.VideoDuration;
             float fadeOutStartTime = videoDuration - FadeoutTime;
+            isFadingOut = true; // 코루틴 시작 전에 플래그 세움
             StartCoroutine(FadeOutAudio(fadeOutStartTime));
-
         }
     }
 
