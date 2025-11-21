@@ -80,7 +80,6 @@ public class EventListener : MonoBehaviour
             return;
         }
         instance = this;
-        DontDestroyOnLoad(gameObject);
     }
 
     void Start()
