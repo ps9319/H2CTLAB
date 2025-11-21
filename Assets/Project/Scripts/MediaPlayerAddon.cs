@@ -11,11 +11,20 @@ public class MediaPlayerAddon : MonoBehaviour
     
     private int currentLoopCount = 0;
 
+    public int CurrentLoopCount => currentLoopCount;
+    public int RepeatCount => repeatCount;
+    public bool IsLastLoop => currentLoopCount >= repeatCount - 1;
+    
+    // 동영상 길이를 반환하는 속성 추가
+    public float VideoDuration => mediaPlayer != null && mediaPlayer.Info != null 
+        ? (float)mediaPlayer.Info.GetDuration() 
+        : 0f;
+
     void Awake()
     {
         mediaPlayer = GetComponent<MediaPlayer>();
     }
-    
+
     void Start()
     {
         StartCoroutine(PlayAfterDelay());
@@ -26,7 +35,7 @@ public class MediaPlayerAddon : MonoBehaviour
         yield return new WaitForSeconds(playDelay);
         mediaPlayer.Control.Play();
     }
-    
+
     private void OnEnable()
     {
         if (mediaPlayer != null)
