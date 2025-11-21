@@ -62,7 +62,15 @@ public class MediaPlayerAddon : MonoBehaviour
         
             if (currentLoopCount >= repeatCount)
             {
-                SceneManager.LoadScene(0);
+                // 현재 활성 씬 중 _StartScene이 아닌 씬을 언로드
+                for (int i = 0; i < SceneManager.sceneCount; i++)
+                {
+                    Scene scene = SceneManager.GetSceneAt(i);
+                    if (scene.name != "_StartScene" && scene.isLoaded)
+                    {
+                        SceneManager.UnloadSceneAsync(scene);
+                    }
+                }
             }
             else
             {

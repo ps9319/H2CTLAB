@@ -12,6 +12,14 @@ using UnityEngine.SceneManagement;
 
 public class EventListener : MonoBehaviour
 {
+    #region Singleton
+    private static EventListener instance;
+    public static EventListener Instance => instance;
+    #endregion
+
+    #region Fields
+
+    // 카테고리별 씬 매핑
     private Dictionary<string, string> categorySceneMap = new Dictionary<string, string>()
     {
         // 예술 Art
@@ -21,7 +29,6 @@ public class EventListener : MonoBehaviour
         { "origami", "Art_origami" },
         { "pollock", "Art_pollok" },
         { "vangogh", "Art_vangogh" },
-        
         // 문화유산 Culture
         { "baekja", "Culture_baekja" },
         { "jage", "Culture_jage" },
@@ -29,7 +36,6 @@ public class EventListener : MonoBehaviour
         { "kimhongdo", "Culture_kimhongdo" },
         { "sinyunbok", "Culture_sinyunbok"},
         { "traditional", "Culture_traditional" },
-    
         // 자연 Natural
         { "autumn", "Nature_autumn" },
         { "camellia", "Nature_camelia" },
@@ -37,7 +43,6 @@ public class EventListener : MonoBehaviour
         { "cherry", "Nature_cherry" },
         { "hydragea", "Nature_hydragea" },
         { "winter", "Nature_winter" },
-    
         // 풍류 Pungryu
         { "constellation", "Pungryu_constellation" },
         { "entertainment", "Pungryu_entertainment" },
@@ -46,72 +51,41 @@ public class EventListener : MonoBehaviour
         { "sumuk", "Pungryu_sumuk" },
         { "fantasy", "Pungryu_fantasy" }
     };
-    // 클래스 상단에 필드 추가
+
     private FirebaseStorage storage;
-    private int currentIslandId = -1;
-    private string currentSketchJson = "";
-    
-    // --- 싱글톤 인스턴스 ---
-    private static EventListener instance;
-    public static EventListener Instance => instance;
-
-    // --- 큐 관리 변수 (Island ID + JSON + 이미지 경로) ---
-    private Queue<(int islandId, string sketchJson, string imagePath)> taskQueue = new Queue<(int, string, string)>();
-    private bool isScenePlaying = false;
-    private string currentImagePath = ""; // 현재 재생 중인 씬의 이미지 경로
-
-    // --- Firebase 설정 ---
     private FirebaseFirestore db;
     private ListenerRegistration configListenerRegistration;
+    private DocumentReference queueCountRef;
+
+    private Queue<(int islandId, string sketchJson, string imagePath)> taskQueue = new Queue<(int, string, string)>();
+    private int currentIslandId = -1;
+    private string currentSketchJson = "";
+    private string currentImagePath = "";
+    private bool isScenePlaying = false;
+    private Timestamp lastProcessedTimestamp = new Timestamp();
+
     private const string CONFIG_COLLECTION = "config";
     private const string CONFIG_DOCUMENT = "current_task";
-    private DocumentReference queueCountRef;
-    
-    // --- 중복 방지를 위한 마지막 처리 timestamp ---
-    private Timestamp lastProcessedTimestamp = new Timestamp();
+
+    #endregion
+
+    #region Unity Lifecycle
 
     void Awake()
     {
+        // 싱글톤 패턴 적용
         if (instance != null && instance != this)
         {
             Destroy(gameObject);
             return;
         }
-
         instance = this;
         DontDestroyOnLoad(gameObject);
-        // Debug.Log("[EventListener] 싱글톤 생성 및 DontDestroyOnLoad 적용");
-    }
-
-    void Update()
-    {
-        // 🔥 테스트용: Q 키로 0번 씬(_StartScene)으로 복귀
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            Debug.Log("[Test] Q 키 입력 감지 - 0번 씬으로 복귀");
-        
-            // 현재 재생 중인 이미지 삭제
-            if (!string.IsNullOrEmpty(currentImagePath) && File.Exists(currentImagePath))
-            {
-                try
-                {
-                    File.Delete(currentImagePath);
-                    // Debug.Log($"[Storage] 강제 복귀 시 이미지 삭제: {currentImagePath}");
-                    currentImagePath = "";
-                }
-                catch (System.Exception e)
-                {
-                    Debug.LogError($"[Storage] 이미지 삭제 실패: {e.Message}");
-                }
-            }
-        
-            isScenePlaying = false;
-            SceneManager.LoadScene(0);
-        }
     }
 
     void Start()
     {
+        // Firebase 초기화 및 리스너 등록
         Firebase.FirebaseApp.CheckAndFixDependenciesAsync().ContinueWithOnMainThread(task =>
         {
             var dependencyStatus = task.Result;
@@ -120,120 +94,116 @@ public class EventListener : MonoBehaviour
                 db = FirebaseFirestore.DefaultInstance;
                 storage = FirebaseStorage.DefaultInstance;
                 queueCountRef = db.Collection(CONFIG_COLLECTION).Document("tablet_config");
-                // Debug.Log("[EventListener] Firebase Firestore 초기화 성공");
- 
                 ListenForConfigChanges();
+                DeleteAllImagesInPersistentDataPath();
+                UpdateQueueCount();
                 StartCoroutine(ProcessQueue());
-            }
-            else
-            {
-                // Debug.LogError($"[EventListener] Firebase 종속성 문제: {dependencyStatus}");
             }
         });
     }
 
+    void Update()
+    {
+        // Q 키 입력 시 현재 이미지 삭제 및 씬 초기화
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            if (!string.IsNullOrEmpty(currentImagePath) && File.Exists(currentImagePath))
+            {
+                try
+                {
+                    File.Delete(currentImagePath);
+                    currentImagePath = "";
+                }
+                catch (Exception e)
+                {
+                    Debug.LogError($"[Storage] 이미지 삭제 실패: {e.Message}");
+                }
+            }
+            isScenePlaying = false;
+            SceneManager.LoadScene(0);
+        }
+    }
+
+    private void OnEnable()
+    {
+        SceneManager.sceneUnloaded += OnSceneUnloaded;
+        // SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.sceneUnloaded -= OnSceneUnloaded;
+        // SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
     private void OnDestroy()
     {
-        if (configListenerRegistration != null)
-        {
-            configListenerRegistration.Dispose();
-            // Debug.Log("[EventListener] Firestore Listener 해제");
-        }
-
+        configListenerRegistration?.Dispose();
         if (instance == this)
-        {
             instance = null;
-        }
     }
 
+    #endregion
+
+    #region Firestore Listener
+
+    /// <summary>
+    /// Firestore에서 config 변경 감지 및 큐에 작업 추가
+    /// </summary>
     private async void ListenForConfigChanges()
-{
-    DocumentReference configRef = db.Collection(CONFIG_COLLECTION).Document(CONFIG_DOCUMENT);
-
-    // 🔥 리스너 등록 전에 현재 timestamp를 먼저 읽어서 초기화
-    try
     {
-        DocumentSnapshot initialSnapshot = await configRef.GetSnapshotAsync();
-        
-        if (initialSnapshot.Exists && initialSnapshot.TryGetValue("updated_at", out object timestampObj))
+        DocumentReference configRef = db.Collection(CONFIG_COLLECTION).Document(CONFIG_DOCUMENT);
+
+        try
         {
-            lastProcessedTimestamp = (Timestamp)timestampObj;
-            // Debug.Log($"[Listen] 초기 timestamp 설정: {lastProcessedTimestamp.ToDateTime():yyyy-MM-dd HH:mm:ss}");
+            DocumentSnapshot initialSnapshot = await configRef.GetSnapshotAsync();
+            if (initialSnapshot.Exists && initialSnapshot.TryGetValue("updated_at", out object timestampObj))
+                lastProcessedTimestamp = (Timestamp)timestampObj;
         }
-        else
+        catch (Exception e)
         {
-            // Debug.LogWarning("[Listen] 초기 문서를 찾을 수 없습니다.");
+            Debug.LogError($"[Listen] 초기 timestamp 읽기 실패 : {e.Message}");
         }
+
+        configListenerRegistration = configRef.Listen(async snapshot =>
+        {
+            if (!snapshot.Exists) return;
+
+            if (snapshot.TryGetValue("updated_at", out object timestampObj) &&
+                snapshot.TryGetValue("matched_island_id", out object islandIdObj) &&
+                snapshot.TryGetValue("sketch_json", out object sketchJsonObj))
+            {
+                Timestamp currentTimestamp = (Timestamp)timestampObj;
+                int matchedIslandId = (int)(long)islandIdObj;
+
+                string sketchJson = sketchJsonObj is string str
+                    ? str
+                    : sketchJsonObj is Dictionary<string, object> dict
+                        ? Newtonsoft.Json.JsonConvert.SerializeObject(dict)
+                        : null;
+
+                if (sketchJson == null) return;
+
+                if (currentTimestamp.CompareTo(lastProcessedTimestamp) <= 0)
+                    return;
+
+                string imagePath = await DownloadIslandImageWithUniqueFileName(matchedIslandId, currentTimestamp);
+                if (string.IsNullOrEmpty(imagePath)) return;
+
+                taskQueue.Enqueue((matchedIslandId, sketchJson, imagePath));
+                lastProcessedTimestamp = currentTimestamp;
+                UpdateQueueCount();
+            }
+        });
     }
-    catch (System.Exception e)
-    {
-        Debug.LogError($"[Listen] 초기 timestamp 읽기 실패: {e.Message}");
-    }
 
-    // 이제 리스너 등록
-    configListenerRegistration = configRef.Listen(async snapshot =>
-    {
-        if (!snapshot.Exists)
-        {
-            // Debug.LogWarning("[Listen] config/current_task 문서가 존재하지 않습니다.");
-            return;
-        }
+    #endregion
 
-        if (snapshot.TryGetValue("updated_at", out object timestampObj) &&
-            snapshot.TryGetValue("matched_island_id", out object islandIdObj) &&
-            snapshot.TryGetValue("sketch_json", out object sketchJsonObj))
-        {
-            Timestamp currentTimestamp = (Timestamp)timestampObj;
-            int matchedIslandId = (int)(long)islandIdObj;
+    #region Queue Processing
 
-            string sketchJson;
-            if (sketchJsonObj is string str)
-            {
-                sketchJson = str;
-            }
-            else if (sketchJsonObj is Dictionary<string, object> dict)
-            {
-                sketchJson = Newtonsoft.Json.JsonConvert.SerializeObject(dict);
-            }
-            else
-            {
-                // Debug.LogError($"[Listen] sketch_json 타입 오류: {sketchJsonObj.GetType()}");
-                return;
-            }
-
-            // Debug.Log($"[Listen] 변환된 JSON: {sketchJson}");
-
-            // 🔥 timestamp 비교로 중복 방지
-            if (currentTimestamp.CompareTo(lastProcessedTimestamp) <= 0)
-            {
-                // Debug.Log($"[Listen] 이미 처리된 요청 (current: {currentTimestamp.ToDateTime():HH:mm:ss}, last: {lastProcessedTimestamp.ToDateTime():HH:mm:ss}). 건너뜀.");
-                return;
-            }
-
-            // 🔥 이미지를 큐에 넣을 때 다운로드
-            string imagePath = await DownloadIslandImageWithUniqueFileName(matchedIslandId, currentTimestamp);
-
-            if (string.IsNullOrEmpty(imagePath))
-            {
-                // Debug.LogError("[Listen] 이미지 다운로드 실패. 큐에 추가하지 않음.");
-                return;
-            }
-
-            taskQueue.Enqueue((matchedIslandId, sketchJson, imagePath));
-            lastProcessedTimestamp = currentTimestamp;
-            // Debug.Log($"[Queue] Island ID {matchedIslandId} + JSON + 이미지({imagePath}) 추가. 큐 크기: {taskQueue.Count}");
-            
-            UpdateQueueCount(); // 🔥 Enqueue 시 Firestore 동기화
-        }
-        else
-        {
-            // Debug.LogWarning("[Listen] config 문서에 필수 필드가 없습니다.");
-        }
-    });
-
-    // Debug.Log("[EventListener] Firestore Listen 시작");
-}
-
+    /// <summary>
+    /// 큐에 쌓인 작업을 순차적으로 처리
+    /// </summary>
     IEnumerator ProcessQueue()
     {
         while (true)
@@ -244,131 +214,152 @@ public class EventListener : MonoBehaviour
             {
                 isScenePlaying = true;
                 var (islandId, sketchJson, imagePath) = taskQueue.Peek();
-                
                 currentIslandId = islandId;
                 currentSketchJson = sketchJson;
-                currentImagePath = imagePath; // 현재 이미지 경로 저장
-
-                // 별도 코루틴으로 처리
+                currentImagePath = imagePath;
                 yield return StartCoroutine(ProcessSingleTask(islandId, sketchJson, imagePath));
-                UpdateQueueCount(); // 🔥 Dequeue 시 Firestore 동기화
-                taskQueue.Dequeue();
-                UpdateQueueCount();
             }
-
             yield return new WaitForSeconds(0.5f);
         }
     }
-    
+
+    /// <summary>
+    /// 단일 작업 처리 및 카테고리별 씬 로드
+    /// </summary>
     private IEnumerator ProcessSingleTask(int islandId, string sketchJson, string imagePath)
     {
-        string category = "wave"; // 기본값
-
+        string category = "wave";
         try
         {
             if (!string.IsNullOrEmpty(sketchJson))
             {
                 JObject json = JObject.Parse(sketchJson);
-
                 if (json?["drawingData"]?["category"] != null)
-                {
                     category = json["drawingData"]["category"].ToString();
-                    // Debug.Log($"[Queue] 파싱된 Category: {category}");
-                }
-                else
-                {
-                    // Debug.LogWarning("[Queue] category 경로를 찾을 수 없음. 기본값(wave) 사용.");
-                }
             }
-
-            // Debug.Log($"[Queue] Island ID {islandId}, Category: {category}, 이미지: {imagePath} 처리 시작.");
         }
-        catch (System.Exception e)
+        catch (Exception e)
         {
             Debug.LogError($"[Queue] JSON 파싱 실패: {e.Message}");
             Debug.LogError($"[Queue] 받은 JSON: {sketchJson}");
         }
-
-        // 이미지는 이미 다운로드되어 있으므로 바로 씬 로드
         LoadSceneByCategory(category);
         yield break;
     }
-    
-    // 🔥 고유 파일명으로 이미지 다운로드 (updated_at timestamp 사용)
+
+    #endregion
+
+    #region Storage & Firestore Update
+
+    /// <summary>
+    /// Firebase Storage에서 이미지 다운로드 (고유 파일명)
+    /// </summary>
     private async Task<string> DownloadIslandImageWithUniqueFileName(int islandId, Timestamp timestamp)
     {
         try
         {
-            // Firebase Storage 경로
             string storagePath = "generated/latest_island.png";
-        
-            // 고유한 로컬 파일명 생성 (timestamp를 밀리초로 변환)
             long uniqueId = timestamp.ToDateTime().Ticks;
             string fileName = $"island_{islandId}_{uniqueId}.png";
             string localPath = Path.Combine(Application.persistentDataPath, fileName);
-
             StorageReference storageRef = storage.GetReference(storagePath);
-        
-            // Debug.Log($"[Storage] 다운로드 시작: {storagePath} → {localPath}");
-
             await storageRef.GetFileAsync(localPath);
-
-            // Debug.Log($"[Storage] 다운로드 완료: {localPath}");
             return localPath;
         }
-        catch (System.Exception e)
+        catch (Exception e)
         {
             Debug.LogError($"[Storage] 이미지 다운로드 실패: {e.Message}");
             return null;
         }
     }
-    
-    // 큐 크기를 Firestore에 업데이트하는 메서드
+
+    public void DeleteAllImagesInPersistentDataPath()
+    {
+        string path = Application.persistentDataPath;
+        string[] imageExtensions = new[] { "*.png", "*.jpg", "*.jpeg" };
+
+        foreach (var ext in imageExtensions)
+        {
+            foreach (var file in Directory.GetFiles(path, ext))
+            {
+                try
+                {
+                    File.Delete(file);
+                }
+                catch (Exception e)
+                {
+                    Debug.LogError($"[Storage] 파일 삭제 실패: {file} - {e.Message}");
+                }
+            }
+        }
+    }
+
+    /// <summary>
+    /// Firestore에 큐 개수 업데이트
+    /// </summary>
     private async void UpdateQueueCount()
     {
         if (queueCountRef == null) return;
-
         try
         {
             await queueCountRef.UpdateAsync("QUEUE_COUNT", taskQueue.Count);
-            // Debug.Log($"[Firestore] QUEUE_COUNT 업데이트: {taskQueue.Count}");
         }
-        catch (System.Exception e)
+        catch (Exception e)
         {
             Debug.LogError($"[Firestore] QUEUE_COUNT 업데이트 실패: {e.Message}");
         }
     }
-    
-    // 기존 DownloadIslandImage 메서드는 제거 가능
-    
+
+    #endregion
+
+    #region Scene Management
+
+    /// <summary>
+    /// 카테고리에 따라 씬 로드
+    /// </summary>
     private void LoadSceneByCategory(string category)
     {
         string normalizedCategory = category.ToLower().Trim();
-    
         if (categorySceneMap.TryGetValue(normalizedCategory, out string sceneToLoad))
-        {
-            // Debug.Log($"[Scene] Category '{category}' → {sceneToLoad} 로드");
-            SceneManager.LoadScene(sceneToLoad);
-        }
+            SceneManager.LoadScene(sceneToLoad, LoadSceneMode.Additive);
         else
+            SceneManager.LoadScene("DefaultScene", LoadSceneMode.Additive);
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        // 씬이 _StartScene이 아닐 때 이미지 삭제
+        // if (scene.name != "_StartScene")
+        // {
+        //     DeleteCurrentImage();
+        // }
+    }
+
+    private void OnSceneUnloaded(Scene scene)
+    {
+        // 씬이 _StartScene이 아닐 때 큐에서 작업 제거 및 상태 초기화
+        if (scene.name != "_StartScene")
         {
-            // Debug.LogWarning($"[Scene] Category '{category}'는 정의되지 않음. DefaultScene 로드.");
-            SceneManager.LoadScene("DefaultScene");
+            DeleteCurrentImage();
+            isScenePlaying = false;
+            if (taskQueue.Count > 0)
+            {
+                taskQueue.Dequeue();
+                UpdateQueueCount();
+            }
         }
     }
-    
-    public string GetCurrentSketchJson()
-    {
-        return currentSketchJson;
-    }
-    
-    // 🔥 현재 이미지 경로를 반환하는 메서드 추가
-    public string GetCurrentImagePath()
-    {
-        return currentImagePath;
-    }
-    
-    // 🔥 이미지 삭제 메서드 추가
+
+    #endregion
+
+    #region Public Methods
+
+    public string GetCurrentSketchJson() => currentSketchJson;
+    public string GetCurrentImagePath() => currentImagePath;
+
+    /// <summary>
+    /// 현재 이미지 파일 삭제
+    /// </summary>
     public void DeleteCurrentImage()
     {
         if (!string.IsNullOrEmpty(currentImagePath) && File.Exists(currentImagePath))
@@ -376,48 +367,14 @@ public class EventListener : MonoBehaviour
             try
             {
                 File.Delete(currentImagePath);
-                // Debug.Log($"[Storage] 이미지 삭제 완료: {currentImagePath}");
                 currentImagePath = "";
             }
-            catch (System.Exception e)
+            catch (Exception e)
             {
                 Debug.LogError($"[Storage] 이미지 삭제 실패: {e.Message}");
             }
         }
     }
-    
-    private void OnEnable()
-    {
-        SceneManager.sceneLoaded += OnSceneLoaded;
-    }
 
-    private void OnDisable()
-    {
-        SceneManager.sceneLoaded -= OnSceneLoaded;
-    }
-
-    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-    {
-        if (scene.name == "_StartScene")
-        {
-            // 🔥 씬 재생 완료 후 이미지 삭제
-            if (!string.IsNullOrEmpty(currentImagePath) && File.Exists(currentImagePath))
-            {
-                try
-                {
-                    File.Delete(currentImagePath);
-                    // Debug.Log($"[Storage] 사용 완료된 이미지 삭제: {currentImagePath}");
-                    currentImagePath = ""; // 경로 초기화
-                }
-                catch (System.Exception e)
-                {
-                    Debug.LogError($"[Storage] 이미지 삭제 실패: {e.Message}");
-                }
-            }
-
-            isScenePlaying = false;
-            // Debug.Log("[Scene] TestScene 복귀 - 다음 작업 대기 중");
-        }
-    }
-
+    #endregion
 }
