@@ -151,6 +151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bcbd5535a4b3c248a6a583597fa3350, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  defaultVideo: {fileID: 545085408728387327}
 --- !u!4 &242961033
 Transform:
   m_ObjectHideFlags: 0

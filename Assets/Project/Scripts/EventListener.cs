@@ -127,13 +127,13 @@ public class EventListener : MonoBehaviour
     private void OnEnable()
     {
         SceneManager.sceneUnloaded += OnSceneUnloaded;
-        // SceneManager.sceneLoaded += OnSceneLoaded;
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
     private void OnDisable()
     {
         SceneManager.sceneUnloaded -= OnSceneUnloaded;
-        // SceneManager.sceneLoaded -= OnSceneLoaded;
+        SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
     private void OnDestroy()
@@ -326,18 +326,20 @@ public class EventListener : MonoBehaviour
             SceneManager.LoadScene("DefaultScene", LoadSceneMode.Additive);
     }
 
+    [SerializeField] private GameObject defaultVideo; // Inspector에서 할당
+
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        // 씬이 _StartScene이 아닐 때 이미지 삭제
-        // if (scene.name != "_StartScene")
-        // {
-        //     DeleteCurrentImage();
-        // }
+        // 씬이 _StartScene이 아닐 때 오브젝트 끄기
+        if (scene.name != "_StartScene")
+        {
+            defaultVideo.SetActive(false);
+        }
     }
 
     private void OnSceneUnloaded(Scene scene)
     {
-        // 씬이 _StartScene이 아닐 때 큐에서 작업 제거 및 상태 초기화
+        // 씬이 _StartScene이 아닐 때 오브젝트 다시 켜기
         if (scene.name != "_StartScene")
         {
             DeleteCurrentImage();
@@ -347,6 +349,7 @@ public class EventListener : MonoBehaviour
                 taskQueue.Dequeue();
                 UpdateQueueCount();
             }
+            defaultVideo.SetActive(true);
         }
     }
 
