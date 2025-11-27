@@ -408,6 +408,7 @@ GameObject:
   - component: {fileID: 827692885}
   - component: {fileID: 827692888}
   - component: {fileID: 827692887}
+  - component: {fileID: 827692889}
   m_Layer: 0
   m_Name: TextureVFX
   m_TagString: Untagged
@@ -510,6 +511,21 @@ VisualEffect:
       m_Array: []
     m_Bool:
       m_Array: []
+--- !u!114 &827692889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 827692884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b19af53131f02240bef38d538481fd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sourceMode: 0
+  sourceVFX: {fileID: 0}
+  texturePropertyName: Texture
 --- !u!1 &876723366
 GameObject:
   m_ObjectHideFlags: 0
@@ -707,7 +723,7 @@ VisualEffect:
       m_Array: []
     m_NamedObject:
       m_Array:
-      - m_Value: {fileID: 2800000, guid: 260c875ee8b67ba4dbb5d1c5f6cda417, type: 3}
+      - m_Value: {fileID: 2800000, guid: d0535462f4be5c84b9eee8f9fb044875, type: 3}
         m_Name: Texture
         m_Overridden: 1
       - m_Value: {fileID: 2800000, guid: 260c875ee8b67ba4dbb5d1c5f6cda417, type: 3}
@@ -831,6 +847,7 @@ GameObject:
   - component: {fileID: 1241558096}
   - component: {fileID: 1241558099}
   - component: {fileID: 1241558098}
+  - component: {fileID: 1241558100}
   m_Layer: 0
   m_Name: TextureVFX
   m_TagString: Untagged
@@ -933,6 +950,21 @@ VisualEffect:
       m_Array: []
     m_Bool:
       m_Array: []
+--- !u!114 &1241558100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1241558095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b19af53131f02240bef38d538481fd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sourceMode: 0
+  sourceVFX: {fileID: 0}
+  texturePropertyName: Texture
 --- !u!1 &1443129546
 GameObject:
   m_ObjectHideFlags: 0
@@ -1001,11 +1033,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c1115b6cd478b6418dfbde57b56db60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jsonSource: 1
+  jsonSource: 0
   vfx: {fileID: 1443129551}
   propertyName: positionMap
   sizeProperty: positionMapSize
-  jsonFile: {fileID: 4900000, guid: 9314c37542a13804eb7a82b99a09596e, type: 3}
+  jsonFile: {fileID: 4900000, guid: dc1c30cbc3045d34583c3d4fc0f98430, type: 3}
   targetQuad: {fileID: 5183353}
   quadLocalOffset: {x: -0.5, y: -0.5, z: 0}
 --- !u!73398921 &1443129550
@@ -1413,7 +1445,7 @@ PrefabInstance:
     - target: {fileID: 168510826369863886, guid: 233238481f6c4ab4a8de4fd1f2f555e1,
         type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 168510826369863886, guid: 233238481f6c4ab4a8de4fd1f2f555e1,
         type: 3}
@@ -1467,56 +1499,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 233238481f6c4ab4a8de4fd1f2f555e1, type: 3}
---- !u!1 &1658558747
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1658558749}
-  - component: {fileID: 1658558748}
-  m_Layer: 0
-  m_Name: TextureMatcher
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1658558748
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1658558747}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d35ee58ef6dbd2042a3a16172fdc5561, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  vfxList:
-  - {fileID: 1055776040}
-  - {fileID: 1241558099}
-  - {fileID: 1885872539}
-  - {fileID: 827692888}
-  texturePropertyName: Texture
---- !u!4 &1658558749
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1658558747}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.869089, y: 2.556972, z: 18.71957}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1738197553
 GameObject:
   m_ObjectHideFlags: 0
@@ -1590,7 +1572,7 @@ PrefabInstance:
     - target: {fileID: 3031551773049889633, guid: e16968cdf9862944abe4abad28954980,
         type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 3031551773049889633, guid: e16968cdf9862944abe4abad28954980,
         type: 3}
@@ -1818,7 +1800,7 @@ VisualEffect:
       m_Array: []
     m_NamedObject:
       m_Array:
-      - m_Value: {fileID: 2800000, guid: 260c875ee8b67ba4dbb5d1c5f6cda417, type: 3}
+      - m_Value: {fileID: 2800000, guid: d0535462f4be5c84b9eee8f9fb044875, type: 3}
         m_Name: Texture
         m_Overridden: 1
       - m_Value: {fileID: 18700000, guid: 46e922488224302408579b49ea238636, type: 2}
@@ -2035,11 +2017,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c1115b6cd478b6418dfbde57b56db60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jsonSource: 1
+  jsonSource: 0
   vfx: {fileID: 284271804082646396}
   propertyName: positionMap
   sizeProperty: positionMapSize
-  jsonFile: {fileID: 4900000, guid: 9314c37542a13804eb7a82b99a09596e, type: 3}
+  jsonFile: {fileID: 4900000, guid: dc1c30cbc3045d34583c3d4fc0f98430, type: 3}
   targetQuad: {fileID: 386532083}
   quadLocalOffset: {x: -0.5, y: -0.5, z: 0}
 --- !u!4 &284271804082646398

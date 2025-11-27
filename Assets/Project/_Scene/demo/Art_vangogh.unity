@@ -676,11 +676,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c1115b6cd478b6418dfbde57b56db60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jsonSource: 1
+  jsonSource: 0
   vfx: {fileID: 114346967}
   propertyName: positionMap
   sizeProperty: positionMapSize
-  jsonFile: {fileID: 4900000, guid: 9314c37542a13804eb7a82b99a09596e, type: 3}
+  jsonFile: {fileID: 4900000, guid: dc1c30cbc3045d34583c3d4fc0f98430, type: 3}
   targetQuad: {fileID: 2030656809}
   quadLocalOffset: {x: -0.5, y: -0.5, z: 0}
 --- !u!95 &114346970
@@ -3689,7 +3689,7 @@ VisualEffect:
       m_Array: []
     m_NamedObject:
       m_Array:
-      - m_Value: {fileID: 2800000, guid: 87b04390bc266ab47b5691fafc88f205, type: 3}
+      - m_Value: {fileID: 2800000, guid: 8224d9506bc43f7409d7c60ed8def627, type: 3}
         m_Name: Texture
         m_Overridden: 1
     m_Bool:
@@ -5702,6 +5702,7 @@ GameObject:
   - component: {fileID: 785103532}
   - component: {fileID: 785103534}
   - component: {fileID: 785103533}
+  - component: {fileID: 785103535}
   m_Layer: 0
   m_Name: TextureVFX
   m_TagString: Untagged
@@ -5804,6 +5805,21 @@ VisualEffect:
       m_Array: []
     m_Bool:
       m_Array: []
+--- !u!114 &785103535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 785103531}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b19af53131f02240bef38d538481fd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sourceMode: 0
+  sourceVFX: {fileID: 0}
+  texturePropertyName: Texture
 --- !u!1 &793138390
 GameObject:
   m_ObjectHideFlags: 0
@@ -7621,7 +7637,7 @@ VisualEffect:
       m_Array: []
     m_NamedObject:
       m_Array:
-      - m_Value: {fileID: 2800000, guid: 87b04390bc266ab47b5691fafc88f205, type: 3}
+      - m_Value: {fileID: 2800000, guid: 8224d9506bc43f7409d7c60ed8def627, type: 3}
         m_Name: Texture
         m_Overridden: 1
     m_Bool:
@@ -9829,6 +9845,7 @@ GameObject:
   - component: {fileID: 1539789486}
   - component: {fileID: 1539789488}
   - component: {fileID: 1539789487}
+  - component: {fileID: 1539789489}
   m_Layer: 0
   m_Name: TextureVFX
   m_TagString: Untagged
@@ -9928,6 +9945,21 @@ VisualEffect:
       m_Array: []
     m_Bool:
       m_Array: []
+--- !u!114 &1539789489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1539789485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b19af53131f02240bef38d538481fd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sourceMode: 0
+  sourceVFX: {fileID: 0}
+  texturePropertyName: Texture
 --- !u!1 &1557303621
 GameObject:
   m_ObjectHideFlags: 0
@@ -11656,11 +11688,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c1115b6cd478b6418dfbde57b56db60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jsonSource: 1
+  jsonSource: 0
   vfx: {fileID: 1846272441}
   propertyName: positionMap
   sizeProperty: positionMapSize
-  jsonFile: {fileID: 4900000, guid: 9314c37542a13804eb7a82b99a09596e, type: 3}
+  jsonFile: {fileID: 4900000, guid: dc1c30cbc3045d34583c3d4fc0f98430, type: 3}
   targetQuad: {fileID: 70364194}
   quadLocalOffset: {x: -0.5, y: -0.5, z: 0}
 --- !u!73398921 &1846272440
