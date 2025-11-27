@@ -14,7 +14,7 @@ public class AudioFadeOutController : MonoBehaviour
 
     private float initialVolume;
     private bool isFadingOut = false;
-    private bool isFadingIn = false;
+    // private bool isFadingIn = false;
 
     void Awake()
     {
@@ -52,11 +52,11 @@ public class AudioFadeOutController : MonoBehaviour
         if (!isFadingOut && mediaPlayerAddon != null && mediaPlayerAddon.IsLastLoop)
         {
             float videoDuration = mediaPlayerAddon.VideoDuration;
-            Debug.Log($"videoDuration: {videoDuration}");
-            Debug.Log($"FadeoutTime: {FadeoutTime}");
+            // Debug.Log($"videoDuration: {videoDuration}");
+            // Debug.Log($"FadeoutTime: {FadeoutTime}");
             float fadeOutStartTime = videoDuration - FadeoutTime;
             isFadingOut = true; // 코루틴 시작 전에 플래그 세움 
-            Debug.Log($"Delay: {mediaPlayerAddon.Delay}");
+            // Debug.Log($"Delay: {mediaPlayerAddon.Delay}");
             StartCoroutine(FadeOutAudio(fadeOutStartTime));
         }
     }
@@ -64,14 +64,14 @@ public class AudioFadeOutController : MonoBehaviour
     private IEnumerator FadeOutAudio(float delayTime)
     {
         isFadingOut = true;
-        Debug.Log($"delayTime:{delayTime}");
+        // Debug.Log($"delayTime:{delayTime}");
 
         if (delayTime > 0f)
         {
             yield return new WaitForSeconds(delayTime);
         }
 
-        Debug.Log($" 페이드아웃 시작");
+        // Debug.Log($" 페이드아웃 시작");
 
         float startVolume = audioSource.volume;
         float elapsed = 0f;
@@ -90,12 +90,12 @@ public class AudioFadeOutController : MonoBehaviour
         private IEnumerator FadeInAudio()
     {
         if (audioSource == null) yield break;
-        isFadingIn = true;
+        // isFadingIn = true;
 
         if (FadeinTime <= 0f)
         {
             audioSource.volume = initialVolume;
-            isFadingIn = false;
+            // isFadingIn = false;
             yield break;
         }
 
@@ -108,6 +108,6 @@ public class AudioFadeOutController : MonoBehaviour
         }
 
         audioSource.volume = initialVolume;
-        isFadingIn = false;
+        // isFadingIn = false;
     }
 }
