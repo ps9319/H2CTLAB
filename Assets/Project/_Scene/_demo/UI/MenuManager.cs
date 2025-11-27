@@ -82,7 +82,7 @@ public class MenuManager : MonoBehaviour
     private void OnSceneLoaded(Scene arg0, LoadSceneMode arg1)
     {
         // 씬이 재생되는 동안 메뉴 UI 전체를 숨김
-        if (entireUICanvas != null)
+        if (entireUICanvas != null && arg0.name != "_StartScene")
         {
             entireUICanvas.SetActive(false);
         }
