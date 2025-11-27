@@ -588,7 +588,7 @@ PrefabInstance:
     - target: {fileID: 168510826369863885, guid: 233238481f6c4ab4a8de4fd1f2f555e1,
         type: 3}
       propertyPath: repeatCount
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 168510826369863886, guid: 233238481f6c4ab4a8de4fd1f2f555e1,
         type: 3}
