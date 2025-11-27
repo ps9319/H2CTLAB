@@ -14,7 +14,7 @@ public class AudioFadeOutController : MonoBehaviour
 
     private float initialVolume;
     private bool isFadingOut = false;
-    private bool isFadingIn = false;
+    // private bool isFadingIn = false;
 
     void Awake()
     {
@@ -90,12 +90,12 @@ public class AudioFadeOutController : MonoBehaviour
         private IEnumerator FadeInAudio()
     {
         if (audioSource == null) yield break;
-        isFadingIn = true;
+        // isFadingIn = true;
 
         if (FadeinTime <= 0f)
         {
             audioSource.volume = initialVolume;
-            isFadingIn = false;
+            // isFadingIn = false;
             yield break;
         }
 
@@ -108,6 +108,6 @@ public class AudioFadeOutController : MonoBehaviour
         }
 
         audioSource.volume = initialVolume;
-        isFadingIn = false;
+        // isFadingIn = false;
     }
 }
