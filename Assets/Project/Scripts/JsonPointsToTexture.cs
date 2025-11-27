@@ -38,69 +38,47 @@ public class JsonPointsToTexture : MonoBehaviour
     void OnEnable()
     {
         if (targetQuad != null)
-        {
             UpdateTransformFromQuad();
-        }
 
-        List<Vector2> allPoints = new List<Vector2>();
-
-        string jsonText = null;
-
-        switch (jsonSource)
+        var drawingData = GetDrawingData();
+        if (drawingData == null)
         {
-            case JsonSourceType.LocalJsonFile:
-                if (jsonFile == null)
-                    return;
-                jsonText = jsonFile.text;
-                break;
-            case JsonSourceType.FirebaseRealtime:
-                if (EventListener.Instance == null)
-                    return;
-                jsonText = EventListener.Instance.GetCurrentSketchJson();
-                break;
+            Debug.LogError("[JsonPointsToTexture] drawingData가 JSON에 없습니다.");
+            return;
         }
 
-        if (string.IsNullOrEmpty(jsonText))
-            return;
-
-        // 아래 방식으로 통일
-        JObject json = JObject.Parse(jsonText);
-        JObject drawingData = json["drawingData"] as JObject;
         float canvasWidth = drawingData["canvasWidth"]?.ToObject<float>() ?? 512f;
         float canvasHeight = drawingData["canvasHeight"]?.ToObject<float>() ?? 512f;
 
-        if (drawingData == null) {
-            return;
-        }
+        var pointsStr = drawingData["shapeData"]?["points"]?.ToString();
+        var points = !string.IsNullOrEmpty(pointsStr) ? JArray.Parse(pointsStr) : new JArray();
+        if (points.Count < 2) return;
 
-        var shapeDataObj = drawingData["shapeData"] as JObject;
-        if (shapeDataObj == null) {
-            return;
-        }
-
-        var pointsToken = shapeDataObj["points"];
-        if (pointsToken == null) {
-            return;
-        }
-
-        // 항상 문자열로 온다고 가정 
-        JArray points = JArray.Parse(pointsToken.ToString());
-        if (points == null) {
-            return;
-        }
-
+        var allPoints = new List<Vector2>(points.Count / 2);
         for (int i = 0; i < points.Count - 1; i += 2)
         {
             float x = points[i]?.ToObject<float>() ?? 0f;
             float y = points[i + 1]?.ToObject<float>() ?? 0f;
-            // 미리 정규화
             allPoints.Add(new Vector2(x / canvasWidth, y / canvasHeight));
         }
 
         if (allPoints.Count > 0)
-        {
             ProcessJsonData(allPoints);
-        }
+    }
+
+    private JObject GetDrawingData()
+    {
+        string jsonText = jsonSource switch
+        {
+            JsonSourceType.LocalJsonFile => jsonFile?.text,
+            JsonSourceType.FirebaseRealtime => EventListener.Instance?.GetCurrentSketchJson(),
+            _ => null
+        };
+        if (string.IsNullOrEmpty(jsonText)) return null;
+
+        var json = JObject.Parse(jsonText);
+        var sketchJson = jsonSource == JsonSourceType.LocalJsonFile ? json["sketch_json"] as JObject : json;
+        return sketchJson?["drawingData"] as JObject;
     }
 
     private void ProcessJsonData(List<Vector2> allPoints)
