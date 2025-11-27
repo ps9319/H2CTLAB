@@ -636,7 +636,7 @@ VisualEffect:
       m_Array: []
     m_Int:
       m_Array:
-      - m_Value: 2014
+      - m_Value: 1458
         m_Name: positionMapSize
         m_Overridden: 1
     m_Matrix4x4f:
@@ -679,11 +679,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c1115b6cd478b6418dfbde57b56db60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jsonSource: 1
+  jsonSource: 0
   vfx: {fileID: 114346967}
   propertyName: positionMap
   sizeProperty: positionMapSize
-  jsonFile: {fileID: 4900000, guid: 6e716d65b97a1664788403b310b84ed3, type: 3}
+  jsonFile: {fileID: 4900000, guid: dc1c30cbc3045d34583c3d4fc0f98430, type: 3}
   targetQuad: {fileID: 2030656809}
   quadLocalOffset: {x: -0.5, y: -0.5, z: 0}
 --- !u!95 &114346970
@@ -3637,7 +3637,7 @@ VisualEffect:
       m_Array: []
     m_NamedObject:
       m_Array:
-      - m_Value: {fileID: 2800000, guid: b617ce7aba2ba6541ab47393c9323db8, type: 3}
+      - m_Value: {fileID: 2800000, guid: 1284674059efb7c488590659689587ea, type: 3}
         m_Name: Texture
         m_Overridden: 1
     m_Bool:
@@ -5624,6 +5624,7 @@ GameObject:
   - component: {fileID: 785103532}
   - component: {fileID: 785103534}
   - component: {fileID: 785103533}
+  - component: {fileID: 785103535}
   m_Layer: 0
   m_Name: TextureVFX
   m_TagString: Untagged
@@ -5726,6 +5727,21 @@ VisualEffect:
       m_Array: []
     m_Bool:
       m_Array: []
+--- !u!114 &785103535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 785103531}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b19af53131f02240bef38d538481fd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sourceMode: 0
+  sourceVFX: {fileID: 0}
+  texturePropertyName: Texture
 --- !u!1 &793138390
 GameObject:
   m_ObjectHideFlags: 0
@@ -7459,7 +7475,7 @@ VisualEffect:
       m_Array: []
     m_NamedObject:
       m_Array:
-      - m_Value: {fileID: 2800000, guid: b617ce7aba2ba6541ab47393c9323db8, type: 3}
+      - m_Value: {fileID: 2800000, guid: 1284674059efb7c488590659689587ea, type: 3}
         m_Name: Texture
         m_Overridden: 1
     m_Bool:
@@ -9679,6 +9695,7 @@ GameObject:
   - component: {fileID: 1539789486}
   - component: {fileID: 1539789488}
   - component: {fileID: 1539789487}
+  - component: {fileID: 1539789489}
   m_Layer: 0
   m_Name: TextureVFX
   m_TagString: Untagged
@@ -9778,6 +9795,21 @@ VisualEffect:
       m_Array: []
     m_Bool:
       m_Array: []
+--- !u!114 &1539789489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1539789485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b19af53131f02240bef38d538481fd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sourceMode: 0
+  sourceVFX: {fileID: 0}
+  texturePropertyName: Texture
 --- !u!1 &1557303621
 GameObject:
   m_ObjectHideFlags: 0
@@ -9875,61 +9907,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1557303621}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1565343301
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1565343303}
-  - component: {fileID: 1565343302}
-  m_Layer: 0
-  m_Name: TextureMatcher
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1565343302
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1565343301}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d35ee58ef6dbd2042a3a16172fdc5561, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  vfxList:
-  - {fileID: 1176051674}
-  - {fileID: 785103534}
-  - {fileID: 450522290}
-  - {fileID: 1539789488}
-  texturePropertyName: Texture
---- !u!224 &1565343303
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1565343301}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 26.342018}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -8.410852, y: 2.1108007}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1573841766
 GameObject:
   m_ObjectHideFlags: 0
@@ -11561,11 +11538,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c1115b6cd478b6418dfbde57b56db60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jsonSource: 1
+  jsonSource: 0
   vfx: {fileID: 1846272441}
   propertyName: positionMap
   sizeProperty: positionMapSize
-  jsonFile: {fileID: 4900000, guid: 6e716d65b97a1664788403b310b84ed3, type: 3}
+  jsonFile: {fileID: 4900000, guid: dc1c30cbc3045d34583c3d4fc0f98430, type: 3}
   targetQuad: {fileID: 70364194}
   quadLocalOffset: {x: -0.5, y: -0.5, z: 0}
 --- !u!73398921 &1846272440
@@ -11653,7 +11630,7 @@ VisualEffect:
       m_Array: []
     m_Int:
       m_Array:
-      - m_Value: 2014
+      - m_Value: 1458
         m_Name: positionMapSize
         m_Overridden: 1
     m_Matrix4x4f:
@@ -13782,7 +13759,7 @@ PrefabInstance:
     - target: {fileID: 168510826369863886, guid: 233238481f6c4ab4a8de4fd1f2f555e1,
         type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 168510826369863886, guid: 233238481f6c4ab4a8de4fd1f2f555e1,
         type: 3}
@@ -13846,7 +13823,7 @@ PrefabInstance:
     - target: {fileID: 3031551773049889633, guid: e16968cdf9862944abe4abad28954980,
         type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 3031551773049889633, guid: e16968cdf9862944abe4abad28954980,
         type: 3}
