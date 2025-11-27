@@ -14,6 +14,10 @@ public class MenuManager : MonoBehaviour
     
     void Start()
     {
+        if (entireUICanvas != null) 
+        {
+            entireUICanvas.SetActive(true); 
+        }
         ShowCategoryPanel();
     }
 
